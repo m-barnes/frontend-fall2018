@@ -18,5 +18,10 @@ body {
   margin-bottom: 15px;
 }
 
-.projectlist {
+.bg-image-full {
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
 }
