@@ -59,11 +59,13 @@
       <!-- /.row -->
       <hr>
       </div>
-
-
-
     </div>
-
-
-
+    <script>
+    $('.navbar-nav ml-auto li a').on('click', function(){
+        // Remove class on each item
+        $('.navbar-nav ml-auto li').removeClass('active');
+        // Add class for this one
+        $(this).parent(".nav-item").addClass('active');
+        });
+    </script>
 </body>
