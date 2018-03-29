@@ -1,73 +1,187 @@
-  <body>
-    <!-- Page Content -->
-    <div class="container">
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Page Heading -->
-      <h1 class="my-4">< / > html
-        <small></small>
-      </h1>
+  <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/custom.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.js"></script>
 
-      <div class="projectlist">
 
-      <!-- Project One -->
-      <div class="row">
-        <div class="col-md-7">
-          <a href="#">
-            <img class="img-fluid rounded mb-3 mb-md-0" src="images/overview.png" alt="">
-          </a>
-        </div>
-        <div class="col-md-5">
-          <h3>html overview</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, odit velit cumque vero doloremque repellendus distinctio maiores rem expedita a nam vitae modi quidem similique ducimus! Velit, esse totam tempore.</p>
-          <a class="btn btn-primary" href="overview.html">View Lesson</a>
-        </div>
-      </div>
-      <!-- /.row -->
 
-      <hr>
-
-      <!-- Project Two -->
-      <div class="row">
-        <div class="col-md-7">
-          <a href="#">
-            <img class="img-fluid rounded mb-3 mb-md-0" src="images/elements.png" alt="">
-          </a>
-        </div>
-        <div class="col-md-5">
-          <h3>html elements</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, odit velit cumque vero doloremque repellendus distinctio maiores rem expedita a nam vitae modi quidem similique ducimus! Velit, esse totam tempore.</p>
-          <a class="btn btn-primary" href="#">View Lesson</a>
-        </div>
-      </div>
-      <!-- /.row -->
-
-      <hr>
-
-      <!-- Project Three -->
-      <div class="row">
-        <div class="col-md-7">
-          <a href="#">
-            <img class="img-fluid rounded mb-3 mb-md-0" src="images/lists.png" alt="">
-          </a>
-        </div>
-        <div class="col-md-5">
-          <h3>lists, tables, &amp; forms</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, temporibus, dolores, at, praesentium ut unde repudiandae voluptatum sit ab debitis suscipit fugiat natus velit excepturi amet commodi deleniti alias possimus!</p>
-          <a class="btn btn-primary" href="#">View Lesson</a>
-        </div>
-      </div>
-      <!-- /.row -->
-      <hr>
-      </div>
+</head>
+<body>
+  <header>
+    <div class=" header navbar navbar-default navbar-fixed-top">
+        <div><a href="javascript:history.back(1)">&#129104;</a>
+        <a href="index.html">Frontend Programming</a></div>
     </div>
-    <script>
-    $('.navbar-nav ml-auto li a').on('click', function(){
-        // Remove class on each item
-        $('.navbar-nav ml-auto li').removeClass('active');
-        // Add class for this one
-        $(this).parent(".nav-item").addClass('active');
-        });
-    </script>
+    <div class="languages">
+      <div class="col-md-4 html">&#60;&nbsp;&#8725;&nbsp;&#62;&nbsp;html</div>
+    </div>
+  </header>
+  <main class="col-md-12 main">
+    <div id="top"><a href="#">Back to Top</a></div>
+  <!--Jump Menu-->
+  <aside class="col-md-4 col-md-push-8 jump">
+        <h4>In this lesson</h4>
+        <hr />
+        <h5>Objectives</h5>
+              <ul>
+                <li>Understand the differences in HTML and CSS</li>
+                <li>Identify and explain the parts of a HTML element</li>
+                <li>Identify and explain the differences between block and inline elements</li>
+                <li>Define the Document Object Model</li>
+              </ul><hr/>
+        <h5>Terms</h5>
+              <ul>
+                <li><a href="#tags">Tags</a></li>
+                <li><a href="#elements">Elements</a></li>
+                <li><a href="#attributes">Attributes</a></li>
+              </ul><hr/>
+        <h5>Concepts</h5>
+              <ul>
+                <li><a href="#dom">Document Object Model</a></li>
+                <li><a href="#html5">HTML5</a></li>
+                <li><a href="#blockInline">Block and Inline</a></li>
+              </ul>
+  </aside>
+      <article class="col-md-8 col-md-pull-4 padding2rem">
+				      <h1>HTML overview</h1>
+					    <h2>A Little History</h2>
+  						<p>Web development has come an extremely long way in a phenomenally short time. In the beginning times if you wanted to build a website, you just had to know HTML. Forms and the like required a little bit of PHP or--if you were feeling particularly adventurous--JavaScript. As time has moved on, however, it's gotten incredibly complex with the introduction of derivative languages like XML and XHTML, an ever expansive and maturing JavaScript, and a whole host of 'new' backend improvements in languages like Python, Ruby, Perl, etc. that enhance server side support for developers. Not to mention the multitude of different devices, platforms, and mediums that web designers and developers are responsible for these days.</p>
+  						<p>With complexity brings new tools to help make the complex a bit more simple and, consequently, you have a whole host of point-and-click environments out there where you simply drag-and-drop elements onto a canvas while the environment does all the programming for you behind the scenes. Companies like Wix, Weebly, and SquareSpace have built business models on these tools and content management systems like WordPress have helped make the unmanageable manageable for the masses.</p>
+  						<p>Should you choose to go down this road of web development there is a very good chance that a huge bit of your work will be using these tools (e.g. installing WordPress themes, or dragging an ecommerce component into an existing site, credit card validation, etc.) and there's nothing wrong with that. You can build boilerplate sites and such all the live long day and probably make a pretty good living at it in most places.</p>
+  						<p>But there is more out there, should you go looking. A lot more.</p>
+  						<p>Now understand that I'm not trying to dissuade you from using these tools. Quite the contrary as some are quite powerful and why reinvent the wheel every time you need to move something, right?</p>
+  						<p>I encourage you to use them, but use them for what they are--tools. Use them to better understand your fundamentals, use them to better understand what's going on behind the scenes, use them to build something neat, and then deconstruct it bit by bit to better understand function and design. Don't just use them to use them.</p>
+  					  <h2>What are HTML and CSS?</h2>
+  						<p>HTML and CSS are the PB & J of web development. HTML is the structure and CSS is the styling. The two languages compliment each other, but should be considered independent of one another. HTML is for content; CSS is for appearance of that content.</p>
+  						<p>I'm going to take just a second for some clarification, okay? We're going to be working with HTML5, which is the current standard. We're not even going to really talk about any of the previous versions except to mention that there were, in fact, previous versions. The terminology you'll learn, the best practices you will...practice, etc. etc. are all going to be in the context of the current standard. I mention this only because there is a very good chance that in the course of your career--should you choose web design or development as a career--that you'll run across older code written in legacy standards. That's fine as it's close enough semantically--in most cases--that you'll have little trouble figuring it out. I just feel that there is way too much to cover and generally not enough time to cover it already without having to spend the time going over older standards that you will most certainly not use in any of your own original work. I don't need to know the specifics of how an old Commodore 64 works to use my laptop--if that makes any sense.</p>
+  						<p>Much like your bones provide structure to the meat puppet you are or how the foundations of a house provide structure to build your dream home on, HTML is the language you use to build the structure of a site. HTML (Hypertext Markup Language) gives content structure and meaning by grouping and defining that content as elements like headings, paragraphs, tables, or images. Without these definitions content on the internet would be a stylistic and logistical mess.</p>
+  						<p>Let's take a closer look at HTML first.</p>
+<pre style="margin: 0; line-height: 125%"><span style="color: #557799">&lt;!DOCTYPE html&gt;</span>
+<span style="color: # 007700">&lt;html</span> <span style="color: #0000CC">lang=</span><span style="background-color: #fff0f0">&quot;en&quot;</span><span style="color: #007700">&gt;</span>
+  <span style="color: #007700">&lt;head&gt;</span>
+	<span style="color: #007700">&lt;meta</span> <span style="color: #0000CC">charset=</span><span style="background-color: #fff0f0">&quot;utf-8&quot;</span><span style="color: #007700">&gt;</span>
+	<span style="color: #007700">&lt;title&gt;</span>Hello World<span style="color: #007700">&lt;/title&gt;</span>
+  <span style="color: #007700">&lt;/head&gt;</span>
+  <span style="color: #007700">&lt;body&gt;</span>
+	<span style="color: #007700">&lt;h1&gt;</span>Hello World<span style="color: #007700">&lt;/h1&gt;</span>
+	<span style="color: #007700">&lt;p&gt;</span>This is a web page.<span style="color: #007700">&lt;/p&gt;</span>
+  <span style="color: #007700">&lt;/body&gt;</span>
+<span style="color: #007700">&lt;/html&gt;</span>
+</pre></td></tr></table><br/>
 
+						<p>This is HTML. You have a <span class="greenText">&lt;head&gt;</span> element--presumably at the top of the page that has a title.</p>
+						<p>You have a <span class="greenText">&lt;body&gt;</span> element with the content of the page.</p>
+						<p>And you have various other elements like <span class="greenText">&lt;h1&gt;</span> and <span class="greenText">&lt;p&gt;</span> that label text content like headers and paragraphs.</p>
+					<h3>Our Mother Tongue</h3>
+						<p>As we move through the landscape there will be a ton of terminology that you will encounter. Familiarity breeds comfort and this is no exception. Starting out let's just focus on three, yeah?
+              <ul>
+  							<li><em>Tags</em></li>
+  							<li><em>Elements</em></li>
+  							<li><em>Attributes</em></li>
+              </ul>
+            </p>
+					<a name="tags" class="anchor"></a>
+					<h4>Tags</h4>
+						<p>This is where it gets a bit confusing for some, but stick with it and it'll all make sense in the end. I promise.</p>
+						<p>Looking at some of the code above, you may have noticed a few things. The first thing is that there are an awful lot of brackets going on up there, right? Structure is defined using elements, which we'll talk about in a minute, but the brackets themselves indicate tags. An opening <span class="greenText">&lt; &gt;</span>and a closing <span class="greenText">&lt; / &gt;</span> tag define the area of influence or scope of the effect of an element. Tags are like prison guards. They keep the inside stuff inside and the outside stuff outside. Some tags need both an explicit opening and closing tag in pairs like <span class="greenText">&lt;body&gt; &lt;/body&gt;</span> and some are considered empty or void and are a combination opening and closing tag in one <span class="greenText">&lt;br/&gt;</span> </p>
+					<a name="elements" class="anchor"></a>
+					<h4>Elements</h4>
+						<p>Elements are designators that define the structure and content of objects within a page. This is the stuff inside the brackets. Some of the more frequently used elements include multiple levels of headings (identified as <span class="greenText">&lt;h1&gt;</span> through <span class="greenText">&lt;h6&gt;</span> elements) and paragraphs (identified as the <span class="greenText">&lt;p&gt;</span> element), which I've already mentioned, but the list goes on to include the <span class="greenText">&lt;a&gt;</span> (for links), <span class="greenText">&lt;div&gt;</span> (for defining sections), <span class="greenText">&lt;span&gt;</span> (chunks of text, usually), <span class="greenText">&lt;strong&gt;</span> (bold text), and <span class="greenText">&lt;em&gt;</span> (italic text) elements, and many more.</p>
+						<p>Elements are identified by the use of less-than and greater-than angle brackets, or tags, <span class="greenText">&lt; &gt;</span>, surrounding the element name <em>and sometimes</em> the content inside the scope of those tags.</p>
+						<p>So, when we refer to elements we might be referring to the type of element specfied like <span class="greenText">&lt;h1&gt;</span> or we might be referring to the whole kit and kaboodle <span class="greenText">&lt;h1&gt;</span>An H1 Heading<span class="greenText">&lt;/h1&gt;.</span></p>
+						<p>As if that wasn't confusing enough developers also tend to use the terms tag and element interchangeably. I've been known to do it myself from time to time, yeah? The point is that while it's important you understand the distinction, don't worry about getting too bogged down in the semantics of all this business as there are definitely bigger things to worry about.</p>
+					<a name="attributes" class="anchor"></a>
+					<h4>Attributes</h4>
+						<p>This one is easier to wrap your head around. Elements define structure, but sometimes structure just isn't enough and we need those elements to have a little bit of function as well.</p>
+						<p>For instance, a link. The ability to link information together in an easy and intuitive way is one of the most powerful features of the internet. Way back in the days of yore before the internet, books were our primary sources for information (they're still a very important resource in modern times, but you get my meaning). If I wanted to find out about the Protestant Reformation, I had to find a book that had that information in it and even then the totality of information in that book might not be complete or cover all of the different related subjects you might subsequently be interested in along the way. To supplement your research you had to find other books with other information in it, which required a trip to the library or a bookstore and endless hours shuffling through content to find that for which you were looking. Sometimes you got lucky and sometimes it was a fool's errand.</p>
+						<p>These days we have the internet. I can go to <a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> and look up the <a href="https://en.wikipedia.org/wiki/Reformation">Protestant Reformation</a> and learn all kinds of stuff about it. If I want to learn more specifically about <a href="https://en.wikipedia.org/wiki/Reformation">Martin Luther</a> or maybe <a href="https://en.wikipedia.org/wiki/Henry_VIII_of_England">Henry the VIII of England</a> I can totally do that (and did, if you'll notice) and it's easy because a simple click will take me to a brand new place with the information I want and it might have other links to other information I might be interested in and so on and so forth, right down the rabbit hole I go.</p>
+						<p>Same thing with images. It's not enough that the element indicates an image should be there. It also has to display that image, right? Otherwise, what's the point?</p>
+						<p>In these cases--and many others--the elements aren't just placeholders for content, they are an added functionality of that content inherent in the element. To add that functionality we have to use 'attributes'.</p>
+						<p>Let's take a look at some sample HTML.</p>
+<pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;img</span> <span style="color: #0000CC">src=</span><span style="background-color: #fff0f0">&quot;images/background.png&quot;</span><span style="color: #007700">/&gt;</span></pre></td></tr></table><br/>
+						<p>This is a pretty basic image element. Images don't need both an opening and closing tag, so, everything is kind of self-contained. 'img' indicates this is an image element. <span class="attribute">'src'</span> indicates the 'source' of the image (the actual location of the image file). In this case the source is in the 'images' folder and has a name of 'background.png' (that's the name + file extension or type of image). When the browser loads that line of code, it knows that this area is reserved for an image and it knows where it needs to go in relation to the document being loaded to find that image.</p>
+						<p>You might have many different attributes in one element.</p>
+<pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;img</span> <span style="color: #0000CC">src=</span><span style="background-color: #fff0f0">&quot;images/background.png&quot;</span> <span style="color: #0000CC">alt=</span><span style="background-color: #fff0f0">&quot;background image&quot;</span> <span style="color: #0000CC">width=</span><span style="background-color: #fff0f0">&quot;100%&quot;</span> <span style="color: #0000CC">height=</span><span style="background-color: #fff0f0">&quot;100%&quot;</span><span style="color: #007700">/&gt;</span></pre></td></tr></table><br/>
+						<p>This image element has an <span class="attribute">alt-text</span> attribute (for accessiblity), a specified <span class="attribute">width</span> attribute (for display), and a specified <span class="attribute">height</span> attribute (for display).</p>
+					<h5>Putting it together</h5>
+						<img src="images/elementExample.png" alt="example of image HTML" class="centered"/>
+					<h3>HTML Concepts</h3>
+					<a name="dom" class="anchor"></a>
+					<h4>Document Object Model</h4>
+<pre style="margin: 0; line-height: 125%"><span style="color: #557799">&lt;!DOCTYPE html&gt;</span>
+<span style="color: #007700">&lt;html</span> <span style="color: #0000CC">lang=</span><span style="background-color: #fff0f0">&quot;en&quot;</span><span style="color: #007700">&gt;</span>
+  <span style="color: #007700">&lt;head&gt;</span>
+	<span style="color: #007700">&lt;meta</span> <span style="color: #0000CC">charset=</span><span style="background-color: #fff0f0">&quot;utf-8&quot;</span><span style="color: #007700">&gt;</span>
+	<span style="color: #007700">&lt;title&gt;</span>Hello World<span style="color: #007700">&lt;/title&gt;</span>
+  <span style="color: #007700">&lt;/head&gt;</span>
+  <span style="color: #007700">&lt;body&gt;</span>
+	<span style="color: #007700">&lt;h1&gt;</span>Hello World<span style="color: #007700">&lt;/h1&gt;</span>
+	<span style="color: #007700">&lt;p&gt;</span>This is a web page.<span style="color: #007700">&lt;/p&gt;</span>
+  <span style="color: #007700">&lt;/body&gt;</span>
+<span style="color: #007700">&lt;/html&gt;</span>
+</pre></td></tr></table><br/>
+						<p>Let's look at our code again.</p>
+						<p>A html document (that looks weird doesn't it?) is saved in a particular type of file named--you guessed it--a HTML file. It carries a *.html extension and can be executed in a browser of your choice. In an effort towards standardization, developers often include a boilerplate list of html tags. Some are just a matter of best practices and provide the basics of structure (e.g. <span class="greenText">&lt;head&gt;</span>, <span class="greenText">&lt;body&gt;</span>, etc.) and some are required for the browser (e.g. DOCTYPE declaration, <span class="greenText">&lt;html&gt;</span>, etc.).</p>
+						<p>When the browser loads the page it creates a separate object called the document object model, which is a platform and language neutral interface that allows programs and scripts to dynamically access and update content, structure, and style. It is--essentially--a guide on how to interact with all the elements on the page. It's an English to Spanish dictionary. A Rosetta Stone for how to interact with html documents.</p>
+						<p>The document object model, or DOM, is a tree structure where every node is an object that represents an element in the html. Here's an illustration for you to check out.</p>
+						<object data="images/dom.svg" type="image/svg+xml" class="centered" alt="picture of the document object model"></object>
+						<p>As you can see in the representative example, every bit of html code is parsed out and displayed in the hierarchy. Some have a parent / child relationship like <span class="greenText">&lt;head&gt;</span> and <span class="greenText">&lt;title&gt;</span> elements, some have sibling relationships like <span class="greenText">&lt;head&gt;</span> and <span class="greenText">&lt;body&gt;</span> and some nodes are considered extensions of elements like the attribute 'href' to the <span class="greenText">&lt;a&gt;</span> element.</p>
+						<p>If you were to look at this in-situ, you might not notice a whole lot of difference between it and the html code itself, especially if that html code is properly indented and well formatted. However, not all code is created equal and so a DOM is created at execution to ensure a platform and language indifferent standard that everyone can use whether it's another frontend developer, a web designer, a backend programmer, or whomever.</p>
+						<p>The purpose--at least for us as frontend developers--is it provides us a way to manipulate the styling of the content via CSS (Cascading Style Sheets) or to make elements interactive via JavaScript, both of which we'll talk about in detail as we go on.</p>
+					<a name="html5" class="anchor"></a>
+					<h4>HTML5</h4>
+						<p>HTML5 is the new hotness and brings with it a whole host of new stuff. The older standards have a lot of generic structural elements with the most egregious offender being <span class="greenText">&lt;div&gt;</span> for 'division.' You can certainly still use <span class="greenText">&lt;div&gt;</span> (if you look at the source code for this site, I use it liberally in some cases), but with HTML5 there are some better alternatives. HTML5 introduced a lot of new 'semantic' elements. This means that there are now elements with names like <span class="greenText">&lt;nav&gt;</span> (for navigation), <span class="greenText">&lt;main&gt;</span> (for main content),<span class="greenText"> &lt;aside&gt;</span> (for additional content outside the purview of the main content), etc. that more accurately describe the content housed in those elements. Navigation menu content can still be placed inside <span class="greenText">&lt;div&gt;</span> elements, but with the new standards they are more appropriately located inside <span class="greenText">&lt;nav&gt;</span> elements.</p>
+						<p>HTML5 also brings with it a bunch of new elements specifically for things like embedding outside content (<span class="greenText">&lt;embed&gt;</span>), including video and audio content (<span class="greenText">&lt;video&gt;</span>, <span class="greenText">&lt;audio&gt;</span>), and for form inputs like <span class="greenText">&lt;email&gt;</span>, <span class="greenText">&lt;tel&gt;</span>, <span class="greenText">&lt;time&gt;</span>, etc.</p>
+					<a name="blockInline" class="anchor"></a>
+					<h4>Block and Inline Elements</h4>
+					<p>Last, but not least we need to talk about block and inline elements. We're definitely going to cover this more when we talk of the box model, but for now, let's keep it simple.</p>
+					<p>Elements on the page are naturally displayed in one of three ways
+              <ul>
+                <li>Block</li>
+  							<li>Inline</li>
+  							<li>Not Displayed or Hidden</li>
+              </ul><br/>
+					<strong>'Not displayed' elements </strong>are the easiest as they are simply not displayed. These are elements that typically contain structure or content that is necessary for the display to render properly, but not out there so that the end user can see them. Elements like <span class="greenText">&lt;meta&gt;</span> and <span class="greenText">&lt;style&gt;</span> are necessary for the page to render, but isn't something the user is typically interested in seeing.</p>
+					<p><strong>Block elements</strong> always--always--start on a new line on the rendered page and take up 100% of the available width of the parent container. Elements like <span class="greenText">&lt;div&gt;</span>,<span class="greenText">&lt;h1&gt;</span>--<span class="greenText">&lt;h6&gt;</span> and <span class="greenText">&lt;p&gt;</span> are block level elements.
+					<h2 style="border:2px solid #2ecc71;">This is a h2 block level element</h2>
+					It started on a completely new line and reserves 100% of the available width of its parent container even if the content doesn't--technically--use 100% of that space.</p>
+					<p><strong>Inline elements</strong> do not start on a new line and only take up as much space as they need to display the content inside. Elements like <span class="greenText">&lt;img&gt;</span>, <span class="greenText">&lt;span&gt;</span> and <span class="greenText">&lt;a&gt;</span> are inline level elements.</p>
+					<p>This is <span style="border:2px solid #2ecc71;">an inline &lt;span&gt; element</span> inside a paragraph element.</p>
+					<p>You can always change the default nature of how an element displays. It's just a matter of including an offsetting value somewhere in a style sheet.</p>
+					<p>This is <span style="border:2px solid #2ecc71; display:block">a block &lt;span&gt; element</span> inside a paragraph element.</p>
+					<p>And</p>
+					<h3 style="border:2px solid #2ecc71; display:inline">This is a h3 inline level element.</h3><h3 style="border:2px solid #2ecc71; display:inline">And so is this.</h3><br/><br/>
+					<p>In HTML5 things have changed a bit. There is no binary distinction of simply block and inline. They've been replaced with a more complex set of categories called <a href="https://developer.mozilla.org/en-US/docs/HTML/Content_categories">content categories</a>. Block-level is roughly analogous to the flow control category and inline is more akin to the phrasing content category although there is overflow to the other defined categories as well.</p>
+					<p>I mention this only because--to me anyway--the distinction is still useful to understand even if you don't necessarily use the old standards. The new content categories are great, but can be terribly confusing to new developers (and, let's be honest, seasoned developers as well), but, if you can understand the distinction between block, inline, and not displayed, then you can usually translate that fairly easily to the new content categories.</p>
+				<h4>A few last things</h4>
+					<p>We're going to talk--in some detail--about all these different elements and where they fit into the bigger picture. I've included a <a href="reference.html">reference</a> of sorts that I'll link to periodically in the text and that can be found on the main page. It includes--among other things--a section on content categories. It features all the different divisions, the elements you'd expect to find in each division, and a brief blurb about the element's use.</p>
+					<p>This has been a lot thrown your way this first time out, but like any big project if you want it to last, you have to have a strong foundation on which to build. We'll definitely be looking at these ideas and concepts in detail as we move through the course work, so don't worry if something just isn't clicking. We'll get there.</p>
+
+        </article>
+
+
+
+        </main>
+        <script>
+        (function($) {
+        $(document).ready(function(){
+
+            //When distance from top = 250px fade button in/out
+            $(window).scroll(function(){
+                if ($(this).scrollTop() > 250) {
+                    $('#top').fadeIn(300);
+                } else {
+                    $('#top').fadeOut(300);
+                }
+            });
+        });
+        })(jQuery);</script>
 
 </body>
+</html>
