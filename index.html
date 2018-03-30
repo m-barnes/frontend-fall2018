@@ -74,7 +74,7 @@
     $('#js-navigation a').click(function(e) {
       e.preventDefault();
       $("#js-content").load(e.target.href);
-      history.pushState({}, e.target.textContent, e.target.href);
+      document.location.hash = "landing.html";
 
     })
   });
