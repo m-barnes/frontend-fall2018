@@ -72,7 +72,7 @@
 
     $('#js-content a').click(function(e) {
       e.preventDefault();
-      $("#js-content").load(e.target.href);
+      $(this).parent("#js-content").load("overview.html");
     })
   });
    
