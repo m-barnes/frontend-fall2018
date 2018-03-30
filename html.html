@@ -68,6 +68,17 @@
         $(this).parent(".nav-item").addClass('active');
         });
     </script>
+      <script>
+      $(document).ready(function() {
+        $('#js-content').load('landing.html');
+
+        $('#js-navigation a').click(function(e) {
+          e.preventDefault();
+          $("#js-content").load(e.target.href);
+        })
+        window.location.href="html.html";
+      });
+    </script>
       
     
 
