@@ -51,6 +51,7 @@ pre {
 .flex-main {
   flex:1;
   padding:1em;
+  padding-bottom:5em;
 }
 
 .flex-widget {
