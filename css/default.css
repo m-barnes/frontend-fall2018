@@ -44,7 +44,7 @@ pre {
  	word-break:keep-all;
  	}
 
-image {
+.container img {
   width:100%;
 }
 
