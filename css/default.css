@@ -1,69 +1,71 @@
-/*!
- * Start Bootstrap - 1 Col Portfolio (https://startbootstrap.com/template-overviews/1-col-portfolio)
- * Copyright 2013-2017 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-1-col-portfolio/blob/master/LICENSE)
- */
-
- body {
-   padding-top: 54px;
- }
-
- @media (min-width: 992px) {
-   body {
-     padding-top: 56px;
-   }
- }
-
-.pagination {
-  margin-bottom: 15px;
+body {
+padding-top: 54px;
 }
 
-.bg-image-full {
-  background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
+table {
+min-width:100%;
 }
 
-#top {
-  z-index:99;
-  position:fixed;
-  bottom:1rem;
-  right:1rem;
-  display:none;
-}
-
-.greenText {
-  color: #27AE60;
-  font-weight:bold;
+#table1 tr:nth-child(even) {
+background: #ebebeb;
 }
 
 pre {
-     white-space: pre-wrap;       /* Since CSS 2.1 */
-     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-     white-space: -pre-wrap;      /* Opera 4-6 */
-     white-space: -o-pre-wrap;    /* Opera 7 */
-     word-wrap: break-word;       /* Internet Explorer 5.5+ */
- 	word-break:keep-all;
- 	}
+white-space: pre-wrap;       /* Since CSS 2.1 */
+white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+white-space: -pre-wrap;      /* Opera 4-6 */
+white-space: -o-pre-wrap;    /* Opera 7 */
+word-wrap: break-word;       /* Internet Explorer 5.5+ */
+word-break:keep-all;
+}
+
+#top {
+z-index:99;
+position:fixed;
+bottom:1rem;
+right:1rem;
+display:none;
+}
+
+@media (min-width: 992px) {
+  body {
+  padding-top: 56px;
+  }
+}
+
+.bg-image-full {
+background: no-repeat center center scroll;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+background-size: cover;
+-o-background-size: cover;
+}
 
 .container img {
-  width:100%;
+width:100%;
 }
 
 .flex-main {
-  flex:1;
-  padding:1em;
-  padding-bottom:5em;
+flex:1;
+padding:1em;
+padding-bottom:5em;
 }
 
 .flex-widget {
-  flex:.50;
-  padding:1em;
+flex:.50;
+padding:1em;
+}
+
+.greenText {
+color: #27AE60;
+font-weight:bold;
 }
 
 .html {
-  background-color:#34495e;
-  color:white;
+background-color:#34495e;
+color:white;
+}
+
+.pagination {
+margin-bottom: 15px;
 }

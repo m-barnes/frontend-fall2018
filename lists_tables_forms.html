@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/default.css" rel="stylesheet">
+
+
+
+
+</head>
+<body>
+  <!-- Page Content -->
+<div class="container">
+
+
+  <div class="row row flex-column-reverse flex-lg-row">
+    <div id="top"><a href="#" class="btn btn-dark btn-lg">Back to Top</a></div>
+
+    <!-- Post Content Column -->
+    <div class="flex-main">
+
+      <!-- Title -->
+      <h1 class="mt-4">lists, tables, &amp; forms</h1>
+      <h2>Organization is Key</h2>
+          <p>So, just in case I haven't hit this hard enough already, I'm going to mention it one more time that html is about content organization. It's structure. It's framework. It's scaffolding. It's...well, you get the point, right?</p>
+          <p>Most html elements are structure-centric. They are designed to provide the foundations on which you can build and drape all your pretty, pretty content on. Some of them are more useful than others depending on the context and your need as a developer, but all of them have a purpose and that purpose is to provide structure (I'm doing it again, aren't I?). </p>
+          <p>This go round we're going to talk about three organizational constructs we can use to organize and display our stuff. They're big ideas and we've got a lot of ground to cover. So, while it's a lot ot trudge through, stick with it and make sure you understand what's going on because--trust me--they're pretty important. Like I've said, each has a purpose, each has a part to play, and with some of them we can use to do some pretty cool stuff.</p>
+          <h2>Lists, tables, and forms, oh my!</h2>
+          <a name="lists" class="anchor"></a>
+          <h3>Lists</h3>
+          <p>Lists--taken at face value--aren't much to really talk about. Lists are a part of everyday life, yeah? We make 'to-do' lists to plan out our weekends, our GPS app prints out our directions in list form, and recipes are lists of ingredients complete with directions to cook delicious, delicious food stuffs. Lists are everywhere, so, it makes sense that they're everywhere online as well.</p>
+          <p>When we want to use a list on our website we have some options. Structurally, we're limited to a handful of different types of lists (e.g. ordered lists, unordered lists, and description lists). We can do some neat stuff when styling them, but--structurally--there's only these. So, before we move too far along, let's take a look at them.</p>
+          <h4>Unordered Lists</h4>
+          <p>Unordered lists are lists of related items in which the order doesn't really matter. Unordered lists are block-level elements, which means they block out all other content on the line once they are instanced. Unordered lists are bracketed by the <span class="greenText">&lt;ul&gt;</span> tag (unordered list) and then each item on the list is bracketed by a <span class="greenText">&lt;li&gt;</span> tag (list item).</p>
+          <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;ul&gt;</span>
+  <span style="color: #007700">&lt;li&gt;</span>Item 1<span style="color: #007700">&lt;/li&gt;</span>
+  <span style="color: #007700">&lt;li&gt;</span>Item 2<span style="color: #007700">&lt;/li&gt;</span>
+  <span style="color: #007700">&lt;li&gt;</span>Item 3<span style="color: #007700">&lt;/li&gt;</span>
+<span style="color: #007700">&lt;/ul&gt;</span>
+</pre></p>
+          <p>And the result on the page:</p>
+            <ul>
+              <li>Item 1</li>
+              <li>Item 2</li>
+              <li>Item 3</li>
+            </ul>
+          <p>By default, the browser does a couple of things to offset our list stylistically. Most browsers--and your mileage may vary--add a vertical margin and some padding to shift the whole thing to the right a bit. They also offset the list items by adding a nice little graphical element (called a marker) before each item. Depending on what 'level' that list is on, in most cases that marker is a single, solid dot, which we can change or omit using CSS, or cascading style sheets (we'll talk about that later, so, stay tuned).</p>
+          <h4>Ordered Lists</h4>
+          <p>Ordered lists are--you guessed it--lists of items in which order <em>does</em> matter. Ordered lists are also block-level elements and are bracketed by the <span class="greenText">&lt;ol&gt;</span> tag (ordered list). Just like unordered lists all items in an ordered list are bracketed by a <span class="greenText">&lt;li&gt;</span> tag.</p>
+          <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;ol&gt;</span>
+  <span style="color: #007700">&lt;li&gt;</span>Item 1<span style="color: #007700">&lt;/li&gt;</span>
+  <span style="color: #007700">&lt;li&gt;</span>Item 2<span style="color: #007700">&lt;/li&gt;</span>
+  <span style="color: #007700">&lt;li&gt;</span>Item 3<span style="color: #007700">&lt;/li&gt;</span>
+<span style="color: #007700">&lt;/ol&gt;</span>
+</pre></p>
+          <p>And the result on the page:</p>
+            <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ol>
+          <p>Again, like an unordered list, the browser does a couple of things to our ordered list to make it distinct on the page. The big difference here, however, is the inclusion of some numbering of some sort because with ordered lists order matters.</p>
+          <p>Ordered lists also have some other unique attributes to them with which we can play.</p>
+          <p>First of all, we can use the <span class="attribute">type</span> attribute to change the type of numbering in the our list. We can have ordered lists start with traditional Arabic numbers, letters (both uppercase and lowercase), Latin numbers (I, II, III, IV, etc.), etc. Just add the <span class="attribute">type</span> attribute inside the <span class="greenText">&lt;ol&gt;</span> tag like so:</p>
+          <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;ol</span> <span style="color: #0000CC">type=</span><span style="background-color: #fff0f0">&quot;A&quot;</span><span style="color: #007700">&gt;</span>
+</pre></p>
+          <p>In the context of our generic list that gets us this:</p>
+          <ol type="A">
+              <li>Item 1</li>
+              <li>Item 2</li>
+              <li>Item 3</li>
+          </ol>
+          <p>We can also use the <span class="attribute">start</span> attribute and start our list at any number we want. You want to start a list at 45? You can totally do that. Just add the <span class="attribute"> start </span>attribute inside the <span class="greenText">&lt;ol&gt;</span> tag like so:</p>
+          <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;ol</span> <span style="color: #0000CC">start=</span><span style="background-color: #fff0f0">&quot;45&quot;</span><span style="color: #007700">&gt;</span>
+</pre></p>
+          <p>Which nets us this on the page:</p>
+            <ol start="45">
+              <li>Item 1</li>
+              <li>Item 2</li>
+              <li>Item 3</li>
+            </ol>
+          <p>We can also throw the list into reverse, you know, if you want. We just add the <span class="attribute">reversed</span> attribute into the <span class="greenText">&lt;ol&gt;</span> tag.</p>
+          <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;ol</span> <span style="color: #0000CC">reversed</span><span style="color: #007700">&gt;</span>
+  <span style="color: #007700">&lt;li&gt;</span>Item 1<span style="color: #007700">&lt;/li&gt;</span>
+  <span style="color: #007700">&lt;li&gt;</span>Item 2<span style="color: #007700">&lt;/li&gt;</span>
+  <span style="color: #007700">&lt;li&gt;</span>Item 3<span style="color: #007700">&lt;/li&gt;</span>
+<span style="color: #007700">&lt;/ol&gt;</span>
+</pre></p>
+          <p>Which gets us this:</p>
+            <ol reversed>
+              <li>Item 1</li>
+              <li>Item 2</li>
+              <li>Item 3</li>
+            </ol>
+            <p>We can also throw random numbers into the list just for kicks. We add the <span class="attribute">value</span> attribute into the individual list item element. If left alone, the list will continue counting up from the inserted value.</p>
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;ol</span><span style="color: #007700">&gt;</span>
+  <span style="color: #007700">&lt;li&gt;</span>Item 1<span style="color: #007700">&lt;/li&gt;</span>
+  <span style="color: #007700">&lt;li</span> <span style="color: #0000CC">value=</span><span style="background-color: #fff0f0">&quot;983&quot;</span><span style="color: #007700">&gt;</span>Item 2<span style="color: #007700">&lt;/li&gt;</span>
+  <span style="color: #007700">&lt;li&gt;</span>Item 3<span style="color: #007700">&lt;/li&gt;</span>
+<span style="color: #007700">&lt;/ol&gt;</span>
+</pre></p>
+            <p>And--as expected:</p>
+              <ol>
+                <li>Item 1</li>
+                <li value="983">Item 2</li>
+                <li>Item 3</li>
+              </ol>
+            <h4>Description Lists</h4>
+            <p>A lesser used type of list is the description list. They have a slightly different format and are usually used to outline lists of terms and their descriptions like what you'd find in a glossary or index.</p>
+            <p>A description list may have several terms and descriptions, one after another. They may also have multiple terms per description and multiple descriptions per term. A single term may have multiple meanings and need multiple descriptions. By extension, a single description may work for multiple terms.</p>
+            <p>The description list is bracketed by the <span class="greenText">&lt;dl&gt;</span> tag (descrption list), each 'term' is bracketed by a <span class="greenText">&lt;dt&gt;</span> tag (description term), and each 'definition' is bracketed by a <span class="greenText">&lt;dd&gt;</span> tag (description definition). The description term and the description definition that follows it correspond to one another, so, the <span class="greenText">&lt;dt&gt;</span> element must come before the <span class="greenText">&lt;dd&gt;</span> element. Order of these elements is super important, yeah? </p>
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;dl&gt;</span>
+    <span style="color: #007700">&lt;dt&gt;</span>study<span style="color: #007700">&lt;/dt&gt;</span>
+      <span style="color: #007700">&lt;dd&gt;</span>The devotion of time and attention to acquiring knowledge on an academic subject, especially by means of books<span style="color: #007700">&lt;/dd&gt;</span>
+    <span style="color: #007700">&lt;dt&gt;</span>design<span style="color: #007700">&lt;/dt&gt;</span>
+      <span style="color: #007700">&lt;dd&gt;</span>A plan or drawing produced to show the look and function or workings of a building, garment, or other object before it is built or made<span style="color: #007700">&lt;/dd&gt;</span>
+      <span style="color: #007700">&lt;dd&gt;</span>Purpose, planning, or intention that exists or is thought to exist behind an action, fact, or material object<span style="color: #007700">&lt;/dd&gt;</span>
+    <span style="color: #007700">&lt;dt&gt;</span>business<span style="color: #007700">&lt;/dt&gt;</span>
+    <span style="color: #007700">&lt;dt&gt;</span>work<span style="color: #007700">&lt;/dt&gt;</span>
+      <span style="color: #007700">&lt;dd&gt;</span>A person&#39;s regular occupation, profession, or trade<span style="color: #007700">&lt;/dd&gt;</span>
+<span style="color: #007700">&lt;/dl&gt;</span>
+</pre></p>
+            <p>Which gets us all this:</p>
+            <dl>
+              <dt>study</dt>
+                <dd style="margin-left:2rem;">The devotion of time and attention to acquiring knowledge on an academic subject, especially by means of books</dd>
+              <dt>design</dt>
+                <dd style="margin-left:2rem;">A plan or drawing produced to show the look and function or workings of a building, garment, or other object before it is built or made</dd>
+                <dd style="margin-left:2rem;">Purpose, planning, or intention that exists or is thought to exist behind an action, fact, or material object</dd>
+              <dt>business</dt>
+              <dt>work</dt>
+                <dd style="margin-left:2rem;">A person's regular occupation, profession, or trade</dd>
+            </dl>
+            <p>I've offset the descriptions from the terms to better illustrate the difference between the different elements, but in practice the margins of the descriptions would align to the left by default.
+            <h4>Nesting Lists</h4>
+            <p>So, one of the more powerful features of using lists is their ability to be nested. This makes them terribly useful for developers when dealing with site navigation, which we'll talk about in just second.</p>
+            <p>Before we do, however, let's take a look at some code</p>
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;ol&gt;</span>
+  <span style="color: #007700">&lt;li&gt;</span>Walk the dog<span style="color: #007700">&lt;/li&gt;</span>
+  <span style="color: #007700">&lt;li&gt;</span>Fold laundry<span style="color: #007700">&lt;/li&gt;</span>
+  <span style="color: #007700">&lt;li&gt;</span>
+    Go to the grocery and buy:
+    <span style="color: #007700">&lt;ul&gt;</span>
+      <span style="color: #007700">&lt;li&gt;</span>Milk<span style="color: #007700">&lt;/li&gt;</span>
+      <span style="color: #007700">&lt;li&gt;</span>Bread<span style="color: #007700">&lt;/li&gt;</span>
+      <span style="color: #007700">&lt;li&gt;</span>Cheese<span style="color: #007700">&lt;/li&gt;</span>
+    <span style="color: #007700">&lt;/ul&gt;</span>
+  <span style="color: #007700">&lt;/li&gt;</span>
+  <span style="color: #007700">&lt;li&gt;</span>Mow the lawn<span style="color: #007700">&lt;/li&gt;</span>
+  <span style="color: #007700">&lt;li&gt;</span>Make dinner<span style="color: #007700">&lt;/li&gt;</span>
+<span style="color: #007700">&lt;/ol&gt;</span>
+</pre></p>
+            <p>As you can see, we've nested an unordered list inside an ordered list</p>
+            <p>Let's see how this plays out on the rendered page.</p>
+            <ol>
+              <li>Walk the dog</li>
+              <li>Fold laundry</li>
+              <li>
+                Go to the grocery and buy:
+                <ul>
+                  <li>Milk</li>
+                  <li>Bread</li>
+                  <li>Cheese</li>
+                </ul>
+              </li>
+              <li>Mow the lawn</li>
+              <li>Make dinner</li>
+            </ol>
+            <p>A few things to note here, okay? The first is that nesting lists is tricky as unwanted styling can pop up unintentionally if you're not careful, so, mind your opening and closing tags. The second is that as you nest lists--particularly unordered lists--the styles for the markers will change. You might have noticed that the unordered list here is delineated by open circles instead of the solid dots like our previous example. This is because the unordered list is nested <em>within</em> an ordered list. This unordered list is at a different 'level' in the list hierarchy.</p>
+            <p>Fortunately, we can control all these default styles with CSS, which is where it becomes particuarly neat for us as developers. I've provided a list of some sample CSS you can throw into or use in conjunction with your code that gives you some styling options. You can find it with our old friend, the <a href="reference.html">reference</a> page. You'll understand it a bit better once we start digging into CSS, but since we're here, I thought I'd go ahead and include it for you.</p>
+            <a name="navigation" class="anchor"></a>
+            <h4>Useful Utility</h4>
+            <p>I mentioned earlier that we can do some neat stuff with generic lists. One of those things has to do with site navigation. We can use lists to create site navigation for our stuff. We just have to do a little bit of manipulation on the CSS side.</p>
+            <ul>
+              <li>Home</li>
+              <li>News</li>
+              <li>Contact</li>
+              <li>About</li>
+            </ul>
+            <p>Here's a basic unordered list, right? Let's see what we can do with it.</p>
+            <p>
+              <nav class="navigation">
+                <ul>
+                  <li><a href="#home">Home</a></li>
+                  <li><a href="#news">News</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                  <li><a href="#about">About</a></li>
+                </ul>
+              </nav>
+            </p>
+            <p>As you can see, we've done some pretty neat stuff using just a basic list and some CSS. We haven't changed the structure of the unordered list. The html for both examples is the same. The changes in how it's being displayed are being handled via CSS. We've stacked the list items side by side on the line, gave each list item a background color, removed any extra spacing, and gave it something neat to do when a mouse is hovered over them on the page.</p>
+            <p>You'll learn how to do stuff like this when we talk about CSS over the next few lessons, but--for now--the point of the example was simply to show you that while there are rules and guidelines in how to use these structural html elements, there is a bit of flexibility in their use which we can use to our advantage when creating content for our pages.</p>
+            <a name="tables" class="anchor"></a>
+            <h2>Tables</h2>
+            <p>Tables used to be <em>the</em> thing when building websites back in the day. There has always been a need to be able to organize tabular data--stuff that would look good in a table--on the internet, but they're also pretty good at managing and organizing data of all kinds. Unruly photo collages, misbehaving text, wandering menus, etc. were all powerless in the face of the all-powerful table and, so, tables started popping up in code...everywhere.</p>
+            <p>In the beginning, this was all right because developers were dealing with some simple and pretty fixed variables as far as design and display were concerned. Even as websites started to get more and more complex and user demand drove the need for more sophisticated design and functionalty, tables were still pretty useful. All kinds of design styles and attributes (e.g. 'colspan,' 'rowspan,' size percentages, nested tables, etc.) were being used heavily in development.</p>
+            <p>The problem is--and I like using analogies, so, hear me out--it became a 'jenga' problem. Tables were never really meant to do these kinds of things, right? The benefits of using them this way were a by-product of the inherent properties of the element. You start stacking this incredibly dense and heavy stuff on top of a weak foundation and the center cannot hold. Inital setup wasn't too bad. It was complicated, to say the least, but starting from scratch was usually better than trying to modify code in-situ--espcecially if you didn't put it together originally, right? Digging through lines and lines of code looking for the one thing--stuck in the middle of the middle of a bunch of tables--that you wanted to change was time-consuming. It was also frustrating because even if you managed to find it, a change often set off a chain-reaction of formatting issues that you then had to fix.</p>
+            <p>I'd like to take just minute to issue a word of warning to the wise. You know, in case you've missed it. Tables are powerful, easy to use, and you will be tempted to use them to wrangle unruly content--especially after fighting for hours on end with your code to get that one stupid picture to fall in line and sit off to the right without covering up that text. I mean, holy crow, what does it take to do that? I've done everything I can think of and it just sits there on the page...mocking me. I hate it.</p>
+            <p>That is to say, you will be seduced by the power of tables and might think to use them inappropriately in your work because of frustration or apathy, or whatever, but do not give into anger and hate for that way leads to the Dark Side. Tables are powerful, but they come at great cost. It can be more difficult to do what you want to do without the benefit of using tables inappropriately, but while learning to do these things the right way might be harder, you will reap greater benefit in the long run and grow into a powerful Jedi in your own right.</p>
+            <p>So, before we get into tables proper, let's set some ground rules on using tables and get into some reasons why you shouldn't use them inappropriately for content layout:</p>
+              <ul>
+                <li>Tables shouldn’t be used for general layout purposes.</li>
+                <li>Tables are not accessible, meaning screen readers have a real problem with them.</li>
+                <li>Tables are tricky to use, especially in complex designs.</li>
+                <li>Tables shouldn’t be used for general layout purposes.</li>
+                <li>Tables are inflexible. Generally, tables are slower to load and depending on how they are formatted, can dramatically change the layout of your content on screens of different sizes.</li>
+                <li>Tables shouldn’t be used for general layout purposes.</li>
+                <li>They don’t always print properly. This isn’t always an issue for the casual user, but in the corporate climate, for instance, the ability to print content is still kind of a thing, which means you have to ensure that what you see on the web page is what you get on the printed page.</li>
+                <li>And, finally, tables shouldn’t be used for general layout purposes.</li>
+              </ul>
+            <p>Truth be told,  using tables for layout has been kind of a no-no since HTML 4.01--although that still didn’t stop everyone from doing it--and while HTML5 has changed the rules a bit, the specification still states:</p>
+            <p><strong style="color:red;">Tables should not be used as layout aids.</strong></p>
+            <p>So, there you go. Tables are still perfectly acceptable for displaying tabular data, by the way. Feel free to use them for data that ‘naturally,’ belongs in grids (e.g. charts, some lists, inventories, etc.), but--and I feel this is important to mention--you shouldn’t use them for layout purposes. If you need to wrangle non-tabular content, There are other means. Sometimes using those means is a bit more difficult, but walk the path, Padwan, and you'll be better off further on down the road.</p>
+            <p>Tables are for data that naturally fits into columns and rows. Html5 has a number of elements available for defining and providing structure to the data. Like our lists example, we're going to take look at some basic html code for tables, build on it a bit, and then make it shine using some CSS.</p>
+            <a name="foundations"class="anchor"></a>
+            <h4>Building Tables</h4>
+            <p>First, let's build the foundation.</p>
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;table&gt;</span>
+   <span style="color: #007700">&lt;tr&gt;</span>
+    <span style="color: #007700">&lt;td&gt;</span>Sword of Destiny<span style="color: #007700">&lt;/td&gt;</span>
+    <span style="color: #007700">&lt;td&gt;</span>Andrzej Sapkowski<span style="color: #007700">&lt;/td&gt;</span>
+    <span style="color: #007700">&lt;td&gt;</span>In Stock<span style="color: #007700">&lt;/td&gt;</span>
+    <span style="color: #007700">&lt;td&gt;</span>1<span style="color: #007700">&lt;/td&gt;</span>
+    <span style="color: #007700">&lt;td&gt;</span>$15.99<span style="color: #007700">&lt;/td&gt;</span>
+   <span style="color: #007700">&lt;/tr&gt;</span>
+   <span style="color: #007700">&lt;tr&gt;</span>
+    <span style="color: #007700">&lt;td&gt;</span>Why Male Models?<span style="color: #007700">&lt;/td&gt;</span>
+    <span style="color: #007700">&lt;td&gt;</span>D. Z&#39;lander<span style="color: #007700">&lt;/td&gt;</span>
+    <span style="color: #007700">&lt;td&gt;</span>In Stock<span style="color: #007700">&lt;/td&gt;</span>
+    <span style="color: #007700">&lt;td&gt;</span>1<span style="color: #007700">&lt;/td&gt;</span>
+    <span style="color: #007700">&lt;td&gt;</span>$24.99<span style="color: #007700">&lt;/td&gt;</span>
+   <span style="color: #007700">&lt;/tr&gt;</span>
+   <span style="color: #007700">&lt;tr&gt;</span>
+    <span style="color: #007700">&lt;td&gt;</span>It&#39;s High Noon<span style="color: #007700">&lt;/td&gt;</span>
+    <span style="color: #007700">&lt;td&gt;</span>Jesse McCree<span style="color: #007700">&lt;/td&gt;</span>
+    <span style="color: #007700">&lt;td&gt;</span>Out of Stock<span style="color: #007700">&lt;/td&gt;</span>
+    <span style="color: #007700">&lt;td&gt;</span>1<span style="color: #007700">&lt;/td&gt;</span>
+    <span style="color: #007700">&lt;td&gt;</span>$22.23<span style="color: #007700">&lt;/td&gt;</span>
+   <span style="color: #007700">&lt;/tr&gt;</span>
+<span style="color: #007700">&lt;/table&gt;</span>
+</pre>
+</p>
+            <p>The table is defined using the <span class="greenText">&lt;table&gt;</span> element. This indicates to the browser that what follows--and will follow until it hits the closing tag--is tabularly structured data. Table rows are defined using the <span class="greenText">&lt;tr&gt;</span> element and individual table data cells are defined using the <span class="greenText">&lt;td&gt;</span> element.</p>
+            <p>The output of our code follows:</p>
+            <table>
+              <tr>
+                <td>Sword of Destiny</td>
+                <td>Andrzej Sapkowski</td>
+                <td>In Stock</td>
+                <td>1</td>
+                <td>$15.99</td>
+              </tr>
+              <tr>
+                <td>Why Male Models?</td>
+                <td>D. Z'lander</td>
+                <td>In Stock</td>
+                <td>1</td>
+                <td>$24.99</td>
+              </tr>
+              <tr>
+                <td>It's High Noon</td>
+                <td>Jesse McCree</td>
+                <td>Out of Stock</td>
+                <td>1</td>
+                <td>$22.23</td>
+              </tr>
+            </table>
+            <br/>
+            <p>Nothing too special, so, let's dress it up a bit with some additional html code.</p>
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;table&gt;</span>
+  <span style="color: #007700">&lt;caption&gt;</span>Your Order:<span style="color: #007700">&lt;/caption&gt;</span>
+   <span style="color: #007700">&lt;thead&gt;</span>
+     <span style="color: #007700">&lt;th&gt;</span>Title<span style="color: #007700">&lt;/th&gt;</span>
+     <span style="color: #007700">&lt;th&gt;</span>Author<span style="color: #007700">&lt;/th&gt;</span>
+     <span style="color: #007700">&lt;th&gt;</span>Status<span style="color: #007700">&lt;/th&gt;</span>
+     <span style="color: #007700">&lt;th&gt;</span>Qty. Requested<span style="color: #007700">&lt;/th&gt;</span>
+     <span style="color: #007700">&lt;th&gt;</span>Price (US)<span style="color: #007700">&lt;/th&gt;</span>
+   <span style="color: #007700">&lt;/thead&gt;</span>
+   <span style="color: #007700">&lt;tbody&gt;</span>
+     <span style="color: #007700">&lt;tr&gt;</span>
+       <span style="color: #007700">&lt;td&gt;</span>Sword of Destiny<span style="color: #007700">&lt;/td&gt;</span>
+       <span style="color: #007700">&lt;td&gt;</span>Andrzej Sapkowski<span style="color: #007700">&lt;/td&gt;</span>
+       <span style="color: #007700">&lt;td&gt;</span>In Stock<span style="color: #007700">&lt;/td&gt;</span>
+       <span style="color: #007700">&lt;td&gt;</span>1<span style="color: #007700">&lt;/td&gt;</span>
+       <span style="color: #007700">&lt;td&gt;</span>$15.99<span style="color: #007700">&lt;/td&gt;</span>  <span style="color: #007700">&lt;/tr&gt;</span>
+     <span style="color: #007700">&lt;tr&gt;</span>
+       <span style="color: #007700">&lt;td&gt;</span>Why Male Models?<span style="color: #007700">&lt;/td&gt;</span>
+       <span style="color: #007700">&lt;td&gt;</span>D. Z&#39;lander<span style="color: #007700">&lt;/td&gt;</span>
+       <span style="color: #007700">&lt;td&gt;</span>In Stock<span style="color: #007700">&lt;/td&gt;</span>
+       <span style="color: #007700">&lt;td&gt;</span>1<span style="color: #007700">&lt;/td&gt;</span>
+       <span style="color: #007700">&lt;td&gt;</span>$24.99<span style="color: #007700">&lt;/td&gt;</span>
+     <span style="color: #007700">&lt;/tr&gt;</span>
+     <span style="color: #007700">&lt;tr&gt;</span>
+       <span style="color: #007700">&lt;td&gt;</span>It&#39;s High Noon<span style="color: #007700">&lt;/td&gt;</span>
+       <span style="color: #007700">&lt;td&gt;</span>Jesse McCree<span style="color: #007700">&lt;/td&gt;</span>
+       <span style="color: #007700">&lt;td&gt;</span>Out of Stock<span style="color: #007700">&lt;/td&gt;</span>
+       <span style="color: #007700">&lt;td&gt;</span>1<span style="color: #007700">&lt;/td&gt;</span>
+       <span style="color: #007700">&lt;td&gt;</span>$22.23<span style="color: #007700">&lt;/td&gt;</span>
+     <span style="color: #007700">&lt;/tr&gt;</span>
+   <span style="color: #007700">&lt;/tbody&gt;</span>
+   <span style="color: #007700">&lt;tfoot&gt;</span>
+     <span style="color: #007700">&lt;tr&gt;</span>
+       <span style="color: #007700">&lt;td</span> <span style="color: #0000CC">colspan=</span><span style="background-color: #fff0f0">&quot;4&quot;</span><span style="color: #007700">&gt;</span>Subtotal:<span style="color: #007700">&lt;/td&gt;</span>
+       <span style="color: #007700">&lt;td&gt;</span>$63.21<span style="color: #007700">&lt;/td&gt;</span>
+     <span style="color: #007700">&lt;/tr&gt;</span>
+     <span style="color: #007700">&lt;tr&gt;</span>
+       <span style="color: #007700">&lt;td</span> <span style="color: #0000CC">colspan=</span><span style="background-color: #fff0f0">&quot;4&quot;</span><span style="color: #007700">&gt;</span>Tax:<span style="color: #007700">&lt;/td&gt;</span>
+       <span style="color: #007700">&lt;td&gt;</span>$5.06<span style="color: #007700">&lt;/td&gt;</span>
+     <span style="color: #007700">&lt;/tr&gt;</span>
+     <span style="color: #007700">&lt;tr&gt;</span>
+       <span style="color: #007700">&lt;td</span> <span style="color: #0000CC">colspan=</span><span style="background-color: #fff0f0">&quot;4&quot;</span><span style="color: #007700">&gt;</span>Shipping:<span style="color: #007700">&lt;/td&gt;</span>
+       <span style="color: #007700">&lt;td&gt;</span>FREE<span style="color: #007700">&lt;/td&gt;</span>
+     <span style="color: #007700">&lt;/tr&gt;</span>
+     <span style="color: #007700">&lt;tr&gt;</span>
+       <span style="color: #007700">&lt;td</span> <span style="color: #0000CC">colspan=</span><span style="background-color: #fff0f0">&quot;4&quot;</span><span style="color: #007700">&gt;</span>Total:<span style="color: #007700">&lt;/td&gt;</span>
+       <span style="color: #007700">&lt;td&gt;</span>$68.27<span style="color: #007700">&lt;/td&gt;</span>
+     <span style="color: #007700">&lt;/tr&gt;</span>
+<span style="color: #007700">&lt;/table&gt;</span>
+</pre></p>
+            <p>And the result on the page:</p>
+            <table>
+              <caption>Your Order:</caption>
+              <thead>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Status</th>
+                <th>Qty. Requested</th>
+                <th>Price (US)</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Sword of Destiny</td>
+                  <td>Andrzej Sapkowski</td>
+                  <td>In Stock</td>
+                  <td>1</td>
+                  <td>$15.99</td>  </tr>
+                <tr>
+                  <td>Why Male Models?</td>
+                  <td>D. Z'lander</td>
+                  <td>In Stock</td>
+                  <td>1</td>
+                  <td>$24.99</td>
+                </tr>
+                <tr>
+                  <td>It's High Noon</td>
+                  <td>Jesse McCree</td>
+                  <td>Out of Stock</td>
+                  <td>1</td>
+                  <td>$22.23</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="4">Subtotal:</td>
+                  <td>$63.21</td>
+                </tr>
+                <tr>
+                  <td colspan="4">Tax:</td>
+                  <td>$5.06</td>
+                </tr>
+                <tr>
+                  <td colspan="4">Shipping:</td>
+                  <td>FREE</td>
+                </tr>
+                <tr>
+                  <td colspan="4">Total:</td>
+                  <td>$68.27</td>
+                </tr>
+            </table><br/>
+            <p>Better, yeah? As you can see I've added a few things. The first thing I've done is provided my table with a proper title, or 'caption.' The title 'Your Order:' is a table caption. It's defined by the <span class="greenText">&lt;caption&gt;</span> tag. I've also added some table headers (e.g. Title, Author, etc.) using the <span class="greenText">&lt;th&gt;</span> tag. I've also added a few new rows at the bottom to reflect totals and addtiional costs. Because these rows don't have data for each individual column in the table, I've had to 'merge' some table data cells in these rows using the <span class="attribute">colspan</span> attribute to make everything line up properly. I've also went ahead and separated each section of the table using the <span class="greenText">&lt;thead&gt;</span> (table header), <span class="greenText">&lt;tbody&gt;</span> (table body), and <span class="greenText">&lt;tfoot&gt;</span> (table footer) tags. You don't necessarily have to do this, but if I want to style each section separately using CSS later, having it broken down into separate sections will make this much easier.</p>
+            <p>It's starting to look a little clunky though, isn't it? With html there's only so much we can do, so, let me throw some CSS at it and see what happens.</p>
+            <table id="table1">
+              <caption>Your Order:</caption>
+              <thead>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Status</th>
+                <th>Qty. Requested</th>
+                <th>Price (US)</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Sword of Destiny</td>
+                  <td>Andrzej Sapkowski</td>
+                  <td>In Stock</td>
+                  <td>1</td>
+                  <td>$15.99</td>  </tr>
+                <tr>
+                  <td>Why Male Models?</td>
+                  <td>D. Z'lander</td>
+                  <td>In Stock</td>
+                  <td>1</td>
+                  <td>$24.99</td>
+                </tr>
+                <tr>
+                  <td>It's High Noon</td>
+                  <td>Jesse McCree</td>
+                  <td>Out of Stock</td>
+                  <td>1</td>
+                  <td>$22.23</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="4">Subtotal:</td>
+                  <td>$63.21</td>
+                </tr>
+                <tr>
+                  <td colspan="4">Tax:</td>
+                  <td>$5.06</td>
+                </tr>
+                <tr>
+                  <td colspan="4">Shipping:</td>
+                  <td>FREE</td>
+                </tr>
+                <tr>
+                  <td colspan="4">Total:</td>
+                  <td>$68.27</td>
+                </tr>
+            </table><br/>
+            <p>Okay. Looking better. You may have noticed that my striping is a bit off. That's because I've got the table separated into different sections. The CSS rule changes the color of every 'even' number row, but once the table flips over into a different section (e.g. from the table body to the table footer), the counter resets. Normally, I wouldn't leave it like this, but as it's a great example of those unintended formatting consequences I talked about earlier, I thought I'd leave it in.</p>
+            <p>Here's that same table styled a bit differently.</p>
+            <table id="table2">
+              <caption>Your Order:</caption>
+              <thead>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Status</th>
+                <th>Qty. Requested</th>
+                <th>Price (US)</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Sword of Destiny</td>
+                  <td>Andrzej Sapkowski</td>
+                  <td>In Stock</td>
+                  <td>1</td>
+                  <td>$15.99</td>  </tr>
+                <tr>
+                  <td>Why Male Models?</td>
+                  <td>D. Z'lander</td>
+                  <td>In Stock</td>
+                  <td>1</td>
+                  <td>$24.99</td>
+                </tr>
+                <tr>
+                  <td>It's High Noon</td>
+                  <td>Jesse McCree</td>
+                  <td>Out of Stock</td>
+                  <td>1</td>
+                  <td>$22.23</td>
+                </tr>
+              </tbody>
+              <tfoot class="total">
+                <tr>
+                  <td colspan="4">Subtotal:</td>
+                  <td>$63.21</td>
+                </tr>
+                <tr>
+                  <td colspan="4">Tax:</td>
+                  <td>$5.06</td>
+                </tr>
+                <tr>
+                  <td colspan="4">Shipping:</td>
+                  <td class="free">FREE</td>
+                </tr>
+                <tr style="background-color:#DADFE1">
+                  <td colspan="4">Total:</td>
+                  <td>$68.27</td>
+                </tr>
+            </table><br/>
+            <p>Just like with our lists example, both of these tables have been built using the same html foundations. My examples aren't that drastically different (I mean, how creative can you get with order confirmations?), but they illustrate the point, yeah? Dress it up how you like, but it means nothing if your framework is lacking. Foundations are important.</p>
+
+            <a name="forms" class="anchor"></a>
+            <h2>Forms</h2>
+            <p>Last, but not least, we have forms.</p>
+            <p>Forms are an essential and ubiquitous part of the internet these days. As developers we use them for all kinds of things from capturing data from users (sign up here!), to processing requests (I'm feeling lucky.), to controlling application function and access (Username and password, please.). If there is interactive functionality built into a website, however, small that functionality might be, chances are it's been framed out using form elements.</p>
+            <p>As frontend developers we need to know how to build forms, so, we're going to discuss how to use html to create some mark up, the roles and uses of some common form elements, and a bit on styling those forms using CSS. Later on we'll even wax poetic on using JavaScript to validate the data input into those forms. What we won't talk about is how to process those forms, yeah? Processing that data, or determining what we do with that data, once it's captured is the business of a backend developer. They use stuff like PHP, python, SQL, Ruby and whole host of other made-up sounding languages to deal with those things on the server side. For our purposes all the information we collect is going to be packaged and sent to a generic email address.</p>
+            <p>Forms are added to the page using a <span class="greenText">&lt;form&gt;</span> element. This element identifies where on the page control elements, or form fields, are going to appear. They define the borders of the form itself and help keep all the form elements in their designated areas while at the same time keeping all the wandering riff-raff out.</p>
+            <p>Like any other element we can apply attributes to them. The two most common are the <span class="attribute">action</span> and the <span class="attribute">method</span> attributes.</p>
+              <p><span class="attribute">action</span> - This attribute contains the url to which the data collected in the form is going to be sent for processing. If I'm Googling something, for instance, this is part of the form they use to process my search.</p>
+              <p><img src="images/google.png" alt="Google form snapshot" /></p>
+              <p>Now, this <em>is</em> Google, so, it's pretty extensive, but--in a nutshell--they are going to take the data from the search box and then append it on to the end of a url that will be sent to a Google server for processing. The 'action' in our screenshot is '/search' which is the tail-end of the proper Google search string--<a href="https://www.google.com/search">https://www.google.com/search</a> The form data will be formatted and tacked on to the end of it to be submitted. Whatever is found will be returned in the browser window.</p>
+              <p><span class="attribute">method</span> - This attribute references the http method that should be used by the form when submitting data for processing. There are two basic 'methods' used:
+              <p>GET - A 'GET' method request is pretty public. The data--in this case it's data from a search box or query--is simply tacked on to the url provided by the <span class="attribute">action</span> attribute. It's cached by the browser for later use, it can be bookmarked by the browser, saved in a server log, and is sent across the internet in plain text out there in the open for everyone to see. The 'method' in our screenshot is a GET request. This means that whatever you put in that search box is going to be appended to the url <a href="https://www.google.com/search">https://www.google.com/search</a>. When the search results are returned that modified url is going to be in the address bar at the top of the browser. The search keywords will be encoded into the returned url. The browser will cache it for later use and somewhere--I'm betting--it's saved to a traffic log at Google HQ probably tied to a whole bunch of other identifying information like an IP address, time/date, etc.</p>
+              <p>As example, here's a recent Google search of mine.</p>
+              <p><a href="https://www.google.com/#q=how+to+get+rid+of+blood+stains+fast">https://www.google.com/#q=how+to+get+rid+of+blood+stains+fast</a></p>
+              <p>Guess what I was searching for? You guessed it--I was searching for an easy no-bake cookie recipe.</p>
+              <p>GET requests are primitive. The only real way for data to pass via a GET request is through the url, which provides a very, very limited amount of space in which to pass data. Consequently, GET requests should really only be used for retrieval of simple, non-sensitive information like when querying a search engine or requesting a url or whatever. Developers like to say that GET requests should be idempotent (because it makes us look wicked smart), meaning you could do it a million times and the server will do the same basic action and return the same basic results <em>each and every time</em>. Google uses a GET request because your search keywords aren't considered sensitive information and even though the results themselves may differ, the action to return those results is exactly the same. A rose is a rose is a rose regardless of where it blooms.
+              <p>Using the 'GET' method means I--as a developer--can do more stuff with that data, but it comes at the expense of privacy, so, it might not be a good idea to use it on a form asking for sensitive personal information like credit card information or a medical history. Not that you could, but you get the point, right?</p>
+              <p>POST - A 'POST' method request is a bit different. It works the same--for the most part--but the data isn't sent via the url, but in body of the request (a GET request has no body). This means there is exponentially more space available to send data back and forth between client and server (e.g. account creation forms, records requests from databases, etc.). An additional benefit is that--because the data is sent via the body of the request--the data can be encoded, encrypted, or otherwise obfuscated to ensure that should that information get into the hands of the bad guys, those bad guys can't really do a whole lot with it. The data sent via a POST request isn't appended on to the url, it isn't cached by the browser (unless you specifically tell your browser to do it in the name of convenience), and your data isn't saved to some server log somewhere at the time of transaction. If you've ever filled out a form, hit the back button, and gotten that little box asking you to confirm resubmission, you're dealing with a form that uses a POST request. Unless you specifically authorize it to do so, your browser will only save the data from your submission until the browser is closed out and only on <em>your</em> side. The record of your transaction may exist (Yes, I can confirm that Bob was here and told me some stuff), but the contents of that transaction will not exist beyond the time it takes to complete that transaction (No, I have no idea what we talked about).</p>
+              <a name="createforms" class="anchor"></a>
+              <h4>Creating Forms</h4>
+              <p>Now that I've bored you to tears with all this, let's talk about actually creating some forms using some of this stuff.</p>
+              <p>We've got our <span class="greenText">&lt;form&gt;</span> opening and closing tag, we know where we want to send the data we're going to collect, we know what method we're going to use to send it, so, let's actually collect some stinking data.</p>
+              <p>The single most important form element is the <span class="greenText">&lt;input&gt;</span> element, which uses the <span class="attribute">type</span> attribute to define what type of information is captured in the control. Using the <span class="attribute">type</span> attribute we can shape our inputs to accept a single line of text, multiple lines of text, create radio buttons, checkboxes, drop down lists, create submit buttons, etc. <span class="greenText">&lt;input&gt;</span> elements are self-contained, or self-closing, which means there is no closing tag. The value of the element is provided for by its attributes and the values that correspond with those attributes. It's also best practice to provide each <span class="greenText">&lt;input&gt;</span> element with a <span class="attribute">name</span> attribute. This ties the data and the form field, or form control, together. Having this connection will make things easier for our friends on the backend when they go about their business of working with the data that the form has collected and submitted.</p>
+              <p>So, without further adieu, let's take a look at some of these <span class="greenText">&lt;input&gt;</span> elements. Examples follow the established format: code first &#8594; rendered results.</p>
+              <p>
+                  <strong>Text fields</strong> - In the beginning text fields were relegated to only two different specific types: text and password. The password attribute covered passwords and text covered everything else. Well, everything else up to a single line. Try them out below. Why are they different, do you think?
+                  <p><pre style="margin: 0; line-height: 125%">Username:<span style="color: #007700">&lt;input</span> <span style="color: #0000CC">type=</span><span style="background-color: #fff0f0">&quot;text&quot;</span><span style="color: #007700">/&gt;&lt;br/&gt;</span>
+Password: <span style="color: #007700">&lt;input</span> <span style="color: #0000CC">type=</span><span style="background-color: #fff0f0">&quot;password&quot;</span><span style="color: #007700">/&gt;</span>
+</pre></p>
+
+                    <p>
+                      Username:<input type="text"/><br/>
+                      Password: <input type="password"/>
+                    </p>
+                    <p>With html5, however, a whole bunch of new, semantic values were added. Most modern browsers accept and understand all these different <span class="attribute">type</span> attributes. On the off-chance they don't, the control falls back the default type, which is 'text'</p>
+                    <p class="col-md-12"><ul class="col-sm-4">
+                      <li>color<br/>
+                      <input type="color"></li>
+                      <li>email<br/>
+                      <input type="email"></li>
+                      <li>range<br/>
+                      <input type="range"></li>
+                      <li>time<br/>
+                      <input type="time"></li>
+                    </ul>
+                    <ul class="col-sm-4">
+                      <li>date<br/>
+                      <input type="date"></li>
+                      <li>month<br/>
+                      <input type="month"></li>
+                      <li>search<br/>
+                      <input type="search"></li>
+                      <li>url<br/>
+                      <input type="url"></li>
+                    </ul>
+                    <ul class="col-sm-4">
+                      <li>datetime<br/>
+                      <input type="datetime"></li>
+                      <li>number<br/>
+                      <input type="number"></li>
+                      <li>tel<br/>
+                      <input type="tel"></li>
+                      <li>week<br/>
+                      <input type="week"></li>
+                    </ul></p>
+                  <p>Some of these don't really look that different, but have additional functionality inherent in the control itself. The 'email' type field, for instance, doesn't look all that different from a generic 'text' type field, but--depending on browser support--any text inside that control may be validated automatically as an email address upon submission. Additionally, some smartphones recognize the 'email' type control and will add the '@' symbol and '.com' to the keyboard for the user. You should also note that the environment plays a part in how these controls will look when rendered. Different browsers, different operating systems, different platforms all have their default styling for these form controls and, consquently, although they will function much the same, the 'date' type field will look very different in a Windows environment vs an iOS environment.</p>
+                  <p><strong>Textareas</strong> - The <span class="greenText">&lt;textarea&gt;</span> element is an off-shoot that accepts multiple lines of text. It <em>does</em> have an opening and closing tag because it might need to encompass multiple lines. You can size it using the <span class="attribute">cols</span> and <span class="attribute">rows</span> attributes, but height and width are more commonly set using CSS. It looks like this:</p>
+                  <p><textarea style="width:40%; height:8rem" placeholder="Nobody exists on purpose. Nobody belongs anywhere. We're all going to die. Come watch TV "></textarea></p>
+                  <hr/>
+                  <strong>Radio buttons</strong> - Radio buttons let users make a quick choice from multiple selections. Radio buttons should only allow for a single choice from the options, which means that each 'button' should have the same <span class="attribute">name</span> attribute, effectively grouping the options together. With text-based inputs, the value of the input corresponds to what the user types into the control, right? With radio buttons there is no inherent value to each button so we have to set the values on each of them. When the form is submitted and the data passed, the value set on the selected radio button will pass normally to the server for processing. You can also pre-select a value by including the boolean attribute <span class="attribute">checked</span>
+                  <p>
+                    <input type="radio" name="monkey" value="see" checked/> See No Evil<br/>
+                    <input type="radio" name="monkey" value"hear"/> Hear No Evil<br/>
+                    <input type="radio" name="monkey" value"speak"/> Speak No Evil
+                  </p>
+                  <hr/>
+                  <strong>Check boxes</strong> - Check boxes are like radio buttons, but allow the user to make multiple choices rather than just the one. Like radio buttons, check box values are tied to one control name.
+                  <p>
+                    <input type="checkbox" name="pokey" value="in" /> In <br/>
+                    <input type="checkbox" name="pokey" value="out" /> Out <br/>
+                    <input type="checkbox" name="pokey" value="shake" /> Shake it all about <br/>
+                    <input type="checkbox" name="pokey" value="sit" /> Sit quietly and think about what you've done <br/>
+                  </p>
+                  <hr/>
+                  <strong>Drop-down lists</strong> - Drop-down lists are an excellent way to condense a long list of options into one, relatively small control. Radio buttons have had their day--and will continue to do so, I'm afraid--but drop-down lists are, in most cases, the better choice, especially on sites designed with mobile in mind (and they all really should be designed with mobile in mind). Drop-down lists are small, compact, and are easy for most users to understand.
+                  <p>To create a drop-down list you'll need two new elements: the <span class="greenText">&lt;select&gt;</span> and the <span class="greenText">&lt;option&gt;</span> elements. The <span class="greenText">&lt;select&gt;</span> element wraps all the menu options and the <span class="greenText">&lt;option&gt;</span> element marks up each menu selection.</p>
+                  <p>The <span class="attribute">name</span> attribute is tied to the <span class="greenText">&lt;select&gt;</span> element and the <span class="attribute">value</span> attribute is tied to the <span class="greenText">&lt;option&gt;</span> element.</p>
+                  <p>Each <span class="greenText">&lt;option&gt;</span> element wraps the text of each individual selection in the menu that is shown to the user. Just like with radio buttons and check boxes, you can pre-select an option in a drop-down list using the similar-meaning boolean <span class="attribute">selected </span> attribute.</p>
+                  <p><pre style="margin: 0; line-height: 125%">Whose your favorite Avenger?<br/>
+<span style="color: #007700">&lt;select</span> <span style="color: #0000CC">name=</span><span style="background-color: #fff0f0">&quot;avenger&quot;</span><span style="color: #007700">&gt;</span>
+  <span style="color: #007700">&lt;option</span> <span style="color: #0000CC">value=</span><span style="background-color: #fff0f0">&quot;Captain America&quot;</span> <span style="color: #0000CC">selected</span><span style="color: #007700">&gt;</span>Captain America<span style="color: #007700">&lt;/option&gt;</span>
+  <span style="color: #007700">&lt;option</span> <span style="color: #0000CC">value=</span><span style="background-color: #fff0f0">&quot;Black Widow&quot;</span><span style="color: #007700">&gt;</span>Black Widow<span style="color: #007700">&lt;/option&gt;</span>
+  <span style="color: #007700">&lt;option</span> <span style="color: #0000CC">value=</span><span style="background-color: #fff0f0">&quot;Hawkeye&quot;</span><span style="color: #007700">&gt;</span>Hawkeye<span style="color: #007700">&lt;/option&gt;</span>
+  <span style="color: #007700">&lt;option</span> <span style="color: #0000CC">value=</span><span style="background-color: #fff0f0">&quot;Hulk&quot;</span><span style="color: #007700">&gt;</span>Hulk<span style="color: #007700">&lt;/option&gt;</span>
+  <span style="color: #007700">&lt;option</span> <span style="color: #0000CC">value=</span><span style="background-color: #fff0f0">&quot;Iron Man&quot;</span><span style="color: #007700">&gt;</span>Iron Man<span style="color: #007700">&lt;/option&gt;</span>
+  <span style="color: #007700">&lt;option</span> <span style="color: #0000CC">value=</span><span style="background-color: #fff0f0">&quot;Thor&quot;</span><span style="color: #007700">&gt;</span>Thor<span style="color: #007700">&lt;/option&gt;</span>
+<span style="color: #007700">&lt;/select&gt;</span>
+</pre></p>
+                  <p>Whose your favorite Avenger?<br/>
+                      <select name="avenger">
+                        <option value="Captain America" selected>Captain America</option>
+                        <option value="Black Widow">Black Widow</option>
+                        <option value="Hawkeye">Hawkeye</option>
+                        <option value="Hulk">Hulk</option>
+                        <option value="Iron Man">Iron Man</option>
+                        <option value="Thor">Thor</option>
+                      </select>
+                  </p>
+                  <p>The only valid answer is 'Thor,' by the way.</p>
+                  <p>And--in a similar vein--you can have multiple selection with drop-down lists. Just add the <span class="attribute">multiple</span> attribute to the <span class="greenText">&lt;select&gt;</span> element.</p>
+                  <p>Whose are your favorite Avengers?<br/>
+                      <select style="width:30%;" name="avenger" multiple>
+                        <option value="Captain America" selected>Captain America</option>
+                        <option value="Black Widow">Black Widow</option>
+                        <option value="Hawkeye">Hawkeye</option>
+                        <option value="Hulk">Hulk</option>
+                        <option value="Iron Man">Iron Man</option>
+                        <option value="Thor">Thor</option>
+                      </select>
+                  </p>
+                  <hr/>
+                  <strong>Form buttons</strong> - You need a way to 'fire' the form submission event and send the data collected on its way. Submission buttons are typically used for that. The <span class="attribute">value</span> attribute is used to define the text that shows up 'on' the button.
+                  <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;input</span> <span style="color: #0000CC">type=</span><span style="background-color: #fff0f0">&quot;submit&quot;</span> <span style="color: #0000CC">name=</span><span style="background-color: #fff0f0">&quot;submit&quot;</span> <span style="color: #0000CC">value=</span><span style="background-color: #fff0f0">&quot;Submit&quot;</span><span style="color: #007700">&gt;</span>
+</pre></p>
+                  <p><input type="submit" name="submit" value="Submit" style="min-width:15%"></p>
+                  <p>You might also have a 'reset' button to clear out all the data on the page so that the user can start over. You don't see them too much these days, but I've included it anyway because I feel like the lesson isn't long enough already.</p>
+                  <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;input</span> <span style="color: #0000CC">type=</span><span style="background-color: #fff0f0">&quot;reset&quot;</span> <span style="color: #0000CC">value=</span><span style="background-color: #fff0f0">&quot;Reset&quot;</span><span style="color: #007700">&gt;</span>
+</pre></p>
+                  <p><input type='Reset' value="Reset" style="min-width:15%"></p>
+
+            <h3>Organization Redux - Electric Boogaloo</h3>
+            <p>Almost, but before you go (assuming you haven't left in disgust already), let's talk about form organization for just a bit.</p>
+            <p>Form fields are great, but most of them don't come with any inherent labeling, which is a problem. I mean, how does the user know what to do if they have nothing there to guide them? In our examples, I had a few labels here and there, but they weren't proper labels because I didn't want to confuse the issue. Now that you've made it thus far, let's learn how to do it properly.</p>
+            <p><strong>Labels</strong> provide captions or headings for form controls. By tying them together we help streamline data processing and make our forms 'accessible,' which means a better experience for users including those that use assistive technologies to view our content. Here's how we do it.</p>
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;label</span> <span style="color: #0000CC">for=</span><span style="background-color: #fff0f0">&quot;username&quot;</span><span style="color: #007700">&gt;</span>Username<span style="color: #007700">&lt;/label&gt;</span>
+<span style="color: #007700">&lt;input</span> <span style="color: #0000CC">type=</span><span style="background-color: #fff0f0">&quot;text&quot;</span> <span style="color: #0000CC">name=</span><span style="background-color: #fff0f0">&quot;username&quot;</span> <span style="color: #0000CC">id=</span><span style="background-color: #fff0f0">&quot;username&quot;</span><span style="color: #007700">&gt;</span>
+</pre></p>
+            <p>
+              <label for="username">Username</label>
+              <input type="text" name="username" id="username">
+            </p>
+            <p>The <span class="attribute">for</span> attribute of the <span class="greenText">&lt;label&gt;</span> element carries the same value as the <span class="attribute">id</span> attribute of the <span class="greenText">&lt;input&gt;</span> element effectively connecting the two elements together. If you click the label, the input field automatically grabs focus. Go ahead, give it a try.</p>
+            <p>So, labels are good. Now the user knows what kind of action we expect from them and what kind of data to input. However, in particularly complicated forms (or maybe if you just have a particular aesthetic bent) it might be beneficial to take our organizational compulsion a bit further.</p>
+            <p><strong>Fieldsets</strong> group labels and controls into little organized clusters of goodness. In a way similar to the <span class="greenText">&lt;section&gt;</span> element, the <span class="greenText">&lt;fieldset&gt;</span> element is a block-level element--complete with border that can be modified--that divides our form up into nice, pretty, easily digestible chunks for the user.</p>
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;fieldset&gt;</span>
+  <span style="color: #007700">&lt;label&gt;</span>
+    Username
+    <span style="color: #007700">&lt;input</span> <span style="color: #0000CC">type=</span><span style="background-color: #fff0f0">&quot;text&quot;</span> <span style="color: #0000CC">name=</span><span style="background-color: #fff0f0">&quot;username&quot;</span><span style="color: #007700">&gt;</span>
+  <span style="color: #007700">&lt;/label&gt;</span>
+  <span style="color: #007700">&lt;label&gt;</span>
+    Password
+    <span style="color: #007700">&lt;input</span> <span style="color: #0000CC">type=</span><span style="background-color: #fff0f0">&quot;text&quot;</span> <span style="color: #0000CC">name=</span><span style="background-color: #fff0f0">&quot;password&quot;</span><span style="color: #007700">&gt;</span>
+  <span style="color: #007700">&lt;/label&gt;</span>
+<span style="color: #007700">&lt;/fieldset&gt;</span>
+</pre></p>
+            <p>
+              <fieldset style="padding:1.5rem; margin:1rem; border:1px groove">
+                <label>
+                  Username
+                  <input type="text" name="username">
+                </label>
+                <label>
+                  Password
+                  <input type="text" name="password">
+                </label>
+              </fieldset>
+            </p>
+            <p>See how nice that looks? Let's make it look a bit nicer, yeah?</p>
+            <p><strong>Legends</strong> provide a caption, or a heading for the <span class="greenText">&lt;fieldset&gt;</span> element. The <span class="greenText">&lt;legend&gt;</span> element wraps the text for display describing the fieldset and should be included <em>immediately</em> after the <span class="greenText">&lt;fieldset&gt;</span> element.</p>
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;fieldset&gt;</span>
+  <span style="color: #007700">&lt;legend&gt;</span>Login<span style="color: #007700">&lt;/legend&gt;</span>
+  <span style="color: #007700">&lt;label&gt;</span>
+    Username
+    <span style="color: #007700">&lt;input</span> <span style="color: #0000CC">type=</span><span style="background-color: #fff0f0">&quot;text&quot;</span> <span style="color: #0000CC">name=</span><span style="background-color: #fff0f0">&quot;username&quot;</span><span style="color: #007700">&gt;</span>
+  <span style="color: #007700">&lt;/label&gt;</span>
+  <span style="color: #007700">&lt;label&gt;</span>
+    Password
+    <span style="color: #007700">&lt;input</span> <span style="color: #0000CC">type=</span><span style="background-color: #fff0f0">&quot;text&quot;</span> <span style="color: #0000CC">name=</span><span style="background-color: #fff0f0">&quot;password&quot;</span><span style="color: #007700">&gt;</span>
+  <span style="color: #007700">&lt;/label&gt;</span>
+<span style="color: #007700">&lt;/fieldset&gt;</span>
+</pre></p>
+          <p>
+            <fieldset style="padding:1.5rem; margin:1rem; border:1px groove">
+              <legend style="width:auto;">Login</legend>
+              <label>
+                Username
+                <input type="text" name="username">
+              </label>
+              <label>
+                Password
+                <input type="text" name="password">
+              </label>
+            </fieldset>
+          </p>
+          <p><strong>Placeholder</strong> is an html5 attribute that provides a hint or tip within the input control to subtly give the user an example of the kind of information they should be providing. It's not advisable to use them in place of a label, even though you will be tempted because not all environments handled the <span class="attribute">placeholder</span> attribute in a consistent manner. Unlike the <span class="attribute">value</span> attribute, the <span class="attribute">placeholder</span> attribute disappears once the input is selected and the user starts typing.</p>
+          <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;label</span> <span style="color: #0000CC">for=</span><span style="background-color: #fff0f0">&quot;email&quot;</span><span style="color: #007700">&gt;</span>Email<span style="color: #007700">&lt;/label&gt;</span>
+<span style="color: #007700">&lt;input</span> <span style="color: #0000CC">type=</span><span style="background-color: #fff0f0">&quot;email&quot;</span> <span style="color: #0000CC">id=</span><span style="background-color: #fff0f0">&quot;email&quot;</span> <span style="color: #0000CC">name=</span><span style="background-color: #fff0f0">&quot;email-address&quot;</span> <span style="color: #0000CC">placeholder=</span><span style="background-color: #fff0f0">&quot;firstname_lastname##@asumh.edu&quot;</span><span style="color: #007700">&gt;</span>
+</pre></p>
+
+          <p>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email-address" placeholder="firstname_lastname##@asumh.edu" style="width:50%">
+          </p>
+          <h4>Further reference</h4>
+          <p>As you can see, forms are a complicated business, to say the least. We've covered some of the different types of inputs and attributes of those inputs, but certainly not all of them because there's a lot. I mean, a lot of them. To that end, I've included a list of <em>some</em> other inputs and attributes on the <a href="reference.html">references</a> page, but, again, it isn't an exhaustive list because--seriously--there's a bunch.<p>
+
+
+    </div>
+
+<!-- Sidebar Widgets Column -->
+    <div class="flex-widget">
+
+      <!-- Side Widget -->
+      <div class="card my-4">
+        <h5 class="card-header html">In this lesson</h5>
+        <div class="card-body">
+          <h5>Objectives</h5>
+            <ul>
+              <li>Distinguish between the different types of lists and employ them in original work.</li>
+              <li>Explain the relationships between table elements and employ them in original work.</li>
+              <li>Compare and contrast the different form elements, analyze their semantic usage, and apply that analysis to form elements in original work.</li>
+            </ul><hr/>
+      <h5>Terms</h5>
+            <ul>
+              <li><a href="#lists">Lists</a></li>
+              <li><a href="#tables">Tables</a></li>
+              <li><a href="#forms">Forms</a></li>
+            </ul><hr/>
+      <h5>Concepts</h5>
+            <ul>
+              <li><a href="#navigation">Lists as Navigation</a></li>
+              <li><a href="#foundations">Building tables</a></li>
+              <li><a href="#createforms">Creating Forms</a></li>
+            </ul>
+
+          </div>
+      </div>
+
+    </div>
+    <!-- /flex-widget -->
+
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->
+<footer>
+  <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.js"></script>
+  <script type="text/javascript" src="vendor/jquery/jquery.js"></script>
+  <script>
+  //fade in the back to top button
+  (function($) {
+  $(document).ready(function(){
+      //When distance from top = 2000px fade button in/out
+      $(window).scroll(function(){
+          if ($(this).scrollTop() > 2000) {
+              $('#top').fadeIn(300);
+          } else {
+              $('#top').fadeOut(300);
+          }
+      });
+  });
+  })(jQuery);
+
+</script>
+
+</footer>
+
+</body>
+</html>

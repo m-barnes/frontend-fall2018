@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/default.css" rel="stylesheet">
+
+
+
+
+</head>
+<body>
+  <!-- Page Content -->
+<div class="container">
+
+
+  <div class="row row flex-column-reverse flex-lg-row">
+    <div id="top"><a href="#" class="btn btn-dark btn-lg">Back to Top</a></div>
+
+    <!-- Post Content Column -->
+    <div class="flex-main">
+
+      <!-- Title -->
+      <h1 class="mt-4">html elements</h1>
+      <h2>Structure</h2>
+      <p>Take a minute to think about all the stuff you read in all the different formats in all the different types of media in...well, you get the point, yeah?</p>
+      <p>Think about what makes them readable. Newspapers, term papers, books, lists of 'things to do,' class schedules, this website, etc. are all readable--to varying degrees--because of the structure in which that content is laid out.</p>
+      <p>Titles, headings, paragraphs, offset images, etc. are all used to define the structure of content, which--by extension--promotes readability. Readability eases reading effort and speed for the reader, which means better comprehension, which means better retention, so, structure is pretty important, yeah? As a web designer or developer (and there are differences) you want to not only make sure that people are looking at your product, but that they're sticking around to hear--and understand--what you're trying to say.</p>
+      <p>I may have mentioned it a time or two in the last lesson, but html is all about structure. It helps us control content to better convey our message to the masses.</p>
+      <p>Let's take a closer look at some actual code and how this all works.</p>
+
+      <pre style="margin: 0; line-height: 125%"><span style="color: #557799">&lt;!DOCTYPE html&gt;</span>
+<span style="color: #007700">&lt;html</span> <span style="color: #0000CC">lang=</span><span style="background-color: #fff0f0">&quot;en&quot;</span><span style="color: #007700">&gt;</span>
+<span style="color: #007700">&lt;head&gt;</span>
+<span style="color: #007700">&lt;meta</span> <span style="color: #0000CC">charset=</span><span style="background-color: #fff0f0">&quot;utf-8&quot;</span><span style="color: #007700">&gt;</span>
+    <span style="color: #007700">&lt;meta</span> <span style="color: #0000CC">name=</span><span style="background-color: #fff0f0">&quot;viewport&quot;</span> <span style="color: #0000CC">content=</span><span style="background-color: #fff0f0">&quot;width=device-width, shrink-to-fit=no, initial-scale=1&quot;</span><span style="color: #007700">&gt;</span>
+<span style="color: #007700">&lt;title&gt;</span>This is our custom title located at the top fo the window<span style="color: #007700">&lt;/title&gt;</span>
+    <span style="color: #007700">&lt;link</span> <span style="color: #0000CC">href=</span><span style="background-color: #fff0f0">&quot;css/custom.css&quot;</span> <span style="color: #0000CC">rel=</span><span style="background-color: #fff0f0">&quot;stylesheet&quot;</span><span style="color: #007700">&gt;</span>
+<span style="color: #007700">&lt;/head&gt;</span>
+<span style="color: #007700">&lt;body&gt;</span>
+    <span style="color: #007700">&lt;nav&gt;</span>
+         <span style="color: #007700">&lt;ul&gt;</span>
+              <span style="color: #007700">&lt;li</span> <span style="color: #0000CC">style=</span><span style="background-color: #fff0f0">&quot;display:inline&quot;</span><span style="color: #007700">&gt;</span>Menu Item 1<span style="color: #007700">&lt;/li&gt;</span>
+              <span style="color: #007700">&lt;li</span> <span style="color: #0000CC">style=</span><span style="background-color: #fff0f0">&quot;display:inline&quot;</span><span style="color: #007700">&gt;</span>Menu Item 2<span style="color: #007700">&lt;/li&gt;</span>
+              <span style="color: #007700">&lt;li</span> <span style="color: #0000CC">style=</span><span style="background-color: #fff0f0">&quot;display:inline&quot;</span><span style="color: #007700">&gt;</span>Menu Item 3<span style="color: #007700">&lt;/li&gt;</span>
+         <span style="color: #007700">&lt;/ul&gt;</span>
+    <span style="color: #007700">&lt;/nav&gt;</span>
+    <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">id=</span><span style="background-color: #fff0f0">&quot;mainContent&quot;</span><span style="color: #007700">&gt;</span>
+         <span style="color: #007700">&lt;hgroup&gt;</span>
+        <span style="color: #007700">&lt;h1&gt;</span>This is our main headline.<span style="color: #007700">&lt;/h1&gt;</span>
+              <span style="color: #007700">&lt;h2&gt;</span>This is a subheading<span style="color: #007700">&lt;/h2&gt;</span>
+         <span style="color: #007700">&lt;/hgroup&gt;</span>
+         <span style="color: #007700">&lt;aside</span> <span style="color: #0000CC">style=</span><span style="background-color: #fff0f0">&quot;float:right; padding-bottom:6em;padding-right:2em;&quot;</span><span style="color: #007700">&gt;</span>
+  <span style="color: #007700">&lt;ul&gt;</span>
+       <span style="color: #007700">&lt;li&gt;&lt;a</span> <span style="color: #0000CC">href =</span><span style="background-color: #fff0f0">&quot;#&quot;</span><span style="color: #007700">&gt;</span>Link to a related page<span style="color: #007700">&lt;/a&gt;&lt;/li&gt;</span>
+             <span style="color: #007700">&lt;li&gt;&lt;a</span> <span style="color: #0000CC">href =</span><span style="background-color: #fff0f0">&quot;#&quot;</span><span style="color: #007700">&gt;</span>Link to a related page<span style="color: #007700">&lt;/a&gt;&lt;/li&gt;</span>
+  <span style="color: #007700">&lt;/ul&gt;</span>
+   <span style="color: #007700">&lt;/aside&gt;</span>
+    <span style="color: #007700">&lt;article&gt;</span>
+<span style="color: #007700">&lt;p&gt;</span>This is a paragraph. This is typically supporting information designed to support or explain the attention grabbing headlines, images, or any other prominent feature on the page.<span style="color: #007700">&lt;/p&gt;</span>
+<span style="color: #007700">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse justo lectus,	dictum at purus sit amet, condimentum dictum risus.  Curabitur ultricies metus id ipsum tempus scelerisque. Mauris pulvinar dignissim eros at ornare. Suspendisse tempus accumsan ornare. Nunc congue ex non laoreet sagittis. Mauris aliquam justo et nisi pellentesque malesuada. Nulla egetest non odio vulputate tincidunt vel et metus. Ut ut laoreet turpis, at hendrerit est. Class aptent taciti sociosqu ad litora torquent
+per conubia nostra, per inceptos himenaeos. Quisque vitae dolor	sed libero placerat aliquam. Nullam vehicula eu velit quis euismod. Curabitur lectus leo, pellentesque ac risus at, aliquet consequat metus. Suspendisse sed nisi blandit, rhoncus leo sit amet, accumsan dolor.<span style="color: #007700">&lt;/p&gt;</span>
+<span style="color: #007700">&lt;/article&gt;</span>
+<span style="color: #007700">&lt;footer&gt;</span>
+<span style="color: #007700">&lt;h4&gt;</span>Name of company, copyright.<span style="color: #007700">&lt;/h4&gt;</span>
+<span style="color: #007700">&lt;address&gt;</span>Address information<span style="color: #007700">&lt;br/&gt;</span> Cupertino, CA 98764<span style="color: #007700">&lt;/address&gt;</span>
+<span style="color: #007700">&lt;/footer&gt;</span>
+
+<span style="color: #007700">&lt;/body&gt;</span>
+<span style="color: #007700">&lt;/html&gt;</span>
+</pre><br/>
+    <p>The spacing is a little off because of the nature of the embed, but you should notice a little bit of structure here already. We've defined the document. We've separated the head, the body, and the footer into different sections. We've also separated the actual content inside those sections into subsections of their own like the navigation menu, the lists, the aside, etc.</p>
+    <p>The magic of all this, however, really doesn't take shape until you run the html in an actual browser.</p>
+    <img src="images/figure1_basehtml.png" alt="picture of a basic html page with structure"/>
+    <br/><br/><p>Maybe this is more clear?</p>
+    <img src="images/structureDiagram.png" alt="diagram of basic html page with structure" /><br/><br/>
+    <p>Pretty cool, yeah?</p>
+    <p>With it rendered, you can see a lot more is going on in the html than you might have originally thought. We've got a clear navigation menu at the top, we've got headlines, we've got paragraph content, we've got an aside that is related to the main content, but kept separate, and we've got some footer information. All clearly defined by spacing and structure. Your eye naturally moves from one bit to the next automatically and you know the intent and purpose of each grouping without having to really think about it.</p>
+    <p>Let's break this down section by section, tag by tag:</p>
+  <a id="head" class="anchor"></a>
+  <h3>From the top</h3>
+    <p>The first section is what I like to think of as 'staging.' The content here, the elements we use, aren't for the public, at large. This area is about setting the stage, getting the space ready for the public. We start with a DOCTYPE declaration. This is an empty tag that sits by itself and separate at the very beginning of the document. It's purpose is simply to let the browser know that the file it's fixing to work through is, indeed, a html file and that the browser should treat it as such. In days past, you'd have also included a document type definition, (DTD), to let the browser know specifically what particular framework was used to structure the document and might have included a referencing entity (the example below does not). It might have looked something like this: </p>
+    <h5>&lt;!DOCTYPE html PUBLIC"-//W3C//DTD Xhtml 1.0 Transitional//EN"&gt;</h5>
+    <p>In html5 there is no DTD, so, the DOCTYPE declaration is short and sweet. In the example below, 'html' is lowercase. The formal syntax is uppercase, but for compatibility purposes (just to make sure) I like to keep it lowercase as both cases are treated as valid in html5.</p>
+    <h5>&lt;html lang="en"&gt;</h5>
+    <p>The next line is our opening html tag. Technically, it's not required in html5, but, again, for purposes of compatibility, it's generally a good idea to include it--at least for right now. Everything we do on the page from here on out will be inside the opening and closing tags of this element. Every bit of background work, every bit of content, every navigation menu, paragraph, heading, etc. will be between the <span class="greenText">&lt;html&gt;</span> opening tag and the <span class="greenText">&lt;html&gt;</span> closing tag. The <span class="attribute">lang</span>="en" attribute is markup solely included for search engines and browsers. It's not required, but is good practice if the element is included, so, I've included it here.</p>
+    <p>The <span class="greenText">&lt;head&gt;</span> element is next and used as a container for all 'head' elements (title, meta information, scripts, referencing styles, etc.). In html5, the element can be omitted as it's not required and a lot of developers leave it out, but, again, I consider it good practice as a matter of personal preference, so, I include it. This one feel free to leave out of your own work, however, if you like.
+      <ul>
+        <li><span class="greenText">&lt;meta&gt;</span>- The metadata section (data about data) includes information relevant to search engines (keywords), to the browser (character sets, author) and to other web services. In our example, we've actually got two <span class="greenText">&lt;meta&gt;</span> elements. The first has an attribute defining the character set (<span class="attribute">"utf-8"</span>) and the second has information on how to display the page (<span class="attribute">name</span> and <span class="attribute">content</span>). The <span class="attribute">content</span> attribute we will talk about at length later when we discuss display properties and responsive design. Generally speaking, the attribute information in this element deals with content scaling and controlling page dimensions for display.</li>
+        <li><span class="greenText">&lt;title&gt;</span>- Defines the title of the document and is REQUIRED in all html documents. Its purpose is to define a title for the page, which will be used for the browser tab, or when it's added to a browser's favorites, and for search engine results.</li>
+        <li><span class="greenText">&lt;link&gt;</span>- links to any secondary resource, typically, an external CSS stylesheet, which is exactly what our example features. In this instance, we're refencing an external stylesheet located in the 'css' folder with the name of 'custom.css.' This is a relative link and we'll be looking at them later on in this lesson when we talk about 'paths' so, stay tuned.</li>
+        <li><span class="greenText">&lt;style&gt;</span>- if we didn't link to an external stylesheet, but still wanted to style elements on the page, this is where you'd include those rules. Style rules in the 'head' of the page are referenced as an embedded stylesheet. When we move the discussion to CSS, there is a substantial section on the different types of stylesheets and their uses. I've just included it here for illustrative purposes.</li>
+        <li><span class="greenText">&lt;script&gt;</span>- if you had some JavaScript you wanted to run on the client side (again, we'll get to it, I promise) this is where you would include it.</li>
+      </ul>
+    <p> With the closing <span class="greenText">&lt;/head&gt;</span> tag we define the end of the 'staging' section. Search engines have their bit to index, the browser has the parameters it needs to start generating some output, and the end user doesn't see any of it. We have effectively set the table for the content buffet to follow.</p>
+  <a id="body" class="anchor"></a>
+  <h3>Meat and Potatoes</h3>
+    <p>The bulk of what the end user sees is located within the opening and closing <span class="greenText">&lt;body&gt;</span> tags. The element delineates main content that's usually specific and particular to that page, so, content specific to a page that features an ordering form, or to a page that features an 'about us' section, etc. is typically found in the <span class="greenText">&lt;body&gt;</span> element. Our example has a few different types of elements that are used in the main content section of a page. Let's go through the list, yeah?
+      <ul>
+        <li><span class="greenText">&lt;nav&gt;</span>- The first of our html5 specific semantic tags designed to offset navigation features on the page. Our example is a single page, but in instances where the navigation menu is meant to carry over consistently across multiple pages, a developer might consider surrounding the <span class="greenText">&lt;nav&gt;</span> element with the <span class="greenText">&lt;header&gt;</span> element meant to indicate header type information. This should not be confused with the <span class="greenText">&lt;head&gt;</span> element.</li>
+        <li><span class="greenText">&lt;ul&gt;</span> and <span class="greenText">&lt;li&gt;</span>- These elements' stock and trade are lists. 'ul' indicates an unordered list, which--by default--are offset with bullet points. In our example, the unordered list is used to create a navigation menu, so, the bullet points have been 'removed' using CSS. I've also included a <span class="attribute">style</span> attribute that makes the list items display horizontally. This is an inline style and, again, is only included for illustrative purposes. The 'li' indicates a list item. Each item in the list gets its own set of opening and closing tags to separate them from one another.</li>
+        <li><span class="greenText">&lt;div&gt;</span>- I mentioned this one before, but the 'div' tag simply indicates a division or section of content. I could have just as easily--and probably should have--used the section element. The 'div' element is really our jack-of-all-trades element. We have a ton of new semantic elements in html5 that we can use, but there are still some gaps, yes? The 'div' element is meant to fill those gaps and provide a bit of flexibility and adaptability to our html code. This particular example features an <span class="attribute">id</span> attribute, which specfically identifies this particular 'div' element, which we can use to style it or provide a bit of interactivity using JavaScript.</li>
+        <li><span class="greenText">&lt;hgroup&gt;</span>- Heading group. A group of heading elements. Some people use it; some people don't. Your mileage may vary.</li>
+        <li><span class="greenText">&lt;h1&gt;</span> - <span class="greenText">&lt;h6&gt;</span>- Heading elements of varying size. 'h1' is the largest; 'h6' is the smallest. These are block level elements meant to indicate important content or important shifts in thematic content.</li>
+        <li><span class="greenText">&lt;aside&gt;</span>- 'Aside' is meant to indicate content that is related to main content, but needs to be offset in the display. Sometimes it's contact information, sometimes it's a targeted ad, sometimes it's secondary navigation (like the jump menu to the right). This particular 'aside' has a <span class="attribute">style</span> attribute. This also features inline styling (something we'll talk about when we get into CSS) and features a couple of rules specific for its display.</li>
+        <li><span class="greenText">&lt;p&gt;</span>- The last--and probably most used--element is the paragraph element. It's pretty self-explanatory, so, I'll just leave it at that.</li>
+      </ul></p>
+  <a id="footer" class="anchor"></a>
+  <h3>The bottom of the barrel</h3>
+    <p>The footer is area reserved for information or features you want to carry across multiple pages of your website. It often works in conjunction with the <span class="greenText">&lt;header&gt;</span> element to frame the changing content of each individual page. Any sort of content can go in the footer, but it's typically stuff like contact information, logos, copyright information, links to support services, etc. In our example we have a couple of new elements to mention:
+      <ul>
+        <li><span class="greenText">&lt;h4&gt;</span>- Heading level/size 4. Kind of mid-range importance.</li>
+        <li><span class="greenText">&lt;address&gt;</span>- Address information. Here it throws the whole thing in italics, but we could just as easily feature a logo or some other company or personal brand identifying element.</li>
+        <li><span class="greenText">&lt;br&gt;</span>- Line break. It's like hitting return on a text document. It immediately takes the next bit of content--whatever that content is--and moves it to the next line.</li>
+        <li><span class="greenText">&lt;hr&gt;</span>- It's not featured in our example, but you might also offset the footer using an <span class="greenText">&lt;hr&gt;</span> element, which would put a horizonal line across the page. These are used to break up or separate thematic content.</li>
+      </ul></p>
+    <p>It's important for you to understand that what's included in the example is not the totality of elements that are available to you for your use. I've included a <a href="reference.html">reference page</a> that has some of these different elements in their different contextual catagories, but even this is not a full and comprehensive list. When you start developing pages of your own, there is a very good chance that you'll have to do some outside research to find the right element for your use and context.</p>
+    <p><strong>This is good.</strong></p>
+    <p>Language--and all languages not just those that help us put together websites or other software--is an ever evolving thing and not everyone agrees on the syntax or its use contextually. Diversity of opinion and experience matters and while it might seem ridiculous to have to wade through some of this stuff, it will force you to examine these things critically, which will make you a better developer in the long run as you form your own opinions and preferences.</p>
+<h2>Structural Concepts</h2>
+    <p>We're almost there.</p>
+  <a id="semantics" class="anchor"></a>
+  <h3>Semantics and Styling</h3>
+    <p>In the early days of web development pages were constructed using 'divisions.' <span class="greenText">&lt;div&gt;</span> tags were everywhere and while most developers were pretty good about providing comments and including identifying attributes with the element to help navigate the code, it was still super easy to get lost in the markup, especially on larger, more complex projects. Divisions--by themselves--provide no semantic value, so, determining intent--even with the additional comments and attribute information--wasn't the easiest most times.</p>
+    <p>html5 has introduced a whole host of new structurally based elements. The great thing about these new additions is that they are semantic, which means they describe the content meant to be contained inside. They can be used and reused as the developer sees fit, they are all block-level, and they all have no default or implied position or style. This means we can put them all over the place, we don't have to worry about how they'll interact with other elements, and we don't have to worry about offsetting a default position on the page or style (like with our ul list items that--by default--come with bullet points, yeah?).</p>
+    <p>We've already talked about a few of these and there are a lot more in the standards, but let's take a look at a few of them in the context of semantics and styling. The important idea to keep in mind when deciding which element--especially semantic elements--to use is context (e.g. what type of content is being described in the element).</p>
+    <p>Which element is the 'best' element? Look at the content inside and then make the decision.</p>
+  <h5><span class="greenText">&lt;head&gt;</span> vs. <span class="greenText">&lt;header&gt;</span> vs. <span class="greenText">&lt;h1&gt;</span> - <span class="greenText">&lt;h6&gt;</span></h5>
+    <p>It's easy to confuse these, but they all have specific purpose and meaning:
+      <ul>
+        <li><span class="greenText">&lt;head&gt;</span>- is not displayed on the page. It's used to outline metadata, titles, links to outside references, etc. It falls directly within the <span class="greenText">&lt;html&gt;</span> element.</li>
+        <li><span class="greenText">&lt;header&gt;</span>- is a semantic element that outlines the 'heading' segment of a page. It falls within the <span class="greenText">&lt;body&gt;</span> element. You could, theoretically, have multiple <span class="greenText">&lt;header&gt;</span> elements on the page.</li>
+        <li><span class="greenText">&lt;h1&gt;</span> - <span class="greenText">&lt;h6&gt;</span>- are used to indicate levels of 'headline' text on the page. 'h1' signifies the most important; 'h6' signifies the least important. They are styling elements meant to provide thematic structure to groups of text like that found in <span class="greenText">&lt;p&gt;</span> elements.</li>
+      </ul>
+    <h5><span class="greenText">&lt;article&gt;</span> vs. <span class="greenText">&lt;section&gt;</span> vs. <span class="greenText">&lt;div&gt;</span></h5>
+    <p>Both <span class="greenText">&lt;article&gt;</span> and <span class="greenText">&lt;section&gt;</span> provide structure and help outline the document (e.g. this is an article; this is a section). They are semantic. If the content inside provides value to the outline of the document, you use one of these.
+      <ul>
+        <li>The <span class="greenText">&lt;article&gt;</span> element is meant for content that can be 'independently redistributed.' If it can be separated from the page and still stand alone thematically, you use the <span class="greenText">&lt;article&gt;</span> element.</li>
+        <li>If the content adds to the value of and is dependent on other content on the page, if it can't be separated from the page and stand alone thematically, you use the <span class="greenText">&lt;section&gt;</span> element.</li>
+      </ul>
+    <p>If the element doesn't provide value to the outline of the document or if the content is being grouped solely for styling purposes, you use the <span class="greenText">&lt;div&gt;</span> element. Again, the <span class="greenText">&lt;div&gt;</span> element is used as a catch-all for the content that just doesn't make sense anywhere else or if you want your style rules to have an effect on a particular set of elements (e.g. you can have <span class="greenText">&lt;article&gt;</span> elements and <span class="greenText">&lt;section&gt;</span> elements <em><strong>inside</em></strong> a <span class="greenText">&lt;div&gt;</span> element that might be styled the same).
+  <a id="paths" class="anchor"></a>
+  <h3>Paths</h3>
+    <p>By this point, you might have noticed that we've been linking stuff left and right. You've seen examples of links to external CSS stylesheets, you've seen links to other webpages, you've seen links that make the viewport jump down the page to a particular section, and a whole bunch of other things. Now down below, we're definitely going to run through some exmaples of the different kinds of linking that you'll do as a developer, but before we do, we need to have a discussion on 'pathing.' </p>
+    <p>The two most common types of links are links to other pages <i>of the same</i> website and links <i>to other outside</i> websites. These links--you may have noticed--are identifed by their <span class="attribute">href</span> attribute, which, in this case, is also known as a 'path.'</p>
+
+  <h4>Relative Paths</h4>
+    <p>Links pointing to other pages or other parts of content of the same website use relative paths. Relative paths link content based on current directory.</p>
+    <p>Think of it like this: If I want to get to Walmart and ask you for directions, what's the easiest way for you to explain to me how to get there?</p>
+    <p>You first have to figure out where you're currently at, right? Once you determine that, you start picking out landmarks and putting together relative directions (left, right, down the road, etc.). Your directions to Walmart might include something like "Well, you keep going down this road, past the library on the hill, take a left at the light, and keep going til you see Home Depot. Walmart is on the left, you can't miss it." </p>
+    <p>This is relative pathing. You have to know where you're at in the current space to figure out where you have to go. You use landmarks and relative directions to navigate from A to B. It's quick, simple, and easy to understand, yeah?</p>
+
+    <p>It works like that with links in html files as well. The file folder with the html file you're currently working on can be thought of as the 'home' directory. This is your starting point. Things that you link to inside the html file that is located inside that 'home' directory have positions (or directions) relative to the 'home' directory. Linking to stuff <i>inside</i> the 'home,' or current, directory is easy, you just include the name of the item you want to link.</p>
+
+    <pre><<span class="greenText">link</span> <span class="attribute">href</span>="custom.css" rel="stylesheet"></pre>
+
+    <p>In a generic html file, you might find something like this. It's a link to an external CSS stylesheet called 'custom.' We're telling the browser that we definitely want to use this stylesheet and we're giving it the location that it needs to find it. In this case, the CSS file is in the same directory as the html file we're editing (they're in the same room), so, we only need to include the name of the actual CSS file itself.</p>
+
+    <img src="images/relational1.PNG"/><br/><br/>
+
+
+    <p>If that file were somewhere else, but still within the internal framework or inside the scope of the project (inside a folder just for CSS files, for instance), then we'd have to modify that link. It would still be a relational link because we're still giving it directions in relation to the html file that's linking, or calling, it, but it would look different.</p>
+
+    <pre><<span class="greenText">link</span> <span class="attribute">href</span>="css/custom.css" rel="stylesheet"></pre>
+
+    <p>In this case, the 'custom.css' file is in a folder separate to that of the 'home' directory or the folder in which our html file is located. When the browser loads the html file, it needs to know not just that the 'custom.css' file is being linked, or called, but also where that file is located in relation to the html file it's loading. So, we give it directions to Walmart. The 'custom.css' file is in the 'css' file folder over there.</p>
+
+    <img src="images/relational2.PNG"/><br/><br/>
+    <img src="images/relational3.PNG"/><br/><br/>
+
+    <p>In the beginning, it will be easier to keep all your 'assets' in the same directory (css files, images, JavaScript, etc.). Depending on your process, you probably won't have too many separate files of which to keep track.</p>
+    <p>As you move further along and your websites start getting bigger and bigger, you'll find that you're going to need to impose a little organization to better keep track of things. You might have folders full of different css files, or JavaScript files, or images, or whatever. As long as those 87 different images are considered part of 'your' website, then relational linking is the way to go.</p>
+    <p>Now, you should understand that the ease of relational linking comes at a cost (doesn't everything?). If--at any point--you move something in the hierarchy of your site (e.g. you move a css file, you move a folder full of images, you change the name of a file folder, etc.) your relational links won't work. If, for instance, you change the name of your css file folder to 'assets', then your relational link--as it's written above with the path 'css/custom.css'--isn't going to work anymore because the 'css' doesn't exist anymore. The landmark is missing.</p>
+
+    <img src="images/relational4.PNG"/><br/><br/>
+
+    <pre><<span class="greenText">link</span> <span class="attribute">href</span>="<strong>assets</strong>/custom.css" rel="stylesheet"></pre>
+
+    <p>To 'fix' the link, you'll have to change 'css' to 'assets' in the path. The path has been fixed, the landmark has been found, and all is well again.</p>
+
+  <h4>Absolute Paths</h4>
+    <p>Absolute paths are for links to things <i>outside</i> the scope of your website. Links to sites that you don't control or manage, for instance, use absolute links complete with protocol prefix and domain suffix.</p>
+
+    <pre><<span class="greenText">a</span> <span class="attribute">href</span>=<strong>"http://www.google.com"</strong>>Google<<span class="greenText">/a></span></pre>
+
+    <p>This is a link to <a href="http://www.google.com">Google.com</a>. It is an absolute link, including the 'http' protocol prefix and the '.com' domain suffix. <a href="http://www.google.com">Google.com</a> is a published website (made available to the public at large) that we don't have insider access to (assuming you don't work for Google, which if you did, what are you doing here?). Anything that we want to link to that we don't have administrative access to must be published and we must use an absolute link.</p>
+
+    <p>To go back to our Walmart analogy: this is like Walmart's physical street address.</p>
+
+    <h5>65 N Walmart Dr, Mountain Home, AR 72653</h5>
+
+    <p>You can totally use this address to provide directions. It's not terribly practical, but it works. I can plug this into my phone or GPS and it leads me to Walmart in Mountain Home every single time. If, for instance, the landmarks around Walmart change (Home Depot goes out of business and is replaced by a ginormous Steak and Shake) or if they build a new road to Walmart that gets you there 3x as fast as the bypass, I can still find Walmart because Walmart's address remains unchanged.</p>
+
+    <p>If I link to <a href="http://www.google.com">Google.com</a>, it doesn't matter where the actual files that make up the site that Google publishes are located, or how they're structured on the back end. Google's website is published as <a href="http://www.google.com">'Google.com'</a> If Google decides to up and move their operations to the Moon, as long as they publish the site using the URL <a href="http://www.google.com">'Google.com'</a> I can link to it and it will work every single time because the address <a href="http://www.google.com">'Google.com'</a> remains unchanged.</p>
+
+    <p>So, if absolute links can be used in place of relative links and they never change, then why don't we just use absolute path links for everything?</p>
+
+    <p>One of the big advantages of using relative path links is for testing. I'm writing this particular part of the site on my laptop while sitting in my recliner in my living room. I can write it, test it in my browser, fix the gazillion typos, test it again, etc. with very little hassle. My CSS is working great. It turns some stuff green, it turns some stuff blue, keeps everything looking the way I want it to look, and is linked using a relative path. If I zip up this folder and move it from my work laptop to my personal laptop, throw it to the cloud, or even upload it to a work server, it will look the same when I test it provided I don't change the folder hierarchy or rename a file.</p>
+
+    <p>Here's where it gets a bit...involved, but stick with me. As previously discussed, absolute links kind of require a complete URL to work, which means protocol prefix and domain suffix (e.g. <a href="http://www.google.com">http://www.google.com</a>, <a href="https://upload.wikimedia.org/wikipedia/commons/f/ff/Carl_Bloch_-_In_a_Roman_Osteria_-_Google_Art_Project.jpg">https://upload.wikimedia.org/wikipedia/commons/f/ff/Carl_Bloch_-_In_a_Roman_Osteria_-_Google_Art_Project.jpg</a>). To get or use those things you need to 'publish' the website first (e.g. upload it to a hosting service, attach a domain name to it, etc.). Even if you could see the future and build all your absolute links with perfect knowledge of what your domain name and the like would be, until it's published, that site doesn't exist as far as the internet is concerned. Those 'perfect' and absolute links wouldn't point anywhere, which means no local testing in a local development environment.</p>
+    <p>So, to test, you'd have to use a 'live' environment, which you certainly can, but it brings with a whole host of problems with it as well.</p>
+    <p>If I used absolute paths for my CSS files or image files, I would have to 'publish' the site before I could see the results of any changes I made to the code. If I made a slight change to the CSS (e.g. I want certain elements to be red instead of green), I would have to make the change in the CSS file locally, upload and publish that file to a hosting service, and go to that published site using the protocol prefix and domain suffix before I could see the changes I made in the browser. A few changes here and there and it isn't too bad, but if you're making changes left and right, that time and work starts to add up. Also, in reality, anyone with the published link would see the changes 'live' as well.</p>
+
+    <p>So, if you're the only one involved and you're okay with it, then run with it. If, however, you aren't the only hand in the pot and you're not the captain of the ship, then the general consensus is that relative links are used for internal content (part of your website) and absolute links are used for external content (third-party stuff you don't control).
+
+  <a id="linking" class="anchor"></a>
+  <h3>Linking</h3>
+  <p>On the page you can link to just about anything. As we've discussed, the ability to make connections between discrete and separate parts of your developed website or to resources available out there is one of the more powerful applications of the internet at large. Hyperlinks (what a dated term, yeah?) are created using an <span class="greenText">&lt;anchor&gt;</span> inline level element. To make the connection between that element and the resource you want to link you have to use the <span class="attribute">href</span>, or hyperlink reference, attribute. Whether that's an image, CSS file, JavaScript file, internal or external website, a block of text further down on the existing page, etc. that <span class="attribute">href</span> attribute is representative of our destination.</p>
+  <p>So, let's run through a few of the ways to create links for some of the more common items you might find on a webpage.</p>
+  <pre>&lt;a href="http://www.google.com"&gt;Google&lt;/a&gt;</pre>
+  <p>This is a basic URL link. We've seen this before, but let's take a minute to break it down and parse it out.</p>
+  <ul>
+    <li><span class="greenText">&lt;a&gt;</span> - The letter 'a' is shorthand for the anchor element</li>
+    <li><span class="attribute">href</span> - This is our attribute. It is the destination for our link, which in this case is a url for 'google.' This is an absolute link as Google is a third-party site as far as we're concerned.</li>
+    <li>'Google' - We have the element and we have the destination, but we need some vanity text on the page to which those things can be tied. The URL itself is ugly and we don't want it littering the page unless we have to have it on the page. To counter, we create a place that we can customize that the browser will format using a universal visual cue for the end user. In this case, our vanity text reads as 'Google' This is what will show up on the page and--by default--the browswer will format it a nice shade of blue and it will be underlined as a visual cue to the end user that this text--which reads 'Google'--is a clickable URL.</li>
+    <li><span class="greenText">/&lt;a&gt;</span> - The closing element tag.
+  </ul>
+  <p>This is--and the examples that will follow--are <i>basic</i> links, but understand that anchor elements--like all elements--can have multiple attributes, many of them specific to the types of links you're trying to create.</p>
+  <p>To open the URL in a new window or tab, for instance, you'd add an additional attribute '<span class="attribute">target</span>="_blank"'</p>
+  <pre>&lt;a href="mailto:mbarnes@asumh.edu"&gt;Email Me&lt;/a&gt;</pre>
+  <p>This link--when clicked--opens the default email application on the system and pre-poplates the 'to' field. You might have noticed there are some similarities with our previous example. The big difference is that <span class="attribute">href</span> attribute. In this example it's just a simple destination email address being pre-populated, but you could also pre-populate the 'subject' or even 'body' text fields of the composed email. </p>
+  <p><span class="attribute">href</span>="mailto:mbarnes@asumh.edu?subject=That%20thing%20I&20sent%20you&body=Did&20you&20get&20that&20thing&20I&20sent&20you?."</p>
+  <p>The separate 'subject' and 'body' are addtional parameters to the attribute. We bind them together with '?' To reflect spaces in the text requires a special 'encoding character' -- '%20' A list of some common encoding characters can be found on the <a href="reference.html">references</a> page.</p>
+  <p><pre>&lt;section id="top"&gt;<br/>
+    ...A whole bunch of text and stuff that requires an endless amount of scrolling down the page... <br/><br/>
+    &lt;a href="#top"&gt;Back to top&lt;/a&gt;<br/>
+&lt;/section&gt;</pre></p>
+  <p>This is a link to another part of the same page. I'm sure you've seen sites with links at the bottom of a page that returns the user (or moves the viewport) back to the top of the page. This site--for instance--could have used them, but what can you do?</p>
+  <p>This link works the same, but requires a few additional steps.</p>
+  <p>The <span class="attribute">href</span> attribute is still there and in a familiar format, but this one references the 'id' of a particular element on the page. We'll talk about 'ids' and 'classes' at length when we get into CSS next time, but--for now--just understand that an 'id' is on of a few different ways we can label and identify specific elements on the page. In this case we have a <span class="greenText">&lt;section&gt;</span> element with the specific 'id,' or name of 'top' The <span class="attribute">href</span> attribute references that 'id,' which moves the page back to the place in the code, or markup, where that 'id' is first referenced. Since that reference is at the top of a whole bunch of text, the user's view is moved back up the page to the beginning.</p>
+  <p>One last one before I let you go and pay attention because this one is a bit complicated</p>
+  <p>To this point, we've only looked at the <span class="attribute">href</span> attribute. The hypertext reference attribute is a link that <em>defines a relationship</em> between the html document where the link is located and the linked resouce. It doesn't actually load the resource into the page itself. This means that when the browser loads, or 'parses' the page, the browser doesn't pause rendering the page to validate the resource. For instance, when we provide a link to <a href="http://www.google.com">Google.com</a> the browser doesn't stop rendering the page when it gets to that link to make sure that <a href="http://www.google.com">Google.com</a> is there or not. The browser assumes it works because we've established a relationship using the <span class="attribute">href</span> attribute. If that link doesn't work, the browser (or rather the user) doesn't know it until that link is clicked and--truth be told--even then the browser isn't aware it isn't working because it still tries to send you to wherever that <span class="attribute">href</span> is pointing.</p>
+  <p>The other frequently used 'linking' attribute, <span class="attribute">src</span>, or 'source', works a bit differently. It doesn't establish a relationship, but instead <em>embeds</em> the resource in the document at the location of the link. </p>
+  <p><pre><span class="greenText">&lt;img</span> <span class="attribute">src</span>="images/Zebra.png"<span class="greenText">/&gt;</span></pre></p>
+  <p>This is a link to an image with the name of 'Zebra.png' located in the 'images' folder. When the browser gets to this particular line of markup, the render is stopped until the resource is found and loaded into the document. This is a subtle, but, oh, so, significant difference, specifically in the context of loading times.</p>
+  <p>You may have noticed that not all pages load the same, right? Some are real quick, some take a little longer, and some take longer still. The more 'embeds' that page has in the markup (e.g. images, videos, audio files, JavaScript, etc.) the longer it takes to load because as the browser gets to those 'embeds' in the markup everything stops until that 'embed' is found and loaded in.</p>
+  <p>There are some methods to offset this (e.g. the loading of JavaScript can be 'deferred' until the page parses), but this is how it generally works.</p>
+  <p>If you're still with me, well done. We've got one more substantial lesson on html markup and then we get to the fun stuff, so, stick around, yeah?</p>
+
+
+    </div><!--/.flex-main-->
+
+
+<!-- Sidebar Widgets Column -->
+    <div class="flex-widget">
+
+      <!-- Side Widget -->
+      <div class="card my-4">
+        <h5 class="card-header html">In this lesson</h5>
+        <div class="card-body">
+          <h5>Objectives</h5>
+              <ul>
+                <li>Compare and contrast structural elements of a basic HTML page</li>
+                <li>Compare and contrast semantic elements of a basic HTML page and evaluate their correct usage</li>
+                <li>Define and identify the differences between relative and absolute paths</li>
+                <li>Identify and explain the different parts of a linking element and their purpose</li>
+              </ul><hr/>
+        <h5>Terms</h5>
+              <ul>
+                <li><a href="#head">Head</a></li>
+                <li><a href="#body">Body</a></li>
+                <li><a href="#footer">Footer</a></li>
+              </ul><hr/>
+        <h5>Concepts</h5>
+              <ul>
+                <li><a href="#semantics">Semantics and Styling</a></li>
+                <li><a href="#paths">Paths</a></li>
+                <li><a href="#linking">Linking</a></li>
+              </ul>
+          </div>
+      </div>
+    </div> <!--/.widget-->
+
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->
+<footer>
+  <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.js"></script>
+  <script type="text/javascript" src="vendor/jquery/jquery.js"></script>
+  <script>
+  //fade in the back to top button
+  (function($) {
+  $(document).ready(function(){
+      //When distance from top = 2000px fade button in/out
+      $(window).scroll(function(){
+          if ($(this).scrollTop() > 2000) {
+              $('#top').fadeIn(300);
+          } else {
+              $('#top').fadeOut(300);
+          }
+      });
+  });
+  })(jQuery);
+
+</script>
+
+</footer>
+
+</body>
+</html>
