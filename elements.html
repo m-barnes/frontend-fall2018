@@ -74,9 +74,9 @@ per conubia nostra, per inceptos himenaeos. Quisque vitae dolor	sed libero place
 </pre><br/>
     <p>The spacing is a little off because of the nature of the embed, but you should notice a little bit of structure here already. We've defined the document. We've separated the head, the body, and the footer into different sections. We've also separated the actual content inside those sections into subsections of their own like the navigation menu, the lists, the aside, etc.</p>
     <p>The magic of all this, however, really doesn't take shape until you run the html in an actual browser.</p>
-    <img src="images/figure1_basehtml.png" alt="picture of a basic html page with structure"/>
+    <img src="images/figure1_basehtml.png" class="image" alt="picture of a basic html page with structure"/>
     <br/><br/><p>Maybe this is more clear?</p>
-    <img src="images/structureDiagram.png" alt="diagram of basic html page with structure" /><br/><br/>
+    <img src="images/structureDiagram.png" class="image" alt="diagram of basic html page with structure" /><br/><br/>
     <p>Pretty cool, yeah?</p>
     <p>With it rendered, you can see a lot more is going on in the html than you might have originally thought. We've got a clear navigation menu at the top, we've got headlines, we've got paragraph content, we've got an aside that is related to the main content, but kept separate, and we've got some footer information. All clearly defined by spacing and structure. Your eye naturally moves from one bit to the next automatically and you know the intent and purpose of each grouping without having to really think about it.</p>
     <p>Let's break this down section by section, tag by tag:</p>
@@ -159,7 +159,7 @@ per conubia nostra, per inceptos himenaeos. Quisque vitae dolor	sed libero place
 
     <p>In a generic html file, you might find something like this. It's a link to an external CSS stylesheet called 'custom.' We're telling the browser that we definitely want to use this stylesheet and we're giving it the location that it needs to find it. In this case, the CSS file is in the same directory as the html file we're editing (they're in the same room), so, we only need to include the name of the actual CSS file itself.</p>
 
-    <img src="images/relational1.PNG"/><br/><br/>
+    <img src="images/relational1.PNG" class="image" alt="image of a file folder in Windows"/><br/><br/>
 
 
     <p>If that file were somewhere else, but still within the internal framework or inside the scope of the project (inside a folder just for CSS files, for instance), then we'd have to modify that link. It would still be a relational link because we're still giving it directions in relation to the html file that's linking, or calling, it, but it would look different.</p>
@@ -168,14 +168,14 @@ per conubia nostra, per inceptos himenaeos. Quisque vitae dolor	sed libero place
 
     <p>In this case, the 'custom.css' file is in a folder separate to that of the 'home' directory or the folder in which our html file is located. When the browser loads the html file, it needs to know not just that the 'custom.css' file is being linked, or called, but also where that file is located in relation to the html file it's loading. So, we give it directions to Walmart. The 'custom.css' file is in the 'css' file folder over there.</p>
 
-    <img src="images/relational2.PNG"/><br/><br/>
-    <img src="images/relational3.PNG"/><br/><br/>
+    <img src="images/relational2.PNG"/ class="image" alt="image of a file folder in windows"><br/><br/>
+    <img src="images/relational3.PNG" class="image" alt="image of a file folder in windows"/><br/><br/>
 
     <p>In the beginning, it will be easier to keep all your 'assets' in the same directory (css files, images, JavaScript, etc.). Depending on your process, you probably won't have too many separate files of which to keep track.</p>
     <p>As you move further along and your websites start getting bigger and bigger, you'll find that you're going to need to impose a little organization to better keep track of things. You might have folders full of different css files, or JavaScript files, or images, or whatever. As long as those 87 different images are considered part of 'your' website, then relational linking is the way to go.</p>
     <p>Now, you should understand that the ease of relational linking comes at a cost (doesn't everything?). If--at any point--you move something in the hierarchy of your site (e.g. you move a css file, you move a folder full of images, you change the name of a file folder, etc.) your relational links won't work. If, for instance, you change the name of your css file folder to 'assets', then your relational link--as it's written above with the path 'css/custom.css'--isn't going to work anymore because the 'css' doesn't exist anymore. The landmark is missing.</p>
 
-    <img src="images/relational4.PNG"/><br/><br/>
+    <img src="images/relational4.PNG" class="image" alt="image of a file folder in windows"/><br/><br/>
 
     <pre><<span class="greenText">link</span> <span class="attribute">href</span>="<strong>assets</strong>/custom.css" rel="stylesheet"></pre>
 

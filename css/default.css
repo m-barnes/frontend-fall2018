@@ -1,14 +1,13 @@
 body {
 padding-top: 54px;
+width:100%;
+word-wrap: break-word;
 }
 
 table {
 min-width:100%;
 }
 
-#table1 tr:nth-child(even) {
-background: #ebebeb;
-}
 
 pre {
 white-space: pre-wrap;       /* Since CSS 2.1 */
