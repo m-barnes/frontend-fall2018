@@ -44,6 +44,10 @@ background-size: cover;
 width:100%;
 }
 
+.img_small {
+  width:auto !important; 
+}
+
 .flex-main {
 flex:1;
 padding:1em;

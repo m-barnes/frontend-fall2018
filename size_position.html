@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/default.css" rel="stylesheet">
+
+
+
+
+</head>
+<body>
+  <!-- Page Content -->
+<div class="container">
+
+
+  <div class="row row flex-column-reverse flex-lg-row">
+    <div id="top"><a href="#" class="btn btn-dark btn-lg">Back to Top</a></div>
+
+    <!-- Post Content Column -->
+    <div class="flex-main">
+
+      <!-- Title -->
+      <h1>Size &amp; position</h1>
+          <h2>A Treatise on Size and Position</h2>
+          <p>We're pretty familar with html at this point and we've covered enough CSS to, at least, know what it looks like and how to do some basic stuff with it. Before we crack into one of the more powerful uses of CSS, layout and positioning, we need to take a little detour and talk about a few things.</p>
+          <p>Moving and positioning stuff around on the page can be...quirky as there are a lot of variables that have to be considered. The elements themselves have distinct properties as to size and display, those elements can be moved around on the page using rules on layout and position, and each element interacts with every other element in the context of those properties and rules.</p>
+          <p>The easiest way for me to think of this--and you might be the same, I don't know--is to think of every element on the page as enclosed in a box. How the final product looks--the rendered page on the screen--is the result of moving those boxes around and fitting them together in a way that works not unlike putting together a jigsaw puzzle. These individual boxes come in many different sizes and bring with them many different peculiarities--most we can change and putting those boxes into an aesthetically pleasing form requires an understanding of the behavior of those boxes in relation to the page and each other. Again, most of these behaviors we can change, we are only limited by the number of set behaviors available. </p>
+          <h3>Size and Display</h3>
+          <p>In previous lessons there's been mention of <em>inline</em> and <em>block</em> level elements. If you remember, block-level elements occupy 100% of the available width of the parent container, regardless of their content, and start a new line on the page. The important distinction here is that this does not mean 100% of the page width, but 100% of the width of the container in which the content sits. Below, for example, the block-level elements do not stretch across 100% of the width of the screen, but they do stretch across 100% of the width of their parent container, which in this case is a percentage of the total screen width. This will make more sense when we talk about the box-model and grids, but I wanted to, at least, throw this at you beforehand because you need to understand that context is important. Typically, larger pieces of content, structural content, or content meant to direct the user's attention to a particular area are block-level elements.</p>
+          <p><pre><p>Paragraph content is 'large' content, which means they're block-level elements. Text is--most likely--the single most important element or one of the single most important elements on the page. Consequently, it's important that it stands out for the user, right? So, paragraph content carries a block-level value for its display property. Now I'm just typing nonsense to make sure that this is in fact enough text to constitute a paragraph. Okay, let me check again...and we're good, so, I'm going to cut this one off.</p></pre>
+          <pre>Structural or container elements (e.g. <span class="greenText">&lt;section&gt;</span>, <span class="greenText">&lt;div&gt;</span>, <span class="greenText">&lt;ul&gt;</span>, etc.) are also block-level elements.</pre>
+          <pre><h1>Heading elements (<span class="greenText">&lt;h1&gt;</span>, etc.) are meant to draw attention.</h1></pre></p>
+          <p>Inline-level elements only occupy as much 'space' as they need to display the element. Inline-level elements are meant to draw distinction to the element and sit 'inline' with other elements.</p>
+          <p><pre style="display:inline"><span class="greenText">&lt;span&gt;</span></pre> elements are inline-level elements.
+          <pre style="display:inline"><span class="greenText">&lt;em&gt;</span></pre> and <pre style="display:inline"><span class="greenText">&lt;strong&gt;</span></pre> elements are inline-level elements.<br/><br/> They're meant to separate or draw particular focus to an element, but not disrupt overall readibility or 'flow.'</p>
+          <a name="display" class="anchor"></a>
+          <h4>The Display Property</h4>
+          <p>Exactly how these elements are displayed--whether they are block-level, inline-level or...something else (and there are a few other 'something elses')--is determined by the 'display' property. Every element has a default display property value. By default, <em>ALL</em> elements are set as inline-level elements. The default user agent style sheet--the style sheet automatically applied by a browser to web content--overwrites some of those values to turn some elements (e.g. paragraph elements, heading elements, etc.) into block-level elements. Now as big, bad developers who aren't bound by the laws of default values and user agent style sheets, we can change those values as we see fit and display our content in whatever way we want. And while we have quite a few options at our disposal, the most common options are as follows:
+            <ul>
+              <li>Block - Again, by default, they will take up 100% of the width of the parent container and will break to a new line. However, we can set additional values like height and width on block elements to better customize our aesthetic (think of a <span class="greenText">&lt;section&gt;</span> element with a custom background color or image). They'll still break to a new line, but we can set custom dimensions.</li>
+              <li>Inline - Only take up the space necessary to effectively display the element. Custom dimensions like height and width are not respected and will not work. You can push elements away horizontally using margins and padding (again, this will make sense when we talk about the box model), but the element will still sit inline.</li>
+              <li>Inline-Block - The first of our new entries. With inline-block you get the best of both worlds. You can have block-level custom dimensions and still have them sit inline. Here's a terribly egregious example:<br/><br/>
+                <p style="display:inline-block">
+                  Here is some text. <div style="display:inline-block;width:10em;height:6em;padding:1rem; background-color:red;color:#fff;margin:.5em;">Here's a div element.</div> and some the rest of the text.
+                </p></li>
+              <li>None - This you'll use more on the JavaScript side of things and it's easier to just show you first.</p>
+              <div>
+                <div id="box1" style="border:1px solid #121212; padding:1rem; box-shadow:5px 5px 2.5px #888888; margin:1rem;display:inline-block; width:30%"><h3>display:none</h3><img src="images/remove.png" style="width:100%; padding:1rem;"/><input type="button"  value="Remove" onClick="removeElement()"/></div>
+                <div id="box2" style="border:1px solid #121212; padding:1rem; box-shadow:5px 5px 2.5px #888888; margin:1rem;display:inline-block; width:30%"><h3>visibility:hidden</h3><img src="images/hide.jpg" style="width:100%;padding:1rem;"/><input type="button"  value="Hide" onClick="changeVisibility()"/></div>
+                <div id="box3" style="border:1px solid #121212; padding:1rem; box-shadow:5px 5px 2.5px #888888; margin:1rem;display:inline-block; width:30%"><h3>reset elements</h3><img src="images/reset.jpg" style="width:100%;padding:1rem;"/><input type="button"  value="Reset" onClick="resetElement()"/></div>
+              </div>
+              <p><strong>display:none</strong> removes the element entirely. It still exists in the DOM, but for all intents and purposes, it's gone. The user doesn't see it, the browser pretends it's not there, you can't tab to it, screen readers don't see it, etc. You'll notice when you hit the button that the other elements inline shift to the left. The element doesn't 'exist' in the display, so, it holds no position, which means everything after it shifts up in the markup.</p>
+              <p>If you just want the element to be hidden from the user, but still have a place in the markup, you use the <strong>visibility property</strong>, which is completely different (I told you CSS was complicated). The browser sees and respects the position of the element, it just hides it from the user. That's why the elements don't shift. It's still there, you just can't see it.</p>
+              </li>
+              <li>There are a few others, but we're going to hold off on them for now as they deal more with layout and position than size and display.</li>
+            </ul>
+          <a name="boxModel" class="anchor"></a>
+          <h4>The Box Model</h4>
+          <p>According to the box model concept (<a href="https://css-tricks.com/the-css-box-model/">CSS-tricks does a bang-up job explaining it in detail, by the way</a>) every element on the page is a rectangular box that may have width, height, padding, borders, and margins.</p>
+          <p><img src="images/boxModel.png" alt="image of the box model"/></p>
+          <p>Regardless of the actual shape of the element inside (e.g. circle, triangle, arrow, hamburger menu, etc.) that content is treated is as if it is in a bounding rectangular box, which is, itself, in a bounding rectangular box (padding), which is, itself, in a bounding rectangular box (border), which is, itself, in a bounding rectangular box (margin).</p>
+          <p>Each box has four edges, which can be manipulated either individually or as a whole. A base value will affect all edges equally.</p>
+          <p><pre>padding:15px;</pre></p>
+          <p>To set values for individual sides you have to specify the side in the declaration.</p>
+          <p><pre>padding-left:15px;<br/>padding-right:20px;</pre></p>
+          <p>Some properties allow for shorthand where you can set all four sides individually in one line. The values should follow the pattern of 'top' 'right' 'bottom' 'left'. You can use shorthand with the padding property, for instance, but can't with the border property.</p>
+          <p><pre>padding:15px 20px 15px 20px</pre></p>
+          <ul>
+            <li>The content box is for, you guessed it content. Whatever the element is that serves as container for the content on the page--be it paragraph, heading, article, section, footer, head, body, whatever.</li>
+            <li>The padding box extends the area around the content box and is, by default, transparent. The content itself isn't resized, but some styling characteristics like a background color or image can be extended beyond the content box. Padding is used to 'pad' the content area by extending the space around it. Kind of like blowing up a balloon.</li>
+            <li>The border box extends the padding and can be transparent or not.</li>
+            <li>The margin box clears the area outside the border box. It doesn't extend anything, but rather pushes nearby content away based on style sheet rules.</li>
+          </ul>
+          <p>If you want to see all the different 'boxes' on something you create, by the way, just add the following code to your CSS and watch the magic happen.</p>
+          <p><pre style="margin: 0; line-height: 125%"><span style="color: #333333">*</span> {
+   <span style="color: #008800; font-weight: bold">border</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">1px</span> <span style="color: #008800; font-weight: bold">solid</span> <span style="color: #007020">red</span> <span style="color: #557799">!important</span>;
+}
+</pre></p>
+          <p>If you've done it correctly, you should notice little, red borders around everything on the page. These are the bounding boxes of each element (all the boxes mentioned above lumped together into one construct). This little trick is useful in troubleshooting layout issues, but is also a nice visual to help with getting your head around all this.</p>
+
+          <p>Okay, let's drag some actual CSS into the discussion, yeah?</p>
+          <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">div</span> {
+  <span style="color: #008800; font-weight: bold">border</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">6px</span> <span style="color: #008800; font-weight: bold">solid</span> <span style="color: #6600EE; font-weight: bold">#949599</span>;
+  <span style="color: #008800; font-weight: bold">height</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">100px</span>;
+  <span style="color: #008800; font-weight: bold">margin</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">20px</span>;
+  <span style="color: #008800; font-weight: bold">padding</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">20px</span>;
+  <span style="color: #008800; font-weight: bold">width</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">400px</span>;
+}
+</pre></p>
+          <ul>
+            <li>The default width of an element depends, in part, on its display value. Block-level elements have a default width of 100%. Inline and inline-block elements will expand and contract to accommodate content. You can change the width of a non-inline element using the 'width' property.</li>
+            <li>The default height of an element depends, almost entirely, on the content. Elements will expand and contract vertically as needed to accommodate. You can change the height of a non-inline element using the 'height' property.</li>
+            <li>Using the 'margin' property allows us to set the surrounding space of an element. Margins fall outside the border and do not affect the sizing of the content itself; they only affect position. If you need a little breathing room between elements, then adjusting your margins is the way to go. Default values for the 'margin' property (and others) differ slightly from browser to browser and element to element. The preferred method for dealing with this nonsense is to use a CSS 'reset,' which tunes all CSS values to a normalized baseline (usually 0), so, you can start building from the ground up using your own values. Check out the <a href="reference.html">references</a> page for links to some of the more popular CSS resets and other goodies.</li>
+            <li>The 'padding' property works a bit like the margin property <em>except</em> it falls <em>within</em> the element's border, which means it adds transparent space to the element itself. It doesn't change the size of the element, but rather adds space around the element inside the border.</li>
+            <li>Typically, the border property only comes into play if we want to set a border around the content explicitly. If we set a border, we have to specify width, style, and color. In our example above, the border is 6px, solid, and black. If we don't set a border explicitly, the border still exists, but it's more an imaginary wall that simply marks the border between margin and padding.
+            <p>While we're here, it's also worth mentioning that you can 'curve' borders as well using the 'border-radius' property.</p>
+            <p><div style="background-color:black;color:#fff;width:100%;padding:3em;border-radius:2em;">Here's a div with curved border radiuses? radii? What's the plural of 'radius?' Anybody?'</div></p>
+            <p>This lets the more creative of you create shapes using pure CSS, which is kind of neat.</p>
+            <p><div style="display:inline-block;background-color:purple; height:92px; width:92px; margin:2em;"></div>
+            <div style="display:inline-block;background-color:green; height:92px; width:92px; border-radius:50%;margin:2em;"></div>
+            <div style="display:inline-block;width:0;height: 0;border-left: 50px solid transparent;border-right: 50px solid transparent;border-bottom: 100px solid blue;margin:2em;"></div></p></li>
+          </ul>
+          <p>Margins and padding are two of the few properties that work on inline elements. If you remember from our conversation earlier, setting a 'width' and 'height' on an inline element does absolutely nothing as the browser ignores the value by default. With margins you can--effectively--set spacing horizontally, but not vertically. With padding you can--effectively set spacing both horizontally and vertically, even if vertical spacing bleeds, or blends into the lines above and below the element.</p>
+          <p>Here is a <strong style="background-color:red;color:#fff;margin:1rem;">bold bit of text</strong> with margins set at 1rem. Notice how the inline content itself doesn't change, but the margins 'push' the other content away from it horizontally.</p>
+          <p>Here's the same<strong style="background-color:red;color:#fff;padding:1rem;">bold bit of text</strong> with padding set to 1rem. Notice how the inline content itself is added to, leaving the margins between the element and the text unchanged. There's also a bit of bleed over into the line below. The padding exists on all four sides and is displayed, but you normally wouldn't notice it because of the overlap and transparency.</p>
+          <p>If we apply the dimensions specified above to our box model picture we get this:</p>
+          <p><img src="images/boxModelpx.png" alt="picture of the box model with pixel values"/></p>
+          <p>Now, here's where it gets a bit confusing, so, stick with me.</p>
+          <p>If you look at the dimensions in our example, what is the width of the element? For most of us, we're going to assume 400px. I mean, it's right there on the screen. It clearly says the width of the content is 400px. If I'm laying out the page and I have to fit that particular piece of content on the page, I'm going to account for 400px in my design, right?</p>
+          <p>And I would be wrong. Terribly, terribly wrong.</p>
+          <p>According to the box model in order to find the actual size of the content as rendered on the page we have to use the following formulas for width and height:
+              <pre>Total Width = margin-right + border-right + padding-right + width + padding-left + border-left + margin-left</pre>
+              <pre>Total Height = margin-top + border-top + padding-top + height + padding-bottom + border-bottom + margin-bottom</pre>
+          <p>This means our 400px x 100px piece of content is actually 492px x 192px when rendered on the page. This presents a bit of a problem if you're trying to squeeze the very last valuable drop of real estate on the page and can't figure out why your content isn't stacking right even though it looks like you've got more than enough room.</p>
+          <a name="boxSizing" class="anchor"></a>
+          <h4>Box Sizing</h4>
+          <p>Now, here's the good news.</p>
+          <p>Until now the box model has been an additive design. If you set the width of an element, you had to add the padding, borders, and margins on either side to get the actual, full width, as displayed of an element. CSS3--which we're using, yeah?--has introduced the 'box-sizing' property, which allows us to change how the box model works. It looks like this:</p>
+          <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">div</span> {
+  box<span style="color: #333333">-</span>sizing<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">content</span><span style="color: #333333">-</span>box;
+}
+</pre></p>
+          <ul>
+            <li>Content Box - The content-box value is the default value. It leaves everything as is, including all that ridiculous addition we have to do get the full width of an element.</li>
+            <li>Padding Box - The padding-box value alters the box model by adding any padding property values to the overall width and height of the element. If your content is 400px wide with padding to the left and right of 20px, the actual width--using the padding-box value--will be 400px. You are drawing a line in the sand and telling the browser that under no circumstances is the width of the content + that content's padding to be anything other than 400px. As padding increases, the content inside shrinks to accommodate. The borders and margins still need to be added to get the full width of the element.</li>
+            <li>Border Box - The border-box value adds the border property and padding property to the overall width and height of the element. If your content is 400px wide--see where I'm going with this--with padding to the left and right of 20px plus a border of 3px, the actual width--using the border-box value--will be 400px. Content shifts in size to accommodate sizing. Margins will still have to be added to get the full width of the element, but all other values will be included in the size calculation.</li>
+          </ul>
+          <p>Ideally, if you feel the need to use one, using the border-box value is your best overall. In fact, a lot of frontend frameworks (collections of common html, css, and JavaScript templates) reset the box-sizing property to border-box by default on a number of elements.</p>
+        <h2>Positioning</h2>
+          <p>The other half of this story is layout and positioning. We've talked about how these different elements are sized using display properties and how they interact with each other in default positions thanks to the box model. We've got our puzzle pieces and now we need to start fitting them together on the page. One of the great things about CSS is that it gives us a myriad of different ways to position our content on the screen. The position property, floats, inline-block, flex, grids, etc. are a few of the methods we can use to create a site that best matches our original intent--no matter how fantastic and out there that original idea might be, right?</p>
+          <p>Each method has its strength and weaknesses, which means that, consequently, your use of them becomes a matter of personal preference and choice. Some developers are locked into one method and will forceably reshape their original vision to fit the capabilities of that one method. Others are a bit more flexible and will mix-and-match as they see fit according to their needs. Whichever developer you turn out to be, doesn't matter. It's been my experience that we're a pretty inclusive bunch. We all like to try new things and love to see the stuff that others are doing. We're more than happy to tell you that your way is totally wrong and that you really should be doing it this way, but--as long as we're not personally working on it--we typically don't get too wrapped up in it.</p>
+          <p>In any event, position is controlled by a number of methods in CSS. The first one we're going to look it is--coincidentally enough--the position property.<p>
+          <h4>The Position Property</h4>
+          <p>By default, the position for all elements on the page is set to 'static.' This means the elements aren't specially positioned at all and will display according to their place in the document. Below we have three div elements--each a different color as specified by their respective classes--in block display.</p>
+          <div style=" display:flex;">
+            <div style="flex:1;margin-left:5rem;">
+            <p><pre style="margin: 0; line-height: 125%;"><span style="color: #0066BB; font-weight: bold">#box_1</span> {
+	<span style="color: #008800; font-weight: bold">width</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">100px</span>;
+	<span style="color: #008800; font-weight: bold">height</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">100px</span>;
+	<span style="color: #008800; font-weight: bold">background</span><span style="color: #333333">:</span> <span style="color: #007020">red</span>;
+}
+
+<span style="color: #0066BB; font-weight: bold">#box_2</span> {
+	<span style="color: #008800; font-weight: bold">width</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">100px</span>;
+	<span style="color: #008800; font-weight: bold">height</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">100px</span>;
+	<span style="color: #008800; font-weight: bold">background</span><span style="color: #333333">:</span> <span style="color: #007020">blue</span>;
+}
+
+<span style="color: #0066BB; font-weight: bold">#box_3</span> {
+	<span style="color: #008800; font-weight: bold">width</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">100px</span>;
+	<span style="color: #008800; font-weight: bold">height</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">100px</span>;
+	<span style="color: #008800; font-weight: bold">background</span><span style="color: #333333">:</span> <span style="color: #007020">yellow</span>;
+}
+</pre></p>
+            </div>
+            <div style="flex:2;margin-left:10rem;">
+              <div style="width:100px;height:100px;background-color:red;"></div>
+              <div style="width:100px;height:100px;background-color:blue;"></div>
+              <div style="width:100px;height:100px;background-color:yellow;"></div>
+            </div>
+          </div>
+          <p>Here are three boxes (red, blue, and yellow) stacked each on top of the other as they are defined in the markup. By default, their position is set to 'static.' You don't have to worry about setting this explicitly unless you need to reset position because you've changed it somewhere upstream.</p>
+          <p>Let's make a few changes.</p>
+          <div style=" display:flex;">
+            <div style="flex:1;margin-left:5rem;">
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #0066BB; font-weight: bold">#box_1</span> {
+	<span style="color: #008800; font-weight: bold">width</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">100px</span>;
+	<span style="color: #008800; font-weight: bold">height</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">100px</span>;
+	<span style="color: #008800; font-weight: bold">background</span><span style="color: #333333">:</span> <span style="color: #007020">red</span>;
+}
+
+<span style="color: #0066BB; font-weight: bold">#box_2</span> {
+	<span style="color: #008800; font-weight: bold">width</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">100px</span>;
+	<span style="color: #008800; font-weight: bold">height</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">100px</span>;
+	<span style="color: #008800; font-weight: bold">background</span><span style="color: #333333">:</span> <span style="color: #007020">blue;</span>
+        <span style="color: #008800; font-weight: bold">position</span><span style="color: #333333">:</span><span style="color: #008800; font-weight: bold">relative</span>;
+        <span style="color: #008800; font-weight: bold">left</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">100px</span>;
+}
+
+<span style="color: #0066BB; font-weight: bold">#box_3</span> {
+	<span style="color: #008800; font-weight: bold">width</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">100px</span>;
+	<span style="color: #008800; font-weight: bold">height</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">100px</span>;
+	<span style="color: #008800; font-weight: bold">background</span><span style="color: #333333">:</span> <span style="color: #007020">yellow</span>;
+
+}
+</pre></p>
+
+            </div>
+            <div style="flex:2;margin-left:10rem;">
+              <div style="width:100px;height:100px;background-color:red;"></div>
+              <div style="width:100px;height:100px;background-color:blue;position:relative; left:100px;"></div>
+              <div style="width:100px;height:100px;background-color:yellow;"></div>
+            </div>
+          </div>
+          <p>The position has been defined explicitly using the value of 'relative' and the 'left' property. Relative positioning means you are offsetting the element <em>relative to its original position in the document</em>. In this case, the position of the element is offset to the left by 100px relative to its original (or default) position in the code. The space the element would normally occupy is left vacant and nothing else will move there. If there are any elements inside the element with relative position (e.g. text, heading, picture, etc.), they will stay with the repositioned element.</p>
+          <p>Here's another.</p>
+          <div style=" display:flex;">
+            <div style="flex:1;margin-left:5rem;">
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #0066BB; font-weight: bold">#box_1</span> {
+	<span style="color: #008800; font-weight: bold">width</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">100px</span>;
+	<span style="color: #008800; font-weight: bold">height</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">100px</span>;
+	<span style="color: #008800; font-weight: bold">background</span><span style="color: #333333">:</span> <span style="color: #007020">red</span>;
+}
+
+<span style="color: #0066BB; font-weight: bold">#box_2</span> {
+	<span style="color: #008800; font-weight: bold">width</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">100px</span>;
+	<span style="color: #008800; font-weight: bold">height</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">100px</span>;
+	<span style="color: #008800; font-weight: bold">background</span><span style="color: #333333">:</span> <span style="color: #007020">blue</span>;
+        <span style="color: #008800; font-weight: bold">position</span><span style="color: #333333">:</span><span style="color: #008800; font-weight: bold">absolute</span>;
+        <span style="color: #008800; font-weight: bold">right</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">0</span>;
+}
+
+<span style="color: #0066BB; font-weight: bold">#box_3</span> {
+	<span style="color: #008800; font-weight: bold">width</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">100px</span>;
+	<span style="color: #008800; font-weight: bold">height</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">100px</span>;
+	<span style="color: #008800; font-weight: bold">background</span><span style="color: #333333">:</span> <span style="color: #007020">yellow</span>;
+
+}
+</pre></p>
+
+
+            </div>
+            <div style="flex:2;margin-left:10rem;">
+              <div style="width:100px;height:100px;background-color:red;"></div>
+              <div style="width:100px;height:100px;background-color:blue;position:absolute; right:0;"></div>
+              <div style="width:100px;height:100px;background-color:yellow;"></div>
+            </div>
+          </div>
+          <p>Here the position of the element has been explictly defined using the value of 'absolute' and the 'right' property. Absolute positioning means you are--effectively--removing the element from the document and displaying it on the page as set by the positional values--top, bottom, right, left---as calculated based on the nearest parent container that does not have a static position set. If all you're containers have a 'static' position, then the absolute value is based on the entire body. Here the element has been removed from the 'flow' of the document and positioned to the far right of the container in which it resides--the first container upstream that <em>does not</em> carry a 'static' position. When the browser hits this line of code, it takes the repositioned element, shoves it aside, and then moves everything upstream, which is why the red and yellow boxes are now fast friends.</p>
+          <p>The last one to mention is the 'fixed' position property. The fixed value works a lot like the absolute value, but the postion is calculated using the entire browser windows by default. Elements with fixed position stick in position even when scrolling the page, which is why you tend to see them on headers and footers.</p>
+          <p>These three property values--in and of themselves--aren't particularly useful, but once you start putting them together you can do all kinds of stuff. <a href="http://www.barelyfitz.com/screencast/html-training/css/positioning/">Barelyfitz.com </a>has a pretty solid demo and I encourage you to check it out. I also encourage you to set up your own template and mess around with these properties- and rules--really all the stuff we're going to talk about--as a hands-on practical is almost always--for me anyway--way more useful than just a discussion on theory.</p>
+        <h4>Floats</h4>
+        <p>Another way to position elements is by using the 'float' property.</p>
+        <p>Floating--just like it sounds--repositions the element outside the normal 'flow' of the document to the left or right of the parent element, sort of floating above it, if that makes any sense. You can stack floating elements across the page (e.g. two or more elements with the 'float:left' property / value) or you can have elements floating across from each other on the page (e.g. one element with a 'float:left' another with a 'float:right' property / value). Floating is particularly useful if you have an image or graph that you want to sort of offset from the text. The text will wrap around the floated element, which looks just...well, real nice. They're also pretty handy for layout as you can create columns that stack across the page, letting your content stretch horizontally across the screen rather than stack vertically.</p>
+        <p>Stacked.</p>
+          <div style="background-color:red; float:left; width:25%; height:200px;"></div>
+          <div style="background-color:blue; float:left; width:25%; height:200px;"></div>
+          <div style="background-color:orange; float:left; width:25%; height:200px;"></div>
+          <div style="visibility:hidden;display:block;height:0;clear:both;"></div><br/>
+
+        <p>Split.</p>
+          <div style="background-color:red; float:left; width:25%; height:200px;"></div>
+          <div style="background-color:orange; float:right; width:25%; height:200px;"></div>
+          <div style="visibility:hidden;display:block;height:0;clear:both;"></div><br/>
+        <p>Now for the weird--as expected, right?</p>
+        <p>Floated elements are both in and not in the document flow. If you'll remember with absolute positioning, the element was removed entirely from it. The rest of the elements on the page ignored the element with absolute positioning and arranged themselves as if it wasn't there.</p>
+        <p>With floated elements, the other elements will respect the floated element's position...to a degree.</p>
+        <div>
+          <div style="background-color:#005294;color:#fff; width:25%; border:1px solid #000; padding:1em; margin:.5em;float:right;">
+            <ul style="list-style:none;">
+              <li>List Item 1</li>
+              <li>List Item 2</li>
+              <li>List Item 3</li>
+              <li>List Item 4</li>
+              <li>List Item 5</li>
+              <li>List Item 6</li>
+            </ul>
+          </div>
+          <div style="background-color:#E4F1FE; width:100%; border:1px solid #000; padding:1em;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eleifend lacus nec fringilla blandit. In convallis eget nisl id tincidunt. Ut tempus euismod ligula elementum porttitor. Phasellus eleifend venenatis mi. Aenean sit amet tempor leo. Etiam sollicitudin ipsum a mauris aliquam dapibus. Nunc massa lorem, suscipit sit amet justo quis, tempor cursus magna.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eleifend lacus nec fringilla blandit. In convallis eget nisl id tincidunt. Ut tempus euismod ligula elementum porttitor. Phasellus eleifend venenatis mi. Aenean sit amet tempor leo. Etiam sollicitudin ipsum a mauris aliquam dapibus. Nunc massa lorem, suscipit sit amet justo quis, tempor cursus magna.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eleifend lacus nec fringilla blandit. In convallis eget nisl id tincidunt. Ut tempus euismod ligula elementum porttitor. Phasellus eleifend venenatis mi. Aenean sit amet tempor leo. Etiam sollicitudin ipsum a mauris aliquam dapibus. Nunc massa lorem, suscipit sit amet justo quis, tempor cursus magna.</p>
+          </div>
+        </div><br/>
+        <p>Looks good. The nested element is floating to the right of the text, which is wrapping around it nicely.</p>
+        <div>
+          <div style="background-color:#005294;color:#fff; width:25%; border:1px solid #000; padding:1em; margin:.5em;float:right;">
+            <ul style="list-style:none;">
+              <li>List Item 1</li>
+              <li>List Item 2</li>
+              <li>List Item 3</li>
+              <li>List Item 4</li>
+              <li>List Item 5</li>
+              <li>List Item 6</li>
+            </ul>
+          </div>
+          <div style="background-color:#E4F1FE; width:100%; border:1px solid #000; padding:1em;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eleifend lacus nec fringilla blandit. In convallis eget nisl id tincidunt. Ut tempus euismod ligula elementum porttitor. Phasellus eleifend venenatis mi. Aenean sit amet tempor leo. Etiam sollicitudin ipsum a mauris aliquam dapibus. Nunc massa lorem, suscipit sit amet justo quis, tempor cursus magna.</p>
+          </div>
+        </div><br/>
+        <p>So, what happened? The only thing that changed was the amount of text in the non-floating element. This is that 'in / not in' limbo that floated elements kind of occupy coming into play. We have set a float property, which is--in essence--like we've removed it and set it hovering over the page. The content of the text element (the non-floating element) respects the position of the list element (the floating element) and will wrap its content to accommodate, but because the text element doesn't really consider the list element as part of itself it only extends far enough down the page to fit the text. The floating element has content that requires it to extend further down the page, which means it breaks over and right through the border of the text element, causing it to look weird (or not weird, if that's the effect you're trying to hit).</p>
+        <p>For what it's worth, the exact same thing is happening in the first example as well. It just looks fine because there is enough content in the text element to extend the element past the floated element. The floated element looks like it's contained inside the borders of the text element, but it's--in reality--an illusion.</p>
+        <p>This is only one of many...many ways floated elements can mess with the layout of your content. It gets exponentially worse once you start dipping into responsive design and grids, which moves stuff around on the page dependent on screen size. The problem is that the float property was never meant for layout and positioning purposes. It was originally designed simply to allow content to wrap around images and when it's used in that context it works really, really well.<p>
+        <p>Because of this weird space that floated elements inhabit--as far as the document is concerned--you also might run into some issues with styling--particularly elements <em>around</em> the floated element, particularly with margins and padding. You might also run into some issues with unwanted content wrapping around a floated element.</p>
+        <p>Let's look at our example from earlier with a slight tweak.</p>
+        <p>Stacked.</p>
+          <div style="background-color:red; float:left; width:25%; height:200px;"></div>
+          <div style="background-color:blue; float:left; width:25%; height:200px;"></div>
+          <div style="background-color:orange; float:left; width:25%; height:200px;"></div>
+
+        <p>Split.</p>
+          <div style="background-color:red; float:left; width:25%; height:200px;"></div>
+          <div style="background-color:orange; float:right; width:25%; height:200px;"></div>
+
+          <p class="padding2rem">I've got some weird wrapping going on here, yeah? There's no defined space between the first example and the second like up above. It's also not respecting my padding rule I've applied to the paragraph element. The problems are the floated elements. Again, it's that weird space. I've removed the elements from the document, which means that all the other elements around it--including this text block--are going to try to wrap around and fill in the empty space, which isn't what I want at all because it looks ridiculous. To fix this I need to 'clear' or 'contain' these floats and return the document to its normal flow. This is a mess and it's freaking me out, so, let's get out of here.</p>
+          <div style="visibility:hidden;display:block;height:0;clear:both;"></div><br/>
+
+
+
+
+
+            <h4>Clear floats</h4>
+            <p>We use the 'clear' property to clear floats and it accepts a few different values.</p>
+            <ul>
+              <li>left - clears left floats.</li>
+              <li>right - clears right floats.</li>
+              <li>both - clears both left and right floats</li>
+            </ul>
+            <p>Common practice is to have a 'clearfix' in place to clear floats. This is usually an empty <span class="greenText">&lt;div&gt;</span> elemnent that's hidden and block-level to reset document flow.</p>
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;div</span> <span style="color: #0000CC">style=</span><span style="background-color: #fff0f0">&quot;visibility:hidden;display:block;height:0;clear:both;&quot;</span><span style="color: #007700">&gt;&lt;/div&gt;</span>
+</pre></p>
+            <p>Here I've applied it inline to the element itself, but if you are going to extensively use floated elements in your work, it might be a better idea to set up a class to make it easier to implement.</p>
+            <h4>Containing floats</h4>
+            <p>To contain floated elements you simply wrap them in a container element like a <span class="greenText">&lt;div&gt;</span> element and then apply the clearfix to the parent element using a class and pseudo element.</p>
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #BB0066; font-weight: bold">.clearfix</span><span style="color: #555555; font-weight: bold">:after</span> {
+      <span style="color: #008800; font-weight: bold">visibility</span><span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">hidden</span>;
+      <span style="color: #008800; font-weight: bold">display</span><span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">block</span>;
+      <span style="color: #008800; font-weight: bold">height</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">0</span>;
+      <span style="color: #008800; font-weight: bold">clear</span><span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">both</span>;
+}
+</pre></p>
+            <p>Here I've applied the same CSS rules to a class called <strong>.clearfix</strong>. Using the pseudo element <strong>:after</strong> I'm telling the browser that I want to apply these css rules to a dynamically generated element that I want inserted immediately after any element that has the <strong>.clearfix</strong> class applied to it. If I wrap my floated elements in a container with the <strong>.clearfix</strong> class then the element--in effect--becomes self clearing. The browser displays the floated content and then immediately generates a pseudo element to clear the floats and return normal flow to the document. If you wanted to be super-thorough you could also add a <strong>:before</strong> pseudo element to the class to clear any residual floats that may not have been cleared correctly further up in the document.</p>
+            <p>Floated elements can be difficult with which to work, so, my personal opinion is to stay far, far away from them, in general. The more complex your layout, the more floated content you use, the bigger a headache using floats becomes. For my money, the inline-block property will do a lot of the same stuff and without a lot of the blowback and a good grid will do the rest.</p>
+            <p>However, I certainly don't want to discourage you from using them. Everybody's brain works a bit different and you may find that you have no problem designing a layout using extensive floats. My brain doesn't, so, I tend to avoid them like the plague. Your mileage may vary. I would caution you, however, that while floats are certainly still used (especially in older, or legacy site work), extensive use of them for layout and design has fallen out of favor with modern developers. There may be a day when floats become all the rage again as everything is cyclical, but that day isn't today.</p>
+
+    </div>
+
+<!-- Sidebar Widgets Column -->
+    <div class="flex-widget">
+
+      <!-- Side Widget -->
+      <div class="card my-4">
+        <h5 class="card-header html">In this lesson</h5>
+        <div class="card-body">
+          <h5>Objectives</h5>
+            <ul>
+              <li>Define the display property and analyze its relationship with both the document object model and css positioning properties.</li>
+              <li>Review the 'box model' and breakdown its constiuent parts.</li>
+              <li>Compare and contrast the 'position' property and the 'float' property. Appraise their use in modern website design.</li>
+            </ul><hr/>
+      <h5>Concepts</h5>
+            <ul>
+              <li><a href="#display">The Display Property</a></li>
+              <li><a href="#boxModel">The Box Model</a></li>
+              <li><a href="#boxSizing">Box Sizing</a></li>
+            </ul>
+
+          </div>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->
+<footer>
+  <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.js"></script>
+  <script type="text/javascript" src="vendor/jquery/jquery.js"></script>
+  <script>
+  //fade in the back to top button
+  (function($) {
+  $(document).ready(function(){
+      //When distance from top = 2000px fade button in/out
+      $(window).scroll(function(){
+          if ($(this).scrollTop() > 2000) {
+              $('#top').fadeIn(300);
+          } else {
+              $('#top').fadeOut(300);
+          }
+      });
+  });
+  })(jQuery);
+
+</script>
+
+</footer>
+
+</body>
+</html>

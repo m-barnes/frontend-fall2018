@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/default.css" rel="stylesheet">
+
+
+
+
+</head>
+<body>
+  <!-- Page Content -->
+<div class="container">
+
+
+  <div class="row row flex-column-reverse flex-lg-row">
+    <div id="top"><a href="#" class="btn btn-dark btn-lg">Back to Top</a></div>
+
+    <!-- Post Content Column -->
+    <div class="flex-main">
+
+      <!-- Title -->
+      <h1>CSS overview</h1>
+          <h2>Stylin' and Profilin'</h2>
+          <p>In the world of computer science there is a design principle referred to as 'separation of concerns' (SoC). The underlying thought is that when you design and develop a computer program, you divide it up into separate sections each with its own focus that addresses a specific concern or problem to be solved. You might also have heard it referred to as object oriented design or modularity. In a particularly complex program you might have a 'module' whose only concern is logging the user into their account. You might have a 'module' whose sole concern is printing. You might have a 'module' whose single focus is on searching a database for items. The beauty of this school of thought is that you can reuse these bits and pieces as you see fit to perform this particular task elsewhere in the program and that if you need to update code for a particular task, you only need to update the code in the 'modules' whose focus is that particular task.</p>
+          <p>In frontend development we use a modified version of that, yeah? We typically separate our concerns into three major components: structure, style, and the interactive. We've covered a bit of this already with html. Do you remember the primary focus of html? </p>
+          <p>It's structure</p>
+          <p>Html is the first division and it deals solely in the structuring of content.</p>
+          <p>CSS is the second division and it deals solely with the styling of content</p>
+          <p>Javascript is the third division and it deals solely with the interactive functionality of content</p>
+          <p>This separation of concerns means that for each focus, there is one division that has primary overwatch. There is certainly some overlap, but if you're dealing with content structure, html is where you generally want to be, if you're dealing with content styling, it's CSS, and if it's a matter of dealing with interactive elements, then it's JavaScript. For CSS, particularly as it concerns external style sheets--which we'll cover in a minute--this division of labor has a number of significant advantages:
+            <ul>
+              <li>Speed - On a page load, the browser cache's the style sheet. Web pages that use the cached style sheet will load faster because the style information won't need to be downloaded again as it's already in memory</li>
+              <li>Maintenance - This is an extension of that idea of modularity. If I want to change the styling rules for multiple <span class="greenText">&lt;table&gt;</span> elements across multiple pages, I can do that in one spot--the external style sheet. This saves time, effort, and reduces the chances of errors.</li>
+              <li>Accessiblity - If--for whatever reason--your CSS doesn't work (e.g. maybe you've borked the syntax, maybe the browser being used doesn't recognize it, whatever), CSS is designed to 'gracefully degrade, ' which means the user can still see the content. It won't look like you want it to look, but it will still be there on the page when the page is loaded.</li>
+              <li>Customization - The use of CSS means you can have multiple sites that look completely different, but use the same html markup. The structure underneath doesn't change when using CSS <em>only</em> the way that content is displayed on the screen. This also allows for users to use their own custom style sheets via their web browser (e.g. if I want every instance of a hyperlink to be bright pink and bold on every page I visit, I can do that).</li>
+              <li>Consistency - Because all the styling is handled in one place (i.e. the style sheet) every element that is attached to that style sheet is styled exactly the same. It also means that any additional content I--as the developer--add to the site later on has the exact same rules applied to it and, consequently, is styled exactly the same as the original content.</li>
+              <li>Portability - This one you probably won't have much to do with, but it's worth mentioning. If you want to translate your site to a different medium (e.g. think printer-friendly preview), you can do that simply by applying a different style sheet to the same content. Again, the content itself doesn't need to be changed, only the way it's displayed.</li>
+            </ul>
+            <p><a href="https://www.w3schools.com/css/css_intro.asp">W3Schools</a> has a wonderful demo of one html page displayed with multiple stylesheets. I've embedded it below.</p>
+            <div style="border:1px solid #000;padding:2rem;border-radius:1rem;">
+              <a href="https://www.w3schools.com/css/css_intro.asp"><img src="example/W3Schools_logo.png" style="width:25%;"/></a>
+              <embed src="example/genericExample.html"/ style="width:100%; height:80rem;">
+            </div>
+            <a name="css" class="anchor"></a>
+          <h2>Cascading Style Sheets</h3>
+            <p>Style sheets work by applying a specified rule-set to a particular element--or sets of elements--in the html markup. On this page, for instance, the <span class="greenText">&lt;h1&gt;</span> element at the top of the page that reads "Lesson 4" is a lovely shade of <a href="http://www.color-hex.com/color/88cbce">aqua</a> and is rendered using the <a href="https://fonts.google.com/specimen/Open+Sans">Open Sans</a> font. In order for that magic to happen, I had to create a CSS rule that selected all <span class="greenText">&lt;h1&gt;</span> elements on the page and then declare that I wanted to apply that particular color and that particular font style to them. I'm using an external CSS style sheet, so, my rule looks a bit like this:</p>
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">h1</span> {
+    <span style="color: #008800; font-weight: bold">color</span><span style="color: #333333">:</span><span style="color: #6600EE; font-weight: bold">#88CBCE</span>;
+    <span style="color: #008800; font-weight: bold">font-family</span><span style="color: #333333">:</span><span style="background-color: #fff0f0">&quot;open sans&quot;</span>;
+}
+</pre></p>
+            <p>While we're here, let's take a minute to parse this out and pick up the syntax.</p>
+            <ul>
+              <li>h1 - This is the selector. They are case sensitive and come in many different flavors. In this case it references a particular html element, or type, that I want to style. There are many types of selectors, which we'll get to in just a second..<br/></li>
+              <li>The declaration block - The stuff inside the curly braces is the declaration block, which contains one or more delcarations separated by a semicolon.
+              <li>The declaration itself is divided into two sections separated by a colon.
+                <ul>
+                  <li>property - The first half of the declaration. This is the property of the html element selected that we want to change. In the example, I want to affect change on two properties of the <span class="greenText">&lt;h1&gt;</span> element. Specifically, the <strong>color</strong> and <strong>font-family</strong> properties.</li>
+                  <li>value - The second half of the declaration. The specified properties already have default values. I want to change those default values to these values.</li>
+                </ul>
+              </li>
+                <li>curly braces - The declaration block is surrounded by curly braces. This effectively sets the scope of the CSS rule-set.
+              </ul>
+              <p>FYI: Most of the CSS in this lesson is written in the context of an external style sheet. External stylesheets are files separate to your html file and carry with them the *.css extention. The CSS file is then linked into the html file like anything else (e.g. links to different websites, email addresses, etc.). We'll cover all of this below, but--for now--keep in mind that while the context of CSS can vary, the syntax is consistent regardless of CSS type.</p>
+            <a name="type" class="anchor"></a>
+            <h4>Combining Type Selectors</h4>
+            <p>Here's where it gets kind of fun.</p>
+            <p>Type selectors target elements of a specific type. So, if I want all the paragraphs on my site to be formatted a particular way with CSS, I can do that by targetng the 'type' of element. For instance, let's say I wanted to apply a generic style to all the paragraphs on my page. It might look something like this:
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">p</span> {
+  <span style="color: #008800; font-weight: bold">font-family</span><span style="color: #333333">:</span><span style="background-color: #fff0f0">&#39;open sans&#39;</span>;
+  <span style="color: #008800; font-weight: bold">margin</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">0</span> <span style="color: #6600EE; font-weight: bold">0</span> <span style="color: #6600EE; font-weight: bold">10px</span>;
+  <span style="color: #008800; font-weight: bold">padding</span><span style="color: #333333">:.</span><span style="color: #6600EE; font-weight: bold">5</span>rem;
+  }
+</pre></p>
+            <p>This CSS rule targets <em>every</em> paragraph element on the page and applies these rules to them. It can be overwritten, but with this rule i place, this is the default styling for every paragraph element to which this styling sheet is attached. I don't even have to think about it anymore as I add content.</p>
+            <p> If I want multiple elements on the page to have the same styling. I can apply the same rule-set to both by piggy-backing one type selector off another like so:</p>
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">h1</span><span style="color: #333333">,</span> <span style="color: #007700">h4</span> {
+    <span style="color: #008800; font-weight: bold">color</span><span style="color: #333333">:</span><span style="color: #6600EE; font-weight: bold">#88CBCE</span>;
+    <span style="color: #008800; font-weight: bold">font-family</span><span style="color: #333333">:</span><span style="background-color: #fff0f0">&quot;open sans&quot;</span>;
+}
+</pre></p>
+            <p>I have combined my selectors and now those same rules apply not just to every <span class="greenText">&lt;h1&gt;</span> element, but every <span class="greenText">&lt;h4&gt;</span> element as well.</p>
+            <pre style="margin: 0; line-height: 125%; background-color:#fff;">
+            <h1>Here's my h1 element with the applied CSS rule</h1>
+            <h4>And here's my h4 element styled using the same rule</h4>
+          </pre>
+            <a name="class" class="anchor"></a>
+            <h4>Class selectors</h4>
+            <p>If I have completely different types of elements that I want to style the same I can use the <span class="attribute">class</span> attribute of the element to name them, or assign a 'class' to them and then apply a rule-set to that named class. As example, For this site, I have a CSS rule that effectively turns text <span class="greenText">green</span> and <strong>bolds</strong> it. I've been using it to provide a little visual interest and emphasis when discussing the different elements (e.g. <span class="greenText">&lt;h1&gt;</span>, <span class="greenText">&lt;aside&gt;</span>, <span class="greenText">&lt;header&gt;</span>, etc.), but I can apply that same rule to just about anything I like provided I can assign the same class to it. </p>
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;h1</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;greenText&quot;</span><span style="color: #007700">&gt;</span> <span style="color: #007700">&lt;/h1&gt;</span>
+
+<span style="color: #007700">&lt;p</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;greenText&quot;</span><span style="color: #007700">&gt;</span> <span style="color: #007700">&lt;/p&gt;</span>
+</pre></p>
+
+            <p><pre style="margin: 0; line-height: 125%"> <span style="color: #BB0066; font-weight: bold">.greenText</span> {
+   <span style="color: #008800; font-weight: bold">color</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">#27AE60</span>;
+   <span style="color: #008800; font-weight: bold">font-weight</span><span style="color: #333333">:</span><span style="color: #008800; font-weight: bold">bold</span>;
+ }
+</pre></p>
+
+            <h2 class="greenText">Here's a h2 element with the mentioned effect</h2>
+            <p class="greenText">And here's a paragraph with the same. These elements may have nothing in common other than the fact that I want them both to be shaded green and bold when the page loads. By assigning them the same <span class="attribute">class</span> attribute I can create a relationship and then exploit that relationship, applying a CSS rule to those elements that share that class name.</p>
+            <p>It doesn't matter what the 'type' of these elements are as I have grouped them together using the the class designator. Elements of the same type but not of the 'greenText' class are unaffected.</p>
+            <a name="id" class="anchor"></a>
+            <h4>Id selectors</h4>
+            <p>I have applied a style to all <span class="greenText">&lt;h1&gt;</span> elements on the page using a type selector, but let's say there is one instance of that element that I don't want this rule-set to apply. I can single out a specific element by assigning it a proper id using the <span class="attribute">id</span> attribute and then apply the style to an element with that specific id. This is a unique name for a unique instance of the element. We tend to use this more on the JavaScript side of things, but we can use it with CSS as well. </p>
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;h1</span> <span style="color: #0000CC">id=</span><span style="background-color: #fff0f0">&quot;default&quot;</span><span style="color: #007700">&gt;</span> <span style="color: #007700">&lt;/h1&gt;</span>
+</pre></p>
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #0066BB; font-weight: bold">#default</span> {
+      <span style="color: #008800; font-weight: bold">color</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">#000</span>;
+      <span style="color: #008800; font-weight: bold">font-family</span><span style="color: #333333">:</span> <span style="background-color: #fff0f0">&quot;Helvetica&quot;</span>;
+    }
+</pre></p>
+
+            <h1>Here's a h1 element with my styling rules applied.</h1>
+            <h1 id="default">And here's one with the id of 'default'.</h1>
+            <a name="descendent" class="anchor"></a>
+            <h4>Descendent selectors</h4>
+            <p>You can target element types (i.e. type selectors), groups of unrelated elements (i.e. class selectors), and specific named instances of elements (i.e. id selectors). You can combine type selectors and apply the same rule to multiple types--and, truth be told, multiple classes and ids as well. You can also target the nested elemnents of a container element. Let me explain:</p>
+            <p>Let's say I have a navigation menu to which I've applied some styling. I've made it to be a nice shade of dark blue with white text and some padding to give it some bulk. If I use the unordered list trick from previous lessons, every list item option will have that default list marker, yeah? It might look something like this:</p>
+            <nav style="width:100%; background-color:#005294; color:white; padding:1.5rem;">
+              <ul style="display:inline-flex; margin-top:1rem;">
+                <li style="margin-right:3rem;">Home</li>
+                <li style="margin-right:3rem;">News</li>
+                <li style="margin-right:3rem;">About</li>
+                <li style="margin-right:3rem;">Contact</li>
+              </ul>
+            </nav><br/>
+            <p>Now, I want those markers as default styling in every other unordered list I'm going to put on the page. I just don't want them there in any unordered list that's in a <span class="greenText">&lt;nav&gt;</span> element. I could go and find every <span class="greenText">&lt;nav&gt;</span> element on every page and manually get rid of those markers or I could apply a style using CSS that targets any unordered list <em>inside</em> a <span class="greenText">&lt;nav&gt;</span> element.</p>
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">nav</span> <span style="color: #007700">ul</span> {
+   <span style="color: #008800; font-weight: bold">list-style</span><span style="color: #333333">:</span><span style="color: #008800; font-weight: bold">none</span>;
+}
+</pre></p>
+            <p>The <span class="greenText">&lt;nav&gt;</span> element is a parent, or container element. The <span class="greenText">&lt;ul&gt;</span> element is a descendent element. To target the descendent element we use a descendent selector. You might also see these referred to as nested or children (although--technically--that has a different and very specfic definition).</p>
+            <p>I can also target descendent elements of specific classes or ids</p>
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #BB0066; font-weight: bold">.navigationMenu</span> <span style="color: #007700">ul</span> {
+   <span style="color: #008800; font-weight: bold">list-style</span><span style="color: #333333">:</span><span style="color: #008800; font-weight: bold">none</span>;
+}
+</pre></p>
+            <h3>pseudo classes and elements</h3>
+            <p>We're not limited to styling the elements as they are static on the page. We can also style any 'special states' of an element as well as specific parts of an element.</p>
+            <h4>pseudo classes</h4>
+            <p>I'm sure you've noticed this already, but have you ever hovered over a link or button and had them change stylistically? Maybe the element changes when you hover over it like a button that inverts colors or maybe there's a difference in the color of links that have been visited and those that haven't or maybe a form control has a nice little box that pops up around it when you click on it. CSS allows for not just styling the elements overall, but also allows for styling specific 'states' of an element as well using pseudo classes.</p>
+            <p>The most common ones are the ones that deal with links (e.g. :visited, :hover, :active), the ones that pull attention (e.g. :focus), and the ones that specify elements in a particular position (e.g. :first-child, :last-child, :nth-child).</p>
+            <p>If you remember a few lessons back when we were styling tables, there was one table that had every other line shaded gray. That was done using a CSS pseudo class selector, specifically this one:</p>
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #0066BB; font-weight: bold">#table1</span> <span style="color: #007700">tr</span><span style="color: #555555; font-weight: bold">:nth-child</span><span style="color: #333333">(</span><span style="color: #007700">even</span><span style="color: #333333">)</span> {
+        <span style="color: #008800; font-weight: bold">background</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">#ebebeb</span>;
+      }
+</pre></p>
+            <p>This rule every even table row element in a section and shades it a nice, subtle gray.</p>
+            <p>There is a whole list pseudo class selectors to use. I've included a list on the <a href="reference.html">references</a> for your edification.</p>
+            <p>In the meantime, Let's look at some examples.</p>
+            <p>Hover or click on each to see a pseudo class in action.
+            <hr/>
+            <a href="http://www.google.com" id="Google">Google</a>
+            <p>Using the pseudo class selector :hover I have given this link some padding and a terrible yellow background when a user hovers over it.</p><hr/>
+            <div class="classSelect"><h3>Hover for tooltip.</h3><p>This is a link to Google.</p></div><hr/>
+
+            <form>
+            <label>First Name:</label><br/>
+            <input type="text" ></input>
+            <p>This one is a bit more subtle. When the element is selected and pulls focus, a nice blue outline pops up around the text box.</p>
+            </form>
+            <hr/>
+            <table id="table1">
+            <tr>
+              <th>Company</th>
+              <th>Contact</th>
+              <th>Country</th>
+            </tr>
+            <tr>
+              <td>Alfreds Futterkiste</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+            </tr>
+            <tr>
+              <td>Centro comercial Moctezuma</td>
+              <td>Francisco Chang</td>
+              <td>Mexico</td>
+            </tr>
+            <tr>
+              <td>Ernst Handel</td>
+              <td>Roland Mendel</td>
+              <td>Austria</td>
+            </tr>
+            <tr>
+              <td>Island Trading</td>
+              <td>Helen Bennett</td>
+              <td>UK</td>
+            </tr>
+            <tr>
+              <td>Laughing Bacchus Winecellars</td>
+              <td>Yoshi Tannamuri</td>
+              <td>Canada</td>
+            </tr>
+            <tr>
+              <td>Magazzini Alimentari Riuniti</td>
+              <td>Giovanni Rovelli</td>
+              <td>Italy</td>
+            </tr>
+          </table>
+          <br/>
+          <p>Our table example again.</p>
+
+            <h4>Pseudo elements</h4>
+            <p>Pseudo elements are a bit different in that they don't select any 'real' element on the page. :before and :after are the two most common and are used to insert specialized content either before or after a particular element. We'll talk a bit more about them when we talk about layout and positioning, specifically when we talk about floats.</p>
+          <a name="precedence" class="anchor"></a>
+          <h2>Context Matters</h2>
+          <p>Where you apply these rules is just as important as how you apply these rules. Context matters. The 'cascade' of 'cascading style sheets' means inheritance and precedence, so, let's take a real quick walk through that park before we talk about the different types of CSS</p>
+          <a name="inheritance" class="anchor"></a>
+          <h4>Inheritance</h4>
+          <p>This one is easy, so, we're not going to talk about it too much. Just like you have inherited certain characteristics and traits from your parents and your grandparents and your grandparents parents, and so on up the line, descendent elements inherit styles from their parent elements. If I apply a font-family attribute to the <span class="greenText">&lt;body&gt;</span> element, then every element <em>nested, or inside</em> that <span class="greenText">&lt;body&gt;</span> element has that font-family attribute applied to them as well by default--even if you don't see it in the CSS. The style will cascade down through the descendent elements. Well, some styles will cascade and some will not. A cascading style that shades the background of every element and slaps a thick, black border around them would be...a hot mess, so, not <em>all</em> styles are inherited. Styles that generally apply to text (e.g. font family, font style, letter spacing, line spacing, etc.), tables (e.g. border spacing), and lists (e.g. list style types) can be inherited.</p>
+          <p>You can certainly override this styling with another font-family attribute applied directly to the nested element as styles take precedence based on proximity to the element affected.
+          <h4>Precedence</h4>
+          <p>Precedence--for those of you unfamiliar with the term--means 'priority of importance.' In the context of an ER, the patient gushing from 87 different stab wounds takes precedence over the patient whose 'feeling a little under the weather.' In the context of the Oval Office, the President of the United States takes precedence over...well, just about anybody else in the room. In the context of a theme park, those disgusting and disreputable folk who buy the line-skip passes take precedence over those honest, salt-of-the-earth regulars waiting in line for Space Mountain.</p>
+          <p>The same is true of rule-sets in CSS. Full disclosure: I'm going to cheat a bit here for brevity's sake (and because I'm a little lazy), so, the examples shown aren't exactly the methods I'm using to get the proper end results. Just pay no attention to the man behind the curtain and you'll be fine.</p>
+          <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">h1</span> {
+  <span style="color: #008800; font-weight: bold">color</span><span style="color: #333333">:</span> <span style="color: #007020">orange</span>;
+  <span style="color: #008800; font-weight: bold">font-size</span><span style="color: #333333">:</span> <span style="color: #6600EE; font-weight: bold">36px</span>;
+}
+<span style="color: #007700">h1</span> {
+  <span style="color: #008800; font-weight: bold">color</span><span style="color: #333333">:</span> <span style="color: #007020">red</span>;
+}
+</pre></p>
+          <p>In this example, the counterfeit presentment of two brothers. Two CSS rule-sets that apply to the same type element. Which one do you think will take precedence? What's the end result?</p>
+
+          <h1 style="color:orange; font-size:36px; color:red;">Oh, whatever will I be?</h1>
+          <p>In CSS all styles 'cascade' from the top of the style sheet to the end. The rule-sets are applied as the file is read by the browser, which means our little <span class="greenText">&lt;h1&gt;</span> element has turned out red. It's important to note, however, that even though it might not look it, the first rule-set was applied and was overwritten by the first. We see evidence of this in the sizing. Our <span class="greenText">&lt;h1&gt;</span> element is exactly 36 pixels high on the line. The 'font-size' declaration was applied and sticks because there was no second declaration to override it in the second rule-set.</p>
+          <p>The same precedence, or 'cascade,' applies inside individual selectors as well.</p>
+          <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">h1</span> {
+  <span style="color: #008800; font-weight: bold">color</span><span style="color: #333333">:</span><span style="color: #007020">red</span>;
+  <span style="color: #008800; font-weight: bold">color</span><span style="color: #333333">:</span> <span style="color: #007020">orange</span>;
+}
+</pre></p>
+
+          <h1 style="color:red; color:orange">Now I'm orange!</h1>
+          <p>This might be a little confusing, but precedence applies to selectors too. Every selector in CSS has a 'specificity weight.' We've talked to this point of three types of selectors: type, class, and id. Each of these selectors has a specificity weight.
+          <ul>
+            <li>type selectors have a specificity weight of 0-0-1</li>
+            <li>class selectors have a specificity weight of 0-1-0</li>
+            <li>id selectors have a specificity weight of 1-0-0</li>
+          </ul>
+          <p>You can dig around in this for days, but the gist is id selectors have precedence over class selectors have precedence over type selectors.</p>
+          <p>If an element has a rule-set applied to it through its type <em>AND</em> through a class name attribute, the class name attribute rule-set will take precedence over the type selector rule-set and be applied exclusively, assuming there are conflicting rules. If an element has a rule-set applied to it through an id selector <em>AND</em> through a class or type selector, the id selector takes precedence and that rule-set is applied exclusively, again, assuming there are conflicting rules.</p>
+          <p>One last thing before we hit the different types of CSS.</p>
+          <p>While an element can only have one type or one id, it can have mulitple classes assigned to it.</p>
+          <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;h1</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;greenText, redText&quot;</span><span style="color: #007700">&gt;</span>Generic Heading Text <span style="color: #007700">&lt;/h1&gt;</span>
+</pre></p>
+          <p>You guessed it, precedence is a thing here too. In this case, whichever class selector is defined later in the style sheet takes precedence (like with our first example in red). It doesn't matter which class is listed last in the html markup, what matters is the order in the style sheet. If 'greenText' comes last in the style sheet, it will take precedence over 'redText' even though it's listed first in the html markup.</p>
+
+
+        <a name="cssTypes" class="anchor"></a>
+        <h2>CSS Types</h2>
+          <p>There are several types of CSS that can be applied to a page and--just like with all things CSS--precedence matters here as well. Here's a very brief rundown before we move on to the next lesson.</p>
+          <ul>
+            <li><strong>Inline style sheets</strong> - These style rules are applied directly to the element itself inline on the page. <em>These rules only affect the specific element in which they are included.</em> <br/>
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;h1</span> <span style="color: #0000CC">style=</span><span style="background-color: #fff0f0">&quot;color:blue; font-weight:bold;&quot;</span> <span style="color: #007700">&gt;</span> <span style="color: #007700">&lt;/h1&gt;</span>
+</pre></p>
+            </li>
+            <li><strong>Embedded style sheets</strong> - also referred to as internal styling. This type of CSS is offset in the <span class="greenText">&lt;head&gt;</span> element of the page itself. <em>These rules apply to all elements on the page in which the style sheet is included.</em><br/>
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;head&gt;</span>
+    <span style="color: #007700">&lt;style&gt;</span>
+      <span style="color: #007700">h1</span> {
+        <span style="color: #008800; font-weight: bold">color</span><span style="color: #333333">:</span><span style="color: #007020">blue</span>;
+        <span style="color: #008800; font-weight: bold">font-weight</span><span style="color: #333333">:</span><span style="color: #008800; font-weight: bold">bold</span>;
+      }
+    <span style="color: #007700">&lt;/style&gt;</span>
+  <span style="color: #007700">&lt;/head&gt;</span>
+</pre></p>
+            </li>
+            <li><strong>External style sheets</strong> - These are completely separate files that are linked in the html markup (usually in the <span class="greenText">&lt;head&gt;</span> element). <em>These rules apply to every page to which the style sheet is linked.</em><br/><br/>
+            <p>In the html:</p>
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;head&gt;</span>
+  <span style="color: #007700">&lt;link</span> <span style="color: #0000CC">href=</span><span style="background-color: #fff0f0">&quot;css/custom.css&quot;</span> <span style="color: #0000CC">rel=</span><span style="background-color: #fff0f0">&quot;stylesheet&quot;</span><span style="color: #007700">&gt;</span>
+<span style="color: #007700">&lt;/head&gt;</span>
+</pre></p>
+          <p>And the style sheet markup itself:</p>
+          <p><pre style="margin: 0; line-height: 125%"> <span style="color: #007700">h1</span> {
+      <span style="color: #008800; font-weight: bold">color</span><span style="color: #333333">:</span><span style="color: #007020">blue</span>;
+      <span style="color: #008800; font-weight: bold">font-weight</span><span style="color: #333333">:</span><span style="color: #008800; font-weight: bold">bold</span>;
+    }
+</pre></p>
+            </li>
+          </ul><br/><br/>
+          <p>With the different types of style sheets there are matters of scope and precedence to consider. Each style sheet has an area of influence, or scope, right? The inline style sheets only affect the single element, while external style sheets affect every element on every page in which that external style sheet is linked. If there are conflicting rules (e.g. if a <span class="greenText">&lt;h1&gt;</span> element has an inline CSS rule and a CSS rule applied via an external style sheet), the style sheet most directly relative to the element will take precedence. External style sheets have the greatest reach as they can affect multiple elements on multiple pages, but they are the lowest on the totem pole as far as precedence goes and can be overridden by the other two types. Inline style rules can only affect the element to which they are attached, but they take precedence over the other two types of style sheets because of their close relative proximity to the element affected. Best practice in modern web development is to use external style sheets exclusively and then work from external style sheets down to inline styles--if you absolutely, must-have, positively need inline styles at all (and you will, but, you know, use them sparingly). </p>
+          <p>And finally, a few last thoughts, if you'll indulge me.</p>
+          <p>CSS is hard, CSS is complicated, and the deeper you dive the more hard and complicated it gets. While there has been a ton of progress as of late on cleaning it up (e.g. language revisions, preprocessors, etc.), there is still a long way to go. What's been presented thus far are only the basics--and only the basics of the basics, truth be told. Our time is finite and there's only so much ground we can cover, so, we have to pick and choose our battles. But even at that, we're a few lessons in, at this point, and I'm betting that there are more than few of you who are feeling overwhelmed and off-balance. To be a good frontend developer requires curiosity, patience, and, above all, persistence. We've spent some time with html and there's way more to cover. We've spent some time with CSS and there's way more to cover. We've spent no time with JavaScript--as of yet--and there's loads to cover there. I tell you this not to dissuade you from becoming a web developer, but to only warn you of the work--and madness, let's be honest--you have ahead of you. It's a good gig, but there will be times where you're going to have to live the Tim Gunn creed and 'make it work.'</p>
+
+    </div>
+
+<!-- Sidebar Widgets Column -->
+    <div class="flex-widget">
+
+      <!-- Side Widget -->
+      <div class="card my-4">
+        <h5 class="card-header html">In this lesson</h5>
+        <div class="card-body">
+          <h5>Objectives</h5>
+            <ul>
+              <li>Compare and contrast the different types of CSS selectors.</li>
+              <li>Demonstrate ability utilizing the different types of CSS selectors in original work.</li>
+              <li>Summarize and discriminate between the concepts of inheritance and precedence in CSS</li>
+              <li>Compare and contrast the different types of cascading style sheets and summarize their order and effect of precedence</li>
+            </ul><hr/>
+      <h5>Terms</h5>
+            <ul>
+              <li><a href="#type">Type Selectors</a></li>
+              <li><a href="#class">Class Selectors</a></li>
+              <li><a href="#id">Id Selectors</a></li>
+              <li><a href="#descendent">Descendent Selectors</a></li>
+            </ul><hr/>
+      <h5>Concepts</h5>
+            <ul>
+              <li><a href="#css">Cascading Style Sheets</a></li>
+              <li><a href="#inheritance">Inheritance</a></li>
+              <li><a href="#precedence">Precedence</a></li>
+              <li><a href="#cssTypes">CSS Types</a></li>
+            </ul>
+
+          </div>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->
+<footer>
+  <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.js"></script>
+  <script type="text/javascript" src="vendor/jquery/jquery.js"></script>
+  <script>
+  //fade in the back to top button
+  (function($) {
+  $(document).ready(function(){
+      //When distance from top = 2000px fade button in/out
+      $(window).scroll(function(){
+          if ($(this).scrollTop() > 2000) {
+              $('#top').fadeIn(300);
+          } else {
+              $('#top').fadeOut(300);
+          }
+      });
+  });
+  })(jQuery);
+
+</script>
+
+</footer>
+
+</body>
+</html>
