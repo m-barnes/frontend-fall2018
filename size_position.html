@@ -48,10 +48,10 @@
                   Here is some text. <div style="display:inline-block;width:10em;height:6em;padding:1rem; background-color:red;color:#fff;margin:.5em;">Here's a div element.</div> and some the rest of the text.
                 </p></li>
               <li>None - This you'll use more on the JavaScript side of things and it's easier to just show you first.</p>
-              <div>
-                <div id="box1" style="border:1px solid #121212; padding:1rem; box-shadow:5px 5px 2.5px #888888; margin:1rem;display:inline-block; width:30%"><h3>display:none</h3><img src="images/remove.png" style="width:100%; padding:1rem;"/><input type="button"  value="Remove" onClick="removeElement()"/></div>
-                <div id="box2" style="border:1px solid #121212; padding:1rem; box-shadow:5px 5px 2.5px #888888; margin:1rem;display:inline-block; width:30%"><h3>visibility:hidden</h3><img src="images/hide.jpg" style="width:100%;padding:1rem;"/><input type="button"  value="Hide" onClick="changeVisibility()"/></div>
-                <div id="box3" style="border:1px solid #121212; padding:1rem; box-shadow:5px 5px 2.5px #888888; margin:1rem;display:inline-block; width:30%"><h3>reset elements</h3><img src="images/reset.jpg" style="width:100%;padding:1rem;"/><input type="button"  value="Reset" onClick="resetElement()"/></div>
+              <div style="display:flex;">
+                <div id="box1" style="border:1px solid #121212; padding:1rem; box-shadow:5px 5px 2.5px #888888; margin:1rem ;display:inline-block; width:30%">display:none<img src="images/remove.png" style="width:100%; padding:1rem;"/><input type="button"  value="Remove" onClick="removeElement()"/></div>
+                <div id="box2" style="border:1px solid #121212; padding:1rem; box-shadow:5px 5px 2.5px #888888; margin:1rem;display:inline-block; width:30%">visibility:hidden<img src="images/hide.jpg" style="width:100%;padding:1rem;"/><input type="button"  value="Hide" onClick="changeVisibility()"/></div>
+                <div id="box3" style="border:1px solid #121212; padding:1rem; box-shadow:5px 5px 2.5px #888888; margin:1rem;display:inline-block; width:30%">reset elements<img src="images/reset.jpg" style="width:100%;padding:1rem;"/><input type="button"  value="Reset" onClick="resetElement()"/></div>
               </div>
               <p><strong>display:none</strong> removes the element entirely. It still exists in the DOM, but for all intents and purposes, it's gone. The user doesn't see it, the browser pretends it's not there, you can't tab to it, screen readers don't see it, etc. You'll notice when you hit the button that the other elements inline shift to the left. The element doesn't 'exist' in the display, so, it holds no position, which means everything after it shifts up in the markup.</p>
               <p>If you just want the element to be hidden from the user, but still have a place in the markup, you use the <strong>visibility property</strong>, which is completely different (I told you CSS was complicated). The browser sees and respects the position of the element, it just hides it from the user. That's why the elements don't shift. It's still there, you just can't see it.</p>
@@ -374,6 +374,19 @@
       });
   });
   })(jQuery);
+
+  function removeElement() {
+    document.getElementById("box1").style.display = "none";
+}
+
+function changeVisibility() {
+    document.getElementById("box2").style.visibility = "hidden";
+}
+
+function resetElement() {
+    document.getElementById("box1").style.display = "inline-block";
+    document.getElementById("box2").style.visibility = "visible";
+}
 
 </script>
 
