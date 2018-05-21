@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/default.css" rel="stylesheet">
+
+
+
+
+</head>
+<body>
+  <!-- Page Content -->
+<div class="container">
+
+
+  <div class="row row flex-column-reverse flex-lg-row">
+    <div id="top"><a href="#" class="btn btn-dark btn-lg">Back to Top</a></div>
+
+    <!-- Post Content Column -->
+    <div class="flex-main">
+
+      <!-- Title -->
+      <h1>Decisions &amp; loops</h1>
+          <h2>Should I stay or should I go now?</h2>
+          <p>In the programming world there are--essentially--three different types of 'structures' and all logic problems in programming can be solved with algorithms using these three structures, which can be combined in an infinite number of ways.</p>
+          <p>The past few lessons, we've been hanging out with 'sequence' structures, specifically, functions and/or methods. Sequence structures are actions or events that lead to other actions or events. I call a function, that function executes, each line in the code block executes sequentially, and a result is returned (maybe). There can be any number of actions or events in the sequence, but each action or event must execute with no possibility of skipping or branching.</p>
+          <a id="selection" class="anchor"></a>
+          <h3>Selection / decision</h3>
+          <p>The second structure on our whirlwind tour of JavaScript programming is the 'selection' structure. You might also see them referred to as 'decision' structures or 'conditional' structures, but regardless of whatever alias they happen to be going by, the song remains the same.</p>
+          <p>In a selection structure, a question is asked and--depending on the answer--the program chooses a 'path,' or course of action, to take. Once the decision has been made, the program goes back to business as usual. Sometimes that question is something simple like 'has a button been pressed?' If that condition has been met, do that thing you're supposed to do when the button is pressed. The flow chart logic looks a bit like this:</p>
+          <p><img src="images/singlealternative.PNG" alt="image of a single alternative flow chart"/></p>
+          <p>Sometimes you might have two options. This is called a binary decision, which looks like this:</p>
+          <p><img src="images/binarydecision.PNG" alt="image of a binary decision flow chart"/></p>
+          <a id="if_else" class="anchor"></a>
+          <h4>If / else</h4>
+          <p>Our mechanism for handling conditional statements in JavaScript is the if/else statement. There are, of course, others, but this one is the most common, so, we're going to start there.</p>
+          <p><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> hour <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #007020">Date</span>().getHours();
+
+<span style="color: #008800; font-weight: bold">if</span> (hour <span style="color: #333333">&lt;</span> <span style="color: #0000DD; font-weight: bold">18</span>) {
+    greeting <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Good day&quot;</span>;
+}
+<span style="color: #008800; font-weight: bold">else</span> {
+    greeting <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Good evening&quot;</span>;
+}
+
+<span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&quot;example&quot;</span>).innerHTML <span style="color: #333333">=</span> greeting;
+</pre></p>
+
+
+          <p>As previously mentioned, JavaScript has a number of really useful built-in methods. One of those functions queries the system for the time. Using that method, I can write code that will output a specific and particular greeting based on the time of day. It's not really all that complicated, but it adds a nice, friendly touch to your interface, if that's the kind of thing for which you're looking. As usual, let's parse this out a bit:
+            <ul>
+              <li>'if' is our keyword. This starts the conditional statement.</li>
+              <li>'(hour < 18)' is our condition to test. 'hour' is the variable in which we're storing the result of the built-in method I mentioned up above. The Date().getHours() methods return a value in the range of 0-23, which I can then use for my comparison. The block of code inside the curly brackets is what I want to do if the condition evalutates to <strong>true</strong>. If the time returned is of a value less than 18 (or six o'clock), my condition is 'truthy,' and, consequently, my greeting is set to 'Good day.'</li>
+              <li>'else' is also a keyword and extends the 'if' statement. The condition isn't always going to evaluate to true, which means you have to have some alternative block of code to execute. I've set this up as a binary statement, it's either before six o'clock or it isn't, so, if the 'if' statement evalutates to false, I'm going to simply set the greeting to 'Good evening.'</li>
+              <li>I then take that greeting and--for now--simply output it to an element on the page with the id of 'example'.</li>
+            </ul>
+          </p>
+          <p>Binary decisions are great, but the world isn't made up exclusively of binary decisions is it? Sometimes we want options to help label and define the space between the absolutes of the world. To that end we're going to make a small modification to the code to make it a bit more specific and useful. We're going to add an additional test statement using the keyword 'else if'.</p>
+          <p><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> hour <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #007020">Date</span>().getHours();
+
+<span style="color: #008800; font-weight: bold">if</span> (time <span style="color: #333333">&lt;</span> <span style="color: #0000DD; font-weight: bold">10</span>) {
+    greeting <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Good morning&quot;</span>;
+}
+<span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span> (time <span style="color: #333333">&lt;</span> <span style="color: #0000DD; font-weight: bold">16</span>) {
+    greeting <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Good afternoon&quot;</span>;
+}
+<span style="color: #008800; font-weight: bold">else</span> {
+    greeting <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Good evening&quot;</span>;
+}
+
+<span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&quot;example&quot;</span>).innerHTML <span style="color: #333333">=</span> greeting;
+</pre></p>
+          <p>No need to parse this one out as I'm not doing anything special with it. I'm modifying the first condition and then adding a second condition to my series of conditions to test.</p>
+          <p>There are a few things to keep in mind when dealing with selection statements and conditions.
+            <ul>
+              <li>You can have as many testing conditions and statements as you like. You can add 'else if' statements all the way down, but you need to understand that all paths are mutually exclusive. "Two roads diverged in a yellow wood, and sorry I could not travel both...." and all that. Each of these conditions represents a potential path that our program logic may travel, but it can only travel the one path--whatever the path. Once the decision has been made, the only way to take a different option is to reinitialize the selection statement.</li>
+              <li>Like with arrays and functions, you can nest selection statements indefinitely. You can have if/else statements inside if/else statements inside if/else statements inside...well, you get the point. Keep in mind, however, that it increases overall complexity and lowers readability (for most of us). It's hard enough to follow the data through a program most days, but you start wrapping if/else statements inside if/else statements and you've added a whole other level of difficulty to overcome.</li>
+              <li>Most of the work of the condition statement is going to be done using comparison operators and there will be instances where you want your evaluation to test not just for one condition, but multiple conditions. Does the statement evaluate true if this condition <em>and this other condition</em> are met? Does the statement evaluate true if this condition <em>or this other condition</em> are met? In those instances we'd use logical operators, which we'll talk of in just moment.</li>
+              <li>Technically, you do not need an else statement after an else if statement--if it's included. I'm of the opinion, however, that it's always best to cover as much of yourself as you can and that means--to me anyway--adding an else statement to catch anything that might slip through the cracks whenever I can. It adds a bit of overhead and bloat to the code, but better to be prepared than caught off guard, again, in my opinion.</li>
+            </ul>
+          </p>
+          <a id="switch" class="anchor"></a>
+          <h4>Honorable mention: the switch statement</h4>
+          <p>So, what do you do if you have multiple options and you don't want to bother with nested if/else selection statements? JavaScript provides another selection statement called the switch statement, but you might also see them referred to as case statements. They're structured a bit differently and are used with a slightly different purpose, or focus. In these instances, we're not so much asking a yes/no question, but more like asking for a value and then comparing that value against a list of predefined values, or 'cases' for a match to determine the path. On the off chance that the value, or expression provided doesn't match any of our predefined values, we must include a default case, which enables us to 'break' out of the condtional statement and keep the program running along  .</p>
+          <p><img src="images/switch.PNG" alt="image of a switch statement"/></p>
+          <p>As example...</p>
+          <p><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">switch</span> (<span style="color: #008800; font-weight: bold">new</span> <span style="color: #007020">Date</span>().getDay()) {
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">:</span>
+        day <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Sunday&quot;</span>;
+        <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">:</span>
+        day <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Monday&quot;</span>;
+        <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">:</span>
+        day <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Tuesday&quot;</span>;
+        <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">3</span><span style="color: #333333">:</span>
+        day <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Wednesday&quot;</span>;
+        <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">4</span><span style="color: #333333">:</span>
+        day <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Thursday&quot;</span>;
+        <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">5</span><span style="color: #333333">:</span>
+        day <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Friday&quot;</span>;
+        <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">6</span><span style="color: #333333">:</span>
+        day <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Saturday&quot;</span>;
+}
+</pre></p>
+        <p>We're going to use the Date() again, but this time we're going to extend that method to get the day of the week using the getDay().
+          <ul>
+            <li>'switch' is our keyword. The content of the parenthesis that follow will be our expression to evaluate. In this case, I'm polling the system to get the date and return the numeric value of the current day of the week (e.g. 0 for Sunday--as arrays start at index 0, 1 for Monday, 2 for Tuesday, etc.).</li>
+            <li>The program takes that value and then compares it with a series of 'case' statements. Once a match is found the associated block of code will execute, setting the variable 'day' to the appropriate value.</li>
+            <li>After the code block is executed, the program will 'break' out of the switch block and carry on with any attached, or following code.</li>
+          </ul>
+        </p>
+        <p>There is something I kind of want to mention here real quick that is kind of important. This particular program doesn't require a 'default' statement. Since I'm polling the system and the system always provides exactly what I'm looking for, I know that the returned value from my getDay() is always, always, always going to be a number in the range of 0-6. Consequently, I don't need a default statement to handle input values outside that range, right? Users are unreliable, at best, and malicious, at worst. If I were polling the user to provide that data, chances are, at some point with one of them, I would get an unworkable value, right? When I got that unworkable value, I would have to have some mechanism in place to deal with that lest the program crash horrifically. This means I need a default statement to handle any instances where the result of the evaluated expression does not match any supplied case statement. If you're feeling particularly careful (i.e. paranoid), you might want to include a default statement no matter what and while it is encouraged to use them, especially if the source of your data is 'unreliable,' they are not required programmatically.</p>
+        <p>If the code block to execute is the same for more than one case statement, you can stack case statements accordingly to reflect that.</p>
+        <p><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">switch</span> (<span style="color: #008800; font-weight: bold">new</span> <span style="color: #007020">Date</span>().getDay()) {
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">:</span>
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">6</span><span style="color: #333333">:</span>
+        day <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;weekend&quot;</span>;
+        <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">:</span>
+        day <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Monday&quot;</span>;
+        <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">:</span>
+        day <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Tuesday&quot;</span>;
+        <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">3</span><span style="color: #333333">:</span>
+        day <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Wednesday&quot;</span>;
+        <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">4</span><span style="color: #333333">:</span>
+        day <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Thursday&quot;</span>;
+        <span style="color: #008800; font-weight: bold">break</span>;
+    <span style="color: #008800; font-weight: bold">case</span> <span style="color: #0000DD; font-weight: bold">5</span><span style="color: #333333">:</span>
+        day <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Friday&quot;</span>;
+        <span style="color: #008800; font-weight: bold">break</span>;
+}
+</pre></p>
+        <a id="iteration" class="anchor"></a>
+        <h3>Iteration / looping</h3>
+        <p>The last stop on our programming structure tour is the iteration, or looping structure. Much like a selection statement, the program will ask a question and compare the result to a predefined condition. If that condition is not met, the program executes an operation, or series of operations, and then loops back around to ask the question again, which it will do in perpetuity until the condition is met or your system sets itself on fire, whichever comes first. Each pass through the code block is called a loop, or iteration. Loops are the programming equivalent of 'are we there yet?'</p>
+        <p><img src="images/simpsons.gif" alt="image from The Simpsons television series"/></p>
+        <p>Iteration is one of the more powerful concepts in programming and, truth be told, probably one of the more difficult concepts to master, even if the idea is a relatively simple one. It's an incredibly versatile and powerful tool, however, and while you might not have a lot of need for it on the front end of things, it's a nice tool to have should those needs change. If we take a look at a flow chart example of the logic, you'll see that the basic structure of a loop isn't terribly complicated.</p>
+        <p><img src="images/loop.PNG" alt="image of a programming loop in flow chart form"/></p>
+        <p>So, let's look at iteration using an example that you would never use in real life.</p>
+        <p>Let's say you want to print out the numbers 1-10 in sequence one after another. Again, not that you'd need to do this in real life, but it is just the kind of tedious, mind-numbing operation for which loops are made. Using a basic output statement it might look something like this.</p>
+        <p><pre style="margin: 0; line-height: 125%"><span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&quot;example&quot;</span>).innerHTML <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span>;
+<span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&quot;example&quot;</span>).innerHTML <span style="color: #333333">+=</span> <span style="color: #0000DD; font-weight: bold">2</span>;
+<span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&quot;example&quot;</span>).innerHTML <span style="color: #333333">+=</span> <span style="color: #0000DD; font-weight: bold">3</span>;
+<span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&quot;example&quot;</span>).innerHTML <span style="color: #333333">+=</span> <span style="color: #0000DD; font-weight: bold">4</span>;
+<span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&quot;example&quot;</span>).innerHTML <span style="color: #333333">+=</span> <span style="color: #0000DD; font-weight: bold">5</span>;
+<span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&quot;example&quot;</span>).innerHTML <span style="color: #333333">+=</span> <span style="color: #0000DD; font-weight: bold">6</span>;
+<span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&quot;example&quot;</span>).innerHTML <span style="color: #333333">+=</span> <span style="color: #0000DD; font-weight: bold">7</span>;
+<span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&quot;example&quot;</span>).innerHTML <span style="color: #333333">+=</span> <span style="color: #0000DD; font-weight: bold">8</span>;
+<span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&quot;example&quot;</span>).innerHTML <span style="color: #333333">+=</span> <span style="color: #0000DD; font-weight: bold">9</span>;
+<span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&quot;example&quot;</span>).innerHTML <span style="color: #333333">+=</span> <span style="color: #0000DD; font-weight: bold">10</span>;
+</pre></p>
+        <p>Kind of repetitive, right? To be honest, it was kind of tedious just typing all that out. I thought real hard about not even finishing it and going with an 'etc. etc.' instead. I did, however, finish it, which, I think, is a testament to my personal character and dedication to you.</p>
+        <p>In any event, if you had to code something like this and then had to do it each and every time you wanted to print the numbers 1-10 in sequence, it might drive you crazy, you might make a mistake (meaning you'd have to spend time hunting it down and fixing it), and you'd probably be looking for a new job at the end of the day. Computers, however, are very good at this stuff. They love it, if, in fact, they could love. To help faciliate that love (and prevent us from checking the classifieds) we're going to take that operation and wrap it in some iteration, specifically, a 'for' loop.</p>
+        <a id="for" class="anchor"></a>
+        <h4>for loop</h4>
+        <p>'for' loops are one of more common loop variations found across multiple programming languages. They are a count-controlled loop, which means we use a programmatic counter to keep track of how many times it iterates through the code. This is important because as a loop is meant to run over and over and over again, there has to be some mechanism in place that forces the loop to 'break.' This mechanism is the conditional, which is why the initalization statement is considered part of the conditional. If the condition is never met and the program doesn't have a way to escape the iterative sequence, then the loop runs indefinitely--at least, on paper. In reality, it crashes the program or locks up the system, which irritates and frustrates the user. While there may be variations on a theme across those programming languages as it relates to for loops, the basic theory and syntax are--essentially--the same.</p>
+        <p>I want to use a for loop when I know--for the most part--how many times I'm going to have to loop through the operation. In the above example, I know that I'm going to want to iterate through that specific line of code 10 times to get my desired result, so, I use a for loop as it is the most semantically appropriate. I should mention that 'known' is kind of a misnomer here. In the example, I know how many passes I'm going to make through the loop because I have explicitly defined it at '10.' However, there will be instances where I might not be able to explictly define that value. Let's say, for instance, part of a program I want to create prints out a current list of students for one of my classes. My roster is--most likely--going to be in an array and that array is going to change sizes depending on a number of external factors that I won't know beforehand when I'm initially writing the program. I can, however, programmatically determine the length of that array using the len(), which means I do kind of 'know' when the program runs how many times I'm going to iterate over that array, which means I would probably use a for loop. </p>
+        <p><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">for</span> (i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">1</span>; i <span style="color: #333333">&lt;=</span> <span style="color: #0000DD; font-weight: bold">10</span>;  i<span style="color: #333333">++</span>) {
+       <span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&quot;example&quot;</span>).innerHTML <span style="color: #333333">+=</span> i <span style="color: #333333">+</span><span style="background-color: #fff0f0">&quot;&lt;br/&gt;&quot;</span>;
+};
+</pre></p>
+        <p>We've got some new stuff there, so, let's do 'the usual' and parse this out bit by bit.
+          <ul>
+            <li>'for' is our--you guesesed it--keyword.</li>
+            <li>In the parenthesis is our conditional statement and it comes in three parts:
+              <ul>
+                <li>'i=1;' is our initialization statement. This is the counter part of our count-controlled loop. You can set this counter to any number you want. I'm setting it to '1' because I'm going to do something kind of clever with it later on. As we successively pass through the loop, our counter will increment to reflect each iteration.</li>
+                <li>'i <= 10' is the evaluative part of our conditional statement. While this condition is true, the loop will continue to execute.</li>
+                <li>'i++' is our iterative, or increment. JavaScript lets us abbreviate the operation 'i = i+1' to 'i++' In this for loop I only want to increment the counter by 1, but you can increment by any value you choose.</li>
+              </ul>
+              <li>The code block is--by this point--the standard run of the mill output statement--for the most part. Inside that <span class="greenText">&lt;div&gt;</span> element I want to display the value for the variable 'i' Why would I want to do that? Well, my end result is going to be the numbers 1-10 shown sequentially as output. I kind of already have a value that will--conveniently enough--increment by 1 each time through the loop, so, I want to take advantage of that. By reusing an already existing variable value and operation, my code is less complex, less repetitive, and more condensed, or elegant. Each time through the loop, however, that output operation is going to overwrite the contents of my<span class="greenText">&lt;div&gt;</span> element, which I don't want. To counter I'm going to instruct the interpreter to simply append the new value to the already existing value in the element with the '+=' operator. I then concatenate a <span class="greenText">&lt;br/&gt;</span> element (remember innerHTML) to give the output a little visual separation.</li>
+            </ul>
+            <p>The code will execute provided that 'i' is less than or equal to '10.' Once it reaches the value of '11', the loop will exit and any successive code will run as expected.</p>
+            <p><span class="redText">Special note:</span> placement of the counter, condition, and increment statements is...'flexible.' JavaScript is incredibly lenient about position (or even their inclusion), which means you can set them just about anywhere in the code and they'll work. You'll see some of this later on when we talk of the other types of loops.</p>
+            <p>For your sanity--and my peace of mind--I'm going to recommend that you try to keep them all in that conditional statement when you can. It promotes readability, keeps your variables inside the local scope, and it translates well to how other programming languages handle syntax.</p>
+            <a id="forin" class="anchor"></a>
+            <h4>for / in loop</h4>
+            For / in loops work the same way as every other loop, but have a slightly different focus. For loops are used to iterate over data a determined, or known, number of times. For / in loops do the same, but for objects. Objects consist of properties and methods. Some of those properties and methods you might want to make available to other parts of your program or to other programmers, so, you set these properties and methods as enumerable, which--essentially--means you 'expose' them, or make them 'public.' The properties and methods can be accessed from outside the object through the defined interface.</p>
+            <p><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> student <span style="color: #333333">=</span> {fName<span style="color: #333333">:</span><span style="background-color: #fff0f0">&quot;Tony&quot;</span>, lName<span style="color: #333333">:</span><span style="background-color: #fff0f0">&quot;Stark&quot;</span>, major<span style="color: #333333">:</span><span style="background-color: #fff0f0">&quot;Engineering&quot;</span>};
+
+<span style="color: #008800; font-weight: bold">function</span> studentRecord(student){
+  <span style="color: #008800; font-weight: bold">this</span>.student <span style="color: #333333">=</span> student;
+  <span style="color: #008800; font-weight: bold">var</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>
+  <span style="color: #008800; font-weight: bold">var</span> output <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot; &quot;</span>;
+<span style="color: #008800; font-weight: bold">for</span> (objectValue <span style="color: #008800; font-weight: bold">in</span> student) {
+  <span style="color: #008800; font-weight: bold">var</span> objectKey <span style="color: #333333">=</span> <span style="color: #007020">Object</span>.keys(student);
+  <span style="color: #008800; font-weight: bold">var</span> objectValue;
+    <span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&quot;example&quot;</span>).innerHTML <span style="color: #333333">=</span> output <span style="color: #333333">+=</span> objectKey[i] <span style="color: #333333">+</span><span style="background-color: #fff0f0">&quot;: &quot;</span> <span style="color: #333333">+</span> student[objectValue]<span style="color: #333333">+</span><span style="background-color: #fff0f0">&quot;&lt;br/&gt;&quot;</span>;
+  i<span style="color: #333333">++</span>;
+  }
+
+}
+
+studentRecord(student);
+</pre></p>
+
+        <p>Here I've created a public object called student. That object has a few properties and associated values. I'm using a loop inside a function to create a list of key:value pairs. 'For' every property 'in' the student object, I want it to get the property's name and the property's value and then output those key:value pairs in a relatively readable format.</p>
+        <p><pre style="margin: 0; line-height: 125%">fName<span style="color: #333333">:</span> Tony
+lName<span style="color: #333333">:</span> Stark
+major<span style="color: #333333">:</span> Engineering
+</pre></p>
+        <p>I have iterated over an object's enumerable properties to create a semi-readable list of those property names and property values.</p>
+        <p>I'm kind of way off the beaten path here, but we've only been looking--thus far--at relatively simple examples. JavaScript--for all its faults--is an incredibly powerful and deep language that's capable of doing...well, a lot. We're almost at the end of <em>our</em> foray into JavaScript, but understand that should you go further with this that the rabbit hole goes much, much deeper.</p>
+        <a id="while" class="anchor"></a>
+        <h4>while loop</h4>
+          <p>A for loop is going to run regardless of condition. We use them when we have a task that we absolutely, without a doubt know that we're going to have to run and, probably, run repeatedly. We throw it in a for loop and forget about it. It's a specialized construct and while it has a condtional statement, it's only there for control purposes. Under no circumstances will the condition be set so that the for loop <em>doesn't</em> run.</p>
+          <p>'While' loops are a bit different, even though the program flow, or logic, is--basically--the same. While loops are for code blocks that may or may not execute. The condition may be such that the while loop never executes when the program is run; the condition may be such that the while loop executes every time the program is run.</p>
+          <p>With the for loop the conditional is about exercising control. With the while loop it's about determining need. It fundamentally changes the question the developer has to ask from "how many times do I need to run this code" to "do I even need to run this code at all." It's a fine distinction, but a distinction nonetheless.</p>
+          <p>While loops are also useful in instances where you don't know exactly how many times the loop needs to execute. This is an especially helpful quality when user input is involved in setting the conditional statement.</p>
+          <p><img src="images/math.gif" alt="image of Bender from Futurama"></p>
+          <p>It seems I'm on a bit of an animated gif kick today, I apologize. I also apologize for what's coming. I'll try to make it as painless as possible.</p>
+          <p>Let's say as part of a math-centric program, I have a bit that calculates the factorial of a number. A factorial--if you recall--is the result of multiplying a number and every positive, whole number before it in the sequence. So, if I want to determine the factorial of the number 5, I multiply 5 x 4 x 3 x 2 x 1, which equals 120. The factorial of 5 is 120.</p>
+          <p>My program, however, doesn't just determine the factorial of the number 5, but the factorial of all integer numbers. To add a bit of flexibility--or difficulty you might be thinking--I'm going to let the user input the number of which they want the factorial.</p>
+          <p>Technically, I know how many times the loop is going to run, so, I could use a for loop, but since the factorial part of my program is an optional part of the program, I'm going to use a while loop instead.</p>
+          <p><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">function</span> factorial(){
+  <span style="color: #008800; font-weight: bold">var</span> userInput <span style="color: #333333">=</span> <span style="color: #007020">parseInt</span>(prompt(<span style="background-color: #fff0f0">&quot;Please input a number.&quot;</span>));
+  <span style="color: #008800; font-weight: bold">var</span> counter <span style="color: #333333">=</span> userInput;
+  <span style="color: #008800; font-weight: bold">var</span> factorial <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span>;
+
+  <span style="color: #008800; font-weight: bold">while</span> ( counter <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">1</span> ) {
+    factorial <span style="color: #333333">*=</span> counter;
+    counter<span style="color: #333333">--</span>;
+    <span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&quot;example&quot;</span>).innerHTML <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;The factorial of &quot;</span> <span style="color: #333333">+</span> userInput <span style="color: #333333">+</span> <span style="background-color: #fff0f0">&quot; is &quot;</span> <span style="color: #333333">+</span> factorial
+  }
+}
+
+factorial()
+</pre></p>
+          <p>No need to parse it as there's nothing new here to see. Some of it's in different places, but there is nothing syntactically new. The last step in any factorial operation is to multiply the product--up to that point--by the number 1. This is my base case. It's something that happens every time regardless of the number input. The last step in determining the factorial of 3, 5, 96, or 2848 is to mulitply the running product by the value of 1. So, I set my initialization statement as 'counter = userInput'.</p>
+          <p>While factorial is less than the number input by the user, I want the loop to execute. Inside the loop, I set a running tab--of sorts--to keep track of the results of each multiplication operation through each iteration, or pass through the loop, and I decrement the counter by a value of 1. On the next to last pass the counter will be 1, the loop will output a statement that is displayed in the <span class="greenText">&lt;div&gt;</span> element, the condition will reevaluate, will not be met, and the loop will stop running, leaving the last output statement in the element.</p>
+          <p>I also set that initialization statement outside the scope of the while loop. Truthfully, all of those variables have to be set outside the scope of the loop. As a bit of a thought exercise, you should totally try moving them inside the loop, run it, and then figure out why you get the results you get. The logic of iteration and looping can get quite...complicated at times. Working through problems like this helps build creative thinking and / or lateral thinking skills, which are invaluable to not just designers and developers, but to everyone in all walks of life.</p>
+          <a id="dowhile" class="anchor"></a>
+          <h4>do while loop</h4>
+          <p>Similar to how the for / in loop is a variant of the for loop, the do while loop is a variant of the while loop, yes? There isn't a lot to say about the last stop at iteration station other than that the do while loop requires a bit of restructuring to work as you can see via the example provided below. Really the only significant difference between these two closely related constructs is that when using a do while loop the code block will always execute, at least, once. That is to say the code block will run and <em>then</em> the condition will be evaluated to determine whether or not the loop continues to execute.</p>
+          <p><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">function</span> factorial(){
+  <span style="color: #008800; font-weight: bold">var</span> userInput <span style="color: #333333">=</span> <span style="color: #007020">parseInt</span>(prompt(<span style="background-color: #fff0f0">&quot;Please input a number.&quot;</span>));
+  <span style="color: #008800; font-weight: bold">var</span> counter <span style="color: #333333">=</span> userInput;
+  <span style="color: #008800; font-weight: bold">var</span> factorial <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span>;
+
+<span style="color: #008800; font-weight: bold">do</span> {
+    factorial <span style="color: #333333">*=</span> counter;
+    counter<span style="color: #333333">--</span>;
+    <span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&quot;example&quot;</span>).innerHTML <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;The factorial of &quot;</span> <span style="color: #333333">+</span> userInput <span style="color: #333333">+</span> <span style="background-color: #fff0f0">&quot; is &quot;</span> <span style="color: #333333">+</span> factorial
+  }
+   <span style="color: #008800; font-weight: bold">while</span> ( counter <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">1</span> );
+}
+
+factorial()
+</pre></p>
+        <a id="break_continue" class="anchor"></a>
+        <h4>Break and continue</h4>
+        <p>We've ran into the break statement before when talking of switch statements, but it's worth mentioning that break statements work in loops as well and--in a shocking turn of events for JavaScript--it works exactly the same way. If you want to break out of a loop entirely, just throw in a break statement. The loop will immediately stop and kick it out to the next chunk of code following the loop. </p>
+        <p>The continue statement breaks out of the current iteration. If a specified condition occurs, the continue statement will stop the current iteration and kick it back to the beginning of the loop for the next pass.</p>
+        <h4>Looping in practice</h4>
+          <hr>
+        <p><div id = "testAreaLoop">Input a number.</div>
+          <hr>
+        <p><button onclick="factorialLoop()">With a Loop!</button>
+        <h4>A final word on iteration</h4>
+        <p>Programming is flexible. I believe I've said this before, but it bears repeating. In the world of programming there is <em>no right answer</em> there are <em>only right answers</em>. Developers all think differently from one another and we sometimes find solutions to problems in the weirdest of places. Your approach to a problem is different from my approach to a problem is different from some other person's approach to a problem and that's a good thing. It keeps it interesting. </p>
+        <p>Loops are versatile and which one you choose to use is almost entirely up to you as a developer. For, for / in, while, do while, they're all basically the same with small differences, right? If the structure and syntax of a for loop makes sense to you, then use a for loop and damn the consequences. You might irritate some, but any developer worth their salt understands that programming is an art in the same way that music, dancing, and painting are art. It manifests itself a bit differently, to be sure, but a well executed and well written page of code is comparable--in my opinion--to that lovely watercolor hanging on your doctor's waiting room wall or that little tune you hum to yourself while you're waiting on your coffee to brew.</p>
+        <p>Personally, I hate loops. They are--to me anyway--a necessary evil in which I have to dip my toe into from time to time. They confuse me, the logic is sometimes ellusive, and I will go to fantastic lengths to avoid using loops when I can. My brain doesn't operate that way and it irritates me a bit. So, in the interest of not ending this lecture on a sour note for me (and it's really all about me, isn't it? Isn't it?), we're going to talk about one last thing and then we'll part ways until another time.</p>
+        <a id="recursion" class="anchor"></a>
+        <h4>Recursion</h4>
+        <p>'Divide and conquer' is a very common technique used for problem solving in the programming world. Problems are solved by systematically breaking down the large, unmanageable problem that seems impossible to solve into smaller, more manageable problems that can be solved--typically with the same, or similar, approach.</p>
+        <p>For instance, let's say I'm in the very back row of a concert hall. I'm not allowed to leave my seat and I can only see the row that's immediately in front of me. This is a problem because I need to determine how many rows of seats are in this concert hall and I only get the one question before the usher comes over to kick me out.</p>
+        <p>I can totally do this by asking a very simple question: "Is there a row in front of you?" I know there's a guy in front of me, so, I ask that guy to repeat the question of the row in front of him, assuming there is a row in front of him. The guy in front of me, asks the guy in front of him, asks the gal in front of him, asks the guy in front of her, and so on until we get to the front of the concert hall where the last man standing (or sitting, in this case) informs the person behind them that there is, in fact, no one sitting in front of him. That guy is our base case. He returns a value of 'no rows,' the guy behind him returns a value of 1 row (the guy in front of him), the gal behind him returns a value of 2 rows (the 2 rows in front of her) and so on until it makes it's way back to you. You take that value and add 1 for the guy in front of you and 1 for the row that you're in and, suddenly, you've figured out how many rows of seats are in the concert hall. You've done what you needed to do and the usher isn't anywhere to be seen.</p>
+        <p>It works the same way in JavaScript, where recursion is, simply put, the ability to call a function or method from within itself.</p>
+        <p>As always, let's look at some code: </p>
+        <p><span class="redText"> Important:</span> Do not run this code as it will lock up your system something fierce.</p>
+        <p><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">function</span> recursiveFunction() {
+
+     recursiveFunction()
+
+}
+
+recursiveFunction()
+</pre></p>
+        <p>The function is invoked with the last line 'recursiveFunction()'. The function executes <em>invoking the function 'recursiveFunction()'</em>, which executes <em>invoking the function
+        'recursiveFunction()'</em></p>
+        <p>It seems counterintuitive, but this is recursion in JavaScript and one of the foundations of functional programming.</p>
+        <p>Let's look at our factorial code this time in a recursion-friendly format.</p>
+        <p><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">function</span> testFunction(){
+  <span style="color: #008800; font-weight: bold">var</span> number<span style="color: #333333">=</span><span style="color: #007020">parseInt</span>(prompt(<span style="background-color: #fff0f0">&quot;Please enter a number for the factorial:\n(decimal numbers will be rounded down.) &quot;</span>));
+  <span style="color: #008800; font-weight: bold">try</span>{
+      <span style="color: #008800; font-weight: bold">var</span> fact <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(n){
+          <span style="color: #008800; font-weight: bold">if</span>(n<span style="color: #333333">===</span><span style="color: #0000DD; font-weight: bold">1</span>) {
+          <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">1</span>;
+          }
+         <span style="color: #008800; font-weight: bold">else</span> {
+          <span style="color: #008800; font-weight: bold">return</span> n<span style="color: #333333">*</span>fact(n<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>);
+         }
+      }
+       <span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&quot;example&quot;</span>).innerHTML <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;The factorial of &quot;</span> <span style="color: #333333">+</span> number <span style="color: #333333">+</span> <span style="background-color: #fff0f0">&quot; is &quot;</span> <span style="color: #333333">+</span>fact(number)
+  }
+  <span style="color: #008800; font-weight: bold">catch</span>(err) {
+    alert(<span style="background-color: #fff0f0">&quot;Please enter a whole, positive number.&quot;</span>)
+    testFunction()
+    }
+}
+
+testFunction()
+</pre></p>
+
+
+
+
+          <p>Can you figure out what's going on? It looks complicated, but it'll lie to you. I've got some error catching code there to ensure that the factorial code only runs if a number is input. I could break that down further to include a specific error message for decimal numbers, but decided a warning message in the prompt box was probably enough. I've also packaged the entire thing in a function, or method, wrapper of sorts to keep everything nice, organized, and all variables local. You might also notice that I have both a function expression and a function declaration. To avoid issues of scope (not there would be in such a simple method) it's best not to have function declarations inside other function declarations. This particular program works regardless, but my editor threw a warning and I--like the good, little programmer I am--listened.
+            <ul>
+              <li>I'm gathering a number from the user and storing it in a variable named, number.</li>
+              <li>I'm then outputting a statement where, in part of it, I pass that variable as an argument to a function called 'fact.'</li>
+              <li>The fact() first checks to see if the value of n, which is the local copied value of the variable number gathered earlier, is equal to 1. If it is, it returns a value of 1. This is our base case, remember? The last mathematical operation in a factorial is always, always, always, multiplying the current product value by a value of 1.</li>
+              <li>If n is not equal to 1, then it will return the result of the value of n multiplied by the result of the fact() where the argument passed is n-1.<br/>
+                If n == 5, then the returned value will be the result of 5 * fact(4)</li>
+              <li>It will continue to call separate instances of the fact() until the value of n == 1. That value will be returned to the most immediate instance of the fact() where n == 2. 1 is multiplied by 2 and then that value is passed back to the most immediate instance of fact() where n == 3. It will continue to do this until it reaches the original instance of the fact(). 1 x 2 x 3 x 4 x 5 = 120.</li>
+            </ul>
+          </p>
+          <p>Here's a visual:</p>
+          <p><img src="images/recursion.png" alt="image of a recursion flow chart for a factorial"/></p>
+          <p>Looping and recursion are really two sides of the same coin (e.g. iteration). My brain digs recursion a bit more, so, for me, it's a bit easier to understand, but your mileage may vary. Again, programming is a highly personalized thing, right? As long as it works in the context it should, do it how you like to do it. Programming is hard enough without having to force yourself to think and code in ways that seem unnatural.</p>
+
+          <h4>Recursion in practice</h4>
+            <hr>
+          <p><div id = "testAreaRecursion">Input a number.</div>
+            <hr>
+          <p><button onclick="factorialRecursion()">With recursion!</button>
+          <h4>A final...final word on iteration</h4>
+          <p>And that's it for iteration. Well...mostly.</p>
+          <p>In fact, we're largely done with JavaScript programming. Next time we'll talk about libraries and frameworks where we'll touch briefly on it and then we're finished.</p>
+          <p>Congrats on sticking it out this far. I've kind of veered off at times into proper programming territory far, far beyond what you need to understand as a new frontend developer. I hope--first off--that you've enjoyed. Programming has sort of become a bit of a passion of mine and the joy of being able to share that with others through this teaching gig has made a tremendous impact on my life even if, at times, I do it badly. Second, programming, or, at least, a basic understanding of programming theory has already become--and will continue to be--a huge part of all kinds of things across all kinds of careers across all kinds of disciplines, so, even if you decide that programming isn't for you, I hope the lessons learned here help in whatever path you walk.</p>
+
+
+
+    </div>
+
+<!-- Sidebar Widgets Column -->
+    <div class="flex-widget">
+
+      <!-- Side Widget -->
+      <div class="card my-4">
+        <h5 class="card-header html">In this lesson</h5>
+        <div class="card-body">
+          <h5>Objectives</h5>
+              <ul>
+                <li>Explain selection and iteration statements and their purpose in the context of the programming paradigm.</li>
+                <li>Analyze the different conditional and looping variants and summarize their specific uses and contexts.</li>
+                <li>Compare and contrast the different methods of conditonal statements (e.g if/else, if/then, switch statements) and iteration (e.g. looping variants and recursion).</li>
+                <li>Extend existing JavaScript knowledge and demonstrate ability by employing conditonals and iteration in original work.</li>
+              </ul><hr/>
+        <h5>Terms</h5>
+              <ul>
+                <li><a href="#if_else">If / else</a></li>
+                <li><a href="#for">The 'for' loop</a></li>
+                <li><a href="#forin">The 'for / in' loop</a></li>
+                <li><a href="#while">The while loop</a></li>
+                <li><a href="#dowhile">The do while loop</a></li>
+                <li><a href="#break_continue">Break &amp; continue</a></li>
+                <li><a href="#recursion">Recursion</a></li>
+              </ul><hr/>
+        <h5>Concepts</h5>
+              <ul>
+                <li><a href="#selection">Selection / decision</a></li>
+                <li><a href="#iteration">Iteration / looping</a></li>
+              </ul>
+
+          </div>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->
+<footer>
+  <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.js"></script>
+  <script type="text/javascript" src="vendor/jquery/jquery.js"></script>
+  <script src="js/basic_javascript.js"></script>
+
+  <script>
+  //fade in the back to top button
+  (function($) {
+  $(document).ready(function(){
+      //When distance from top = 2000px fade button in/out
+      $(window).scroll(function(){
+          if ($(this).scrollTop() > 2000) {
+              $('#top').fadeIn(300);
+          } else {
+              $('#top').fadeOut(300);
+          }
+      });
+  });
+  })(jQuery);
+
+</script>
+
+</footer>
+
+</body>
+</html>
