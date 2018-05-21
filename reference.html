@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/default.css" rel="stylesheet">
+
+
+
+
+</head>
+<body>
+  <!-- Page Content -->
+<div class="container">
+
+
+  <div class="row row flex-column-reverse flex-lg-row">
+    <div id="top"><a href="#" class="btn btn-dark btn-lg">Back to Top</a></div>
+
+    <!-- Post Content Column -->
+    <div class="flex-main">
+
+      <!-- Title -->
+      <h1>Reference</h1>
+       <hr/>
+        <h3>Content Categories</h3>
+        <p>Each HTML element must abide by rules defining what kind of content it can have. These rules are grouped into content models common to several elements. Each HTML element belongs to zero, one, or multiple content models, each setting rules that the element's content must follow in an HTML-conformant document.</p>
+        <p>There are three types of content categories:
+          <ul>
+            <li>Main content categories, which describe common content rules shared by many elements</li>
+            <li>Form-related content categories, which describe content rules common to form-related elements</li>
+            <li>Specific content categories, which describe rare categories shared only by a few elements, sometimes only in a specific context</li>
+          </ul></p>
+        <p>Some elements in content categories overlap, fulfilling multiple conditions and roles. Some elements are only included in some content categories if--<em>and only if</em>--other related elements are present.</p>
+        <br/>
+
+          <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                <h4 class="panel-title">Metadata Content
+              </h4>
+              </a>
+              </div>
+              <div id="collapse1" class="panel-collapse collapse">
+              <div class="panel-body">
+              <p>These elements modify the presentation or behavior of the rest of the document, link to other documents or other <em>out of band</em> information.</p>
+                <ul>
+                  <li>&lt;base&gt; - Specifies a base URL for all additional URLs in the document.</li>
+                  <li>&lt;meta&gt; - Used for metadata.</li>
+                  <li>&lt;link&gt; - Specifies relationship between the current document and an outside source. Mostly used to link stylesheets.</li>
+                  <li>&lt;noscript&gt; - Used to specify code that should run if JavaScript isn't supported or turned off.</li>
+                  <li>&lt;script&gt; - Used for executable script or to reference an executable script.</li>
+                  <li>&lt;style&gt; - Used for style information, usually CSS.</li>
+                  <li>&lt;title&gt; - Used for the title of the document. Only supports text.</li>
+                </ul>
+              </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                  <h4 class="panel-title">Flow Content</h4>
+                </a>
+              </div>
+              <div id="collapse2" class="panel-collapse collapse">
+              <div class="panel-body">
+              <p>These elements are typically text or other embedded content. Here are a few.</p>
+                <ul>
+                  <li>&lt;a&gt; - Anchor element. Used primarily for linking to other elements or outside resources.</li>
+                  <li>&lt;article&gt; - Represents a separate, self-contained composition in a document.</li>
+                  <li>&lt;aside&gt; - A section of the page that is tangentially related to the main content, but could be considered separate.</li>
+                  <li>&lt;audio&gt; - Used to embed audio element.</li>
+                  <li>&lt;blockquote&gt; - Offsets an extended quotation.</li>
+                  <li>&lt;br/&gt; - Creates a line break in the text.</li>
+                  <li>&lt;button&gt; - Clickable button.</li>
+                  <li>&lt;div&gt; - Document division element. This is a generic tag used when nothing else fits.</li>
+                  <li>&lt;em&gt; and &lt;i&gt; - Emphasis and italics. Emphasis elements can be nested.</li>
+                  <li>&lt;fieldset&gt; - Groups control elements in a form.</li>
+                  <li>&lt;figure&gt; - Separate element usually paired with a caption (e.g. illustrations, images, code snippets, etc.)</li>
+                  <li>&lt;footer&gt; - The footer section of the page.</li>
+                  <li>&lt;form&gt; - Defines a form.</li>
+                  <li>&lt;h1&gt; - &lt;h6&gt; - Heading elements of various sizes. &lt;H1&gt; being the largest.</li>
+                  <li>&lt;header&gt; - Represents a group of introductory elements or navigational aids.</li>
+                  <li>&lt;hr/&gt; - Horizontal rule. Throws a line right across the page to represent a thematic break in content.</li>
+                  <li>&lt;img&gt; - Images.</li>
+                  <li>&lt;label&gt; - Captions for interactive user elements like in a form.</li>
+                  <li>&lt;main&gt; - Used to separate main content from the rest of the page.</li>
+                  <li>&lt;nav&gt; - Used to define navigational controls on the page.</li>
+                  <li>&lt;ol&gt; and &lt;ul&gt; - ordered and unordered lists. Ordered lists have numbers; unordered lists do not. These are often paired with &lt;li&gt; elements.</li>
+                  <li>&lt;p&gt; - Paragraph element.</li>
+                  <li>&lt;pre&gt; - Used for preformatted text. Preformatted text is typically displayed exactly as it's laid out in a file. Whitespace is respected.</li>
+                  <li>&lt;section&gt; - Represents a generic section of document.</li>
+                  <li>&lt;span&gt; - A generic inline container for separating and emphasizing content.</li>
+                  <li>&lt;strong&gt; and &lt;b&gt; - Strong and bold.</li>
+                  <li>&lt;sub&gt; and &lt;sup&gt;- Subscript and superscript.</li>
+                  <li>&lt;table&gt; - Used to wrangle tabular data.</li>
+                  <li>&lt;textarea&gt; - Represents a multi-line, plain-text form control.</li>
+                  <li>&lt;video&gt; - Offsets video content.</li>
+                </ul>
+              </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+            <div class="panel-heading">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                <h4 class="panel-title">Sectioning Content</h4>
+              </a>
+              </div>
+              <div id="collapse3" class="panel-collapse collapse">
+              <div class="panel-body">
+              <p>These elements create sections of content in the document. There is a lot of overlap with the sectioning content category as you can see.</p>
+                <ul>
+                  <li>&lt;h1&gt; - &lt;h6&gt; - Heading elements of various sizes. &lt;H1&gt; being the largest.</li>
+                </ul>
+              </div>
+              </div>
+            </div>
+             <div class="panel panel-default">
+            <div class="panel-heading">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                <h4 class="panel-title">Heading Content</h4>
+              </a>
+              </div>
+              <div id="collapse4" class="panel-collapse collapse">
+              <div class="panel-body">
+              <p>Heading content defines the title of a section whether marked by an explicit sectioning content element or implicitly defined by the heading content itself.</p>
+                <ul>
+                  <li>&lt;article&gt; - Represents a separate, self-contained composition in a document.</li>
+                  <li>&lt;aside&gt; - A section of the page that is tangentially related to the main content, but could be considered separate.</li>
+                  <li>&lt;footer&gt; - The footer section of the page.</li>
+                  <li>&lt;header&gt; - Represents a group of introductory elements or navigational aids.</li>
+                  <li>&lt;nav&gt; - Used to define navigational controls on the page.</li>
+                  <li>&lt;section&gt; - Represents a generic section of document.</li>
+                </ul>
+              </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+                  <h4 class="panel-title">Phrasing Content</h4>
+                </a>
+              </div>
+              <div id="collapse5" class="panel-collapse collapse">
+              <div class="panel-body">
+              <p>These elements define text and markup. Runs of phrasing content make up paragraphs.</p>
+                <ul>
+                  <li>&lt;a&gt; - Only if it contains phrasing content.</li>
+                  <li>&lt;audio&gt; - Used to embed audio element.</li>
+                  <li>&lt;br/&gt; - Creates a line break in the text.</li>
+                  <li>&lt;button&gt; - Clickable button.</li>
+                  <li>&lt;em&gt; and &lt;i&gt; - Emphasis and italics. Emphasis elements can be nested.</li>
+                  <li>&lt;img&gt; - Images.</li>
+                  <li>&lt;label&gt; - Captions for interactive user elements like in a form.</li>
+                  <li>&lt;script&gt; - References an executable script.</li>
+                  <li>&lt;span&gt; - A generic inline container for separating and emphasizing content.</li>
+                  <li>&lt;strong&gt; and &lt;b&gt; - Strong and bold.</li>
+                  <li>&lt;sub&gt; and &lt;sup&gt;- Subscript and superscript.</li>
+                  <li>&lt;video&gt; - Offsets video content.</li>
+                </ul>
+              </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+                  <h4 class="panel-title">Embedded Content</h4>
+                </a>
+              </div>
+              <div id="collapse6" class="panel-collapse collapse">
+              <div class="panel-body">
+              <p>These elements are for controlling and embedding outside resources or inserts content from another markup language.</p>
+                <ul>
+                  <li>&lt;audio&gt; - Used to embed audio element.</li>
+                  <li>&lt;canvas&gt; - Element offsets an area for drawing graphics, usually with JavaScript.</li>
+                  <li>&lt;embed&gt; - Integration point for an external application or interactive content.</li>
+                  <li>&lt;iframe&gt; - Nested browsing content like a separate html page.</li>
+                  <li>&lt;img&gt; - Images.</li>
+                  <li>&lt;video&gt; - Offsets video content.</li>
+                </ul>
+              </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+                  <h4 class="panel-title">Interactive Content</h4>
+                </a>
+              </div>
+              <div id="collapse7" class="panel-collapse collapse">
+              <div class="panel-body">
+              <p>These elements are for interactive user content. </p>
+                <ul>
+                  <li>&lt;a&gt; - Anchor element. Used primarily for linking to other elements or outside resources.</li>
+                  <li>&lt;audio&gt; - Used to embed audio element. Only if the controls element is present.</li>
+                  <li>&lt;button&gt; - Clickable button.</li>
+                  <li>&lt;embed&gt; - Integration point for an external application or interactive content.</li>
+                  <li>&lt;iframe&gt; - Nested browsing content like a separate html page.</li>
+                  <li>&lt;img&gt; - Images. Only if the usemap element is present.</li>
+                  <li>&lt;label&gt; - Captions for interactive user elements like in a form.</li>
+                  <li>&lt;video&gt; - Offsets video content. Only if the controls element is present.</li>
+                </ul>
+              </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
+                  <h4 class="panel-title">Palpable Content</h4>
+                </a>
+              </div>
+              <div id="collapse8" class="panel-collapse collapse">
+              <div class="panel-body">
+              <p>Content is palpable when it's neither empty nor hidden. Elements in flow content or phrasing content should have at least one palpable node.</p>
+              </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">
+                  <h4 class="panel-title">Form Associated Content</h4>
+                </a>
+              </div>
+              <div id="collapse9" class="panel-collapse collapse">
+              <div class="panel-body">
+              <p>Form content exposed by a form attribute (e.g. either a &lt;form&gt; element or an element with a <em>form</em> attribute.</p>
+                <ul>
+                  <li>&lt;button&gt; - Clickable button.</li>
+                  <li>&lt;fieldset&gt; - Groups control elements in a form.</li>
+                  <li>&lt;input&gt; - Used to define fields for accepting data from user.</li>
+                  <li>&lt;label&gt; - Captions for interactive user elements like in a form.</li>
+                  <li>&lt;select&gt; - Represents a selection of options.</li>
+                  <li>&lt;textarea&gt; - Represents a multi-line, plain-text form control.</li>
+
+                </ul>
+              </div>
+              </div>
+            </div>
+      <hr/>
+      </section>
+          </section>
+
+
+
+    </div>
+
+<!-- Sidebar Widgets Column -->
+    <div class="flex-widget">
+
+      <!-- Side Widget -->
+      <div class="card my-4">
+        <h5 class="card-header html">In this lesson</h5>
+        <div class="card-body">
+
+
+          </div>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->
+<footer>
+  <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.js"></script>
+  <script type="text/javascript" src="vendor/jquery/jquery.js"></script>
+  <script src="js/basic_javascript.js"></script>
+
+  <script>
+  //fade in the back to top button
+  (function($) {
+  $(document).ready(function(){
+      //When distance from top = 2000px fade button in/out
+      $(window).scroll(function(){
+          if ($(this).scrollTop() > 2000) {
+              $('#top').fadeIn(300);
+          } else {
+              $('#top').fadeOut(300);
+          }
+      });
+  });
+  })(jQuery);
+
+</script>
+
+</footer>
+
+</body>
+</html>

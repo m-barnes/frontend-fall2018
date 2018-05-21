@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/default.css" rel="stylesheet">
+
+
+
+
+</head>
+<body>
+  <!-- Page Content -->
+<div class="container">
+
+
+  <div class="row row flex-column-reverse flex-lg-row">
+    <div id="top"><a href="#" class="btn btn-dark btn-lg">Back to Top</a></div>
+
+    <!-- Post Content Column -->
+    <div class="flex-main">
+
+      <!-- Title -->
+      <h1>Libraries &amp; frameworks</h1>
+          <p>At this point you've got some vanilla JavaScript under your belt, yeah? You know what variables are and how to declare them, you can manipulate the data stored in those variables, you can create methods that can use those variables to do neat stuff, and you have a pretty solid grounding in concepts like iteration and recursion. Overall, a nice foundation from which to springboard should you want.</p>
+          <p>But maybe that's not what you 'want,' yes? Maybe programming just isn't your bag; maybe you're not interested in programming for programming's sake; maybe you just want to get stuff done.</p>
+          <p>I'm not one to judge. I get it. Programming is difficult even on the best of days. JavaScript is a necessary component in the frontend world, so, there's really no way to avoid it, but sometimes--well, most times--you just want something to happen without having to write it yourself, test it, troubleshoot it, fix it, test it again, troubleshoot some more, fix it, yet again, test it, convince yourself that it's good enough and that you'll get back to it later, etc. etc.</p>
+          <p>There are billions of sites out there on the internet and most of them provide some level of interactivity, right? I mean here's some examples of a basic slideshow that I shamelessly stole from the internet.
+          </p>
+          <p><img src="images/slide3.png" alt="image of a dog in a swimming pool"/></p>
+          <p><img src="images/slide2.png" alt="image of a Purple Emporor butterfly"/></p>
+          <p><img src="images/slide1.png" alt="image of a primate extending a hand to Jane Goodall"/></p>
+          <p>They all kind of look the same. They all kind of function the same. They are--in essence--the same. Now, there is the possiblity that each of the developers for these three different sites rolled their own JavaScript to create these slideshows, endlessly slaving away over a keyboard for hours on end until every little bit was absolute perfection. I'm guessing, however, that that wasn't the case. You see, one of the more pervasive mantras in programming is "don't repeat yourself." We might have talked about this a bit when we talked of functions/methods. Code is code; once it's written it's an endless resource, right? I mean, you don't 'use' up a function. You don't have to watch your 'method' gauge to make sure you have enough 'method' in the 'method' tank before you load your site--shut up, it's the best I could come up with. So, if code is an endlessly reusable resource, why would you go through the trouble of writing and rewriting all the code that is required to slap a slideshow on a page everytime you want to slap a slideshow on a page? You wouldn't. Why reinvent the wheel everytime you need a wheel? Code is also pretty generic and--assuming it's written correctly--can often be adapted easily to different projects or purposes. All you have to do is remember where you put it.</p>
+          <a id="libraries" class="anchor"></a>
+          <h3>Libraries</h3>
+          <p>In JavaScript, the way we do that is by working with libraries. A library is a collection of functions/methods--all relatively generic and customizable--that you can use to do stuff on your site.</p>
+          <p>Sometimes that library is just the stuff that you've done personally. Code that you've written for one project that you think might work in another. You may, or may not--you really should--have documentation that goes along with it that explains how it works and how to use it. It's for your personal use only; a repository of useful stuff; a frontend toolbox, so to speak.</p>
+          <p>The neat thing is that there are all kinds of programmers and developers out there that have created libraries of their own and are willing to share that with the rest of us. They host the source code, they maintain the documentation, they create the 'wheel,' and let us borrow it whenever we need to get somewhere fast.</p>
+          <p>One of the more popular JavaScript libraries is<a href="http://jquery.com/"/> jQuery</a>. jQuery is a 'fast, small, and feature-rich JavaScript libary' designed to--well, make a developer's life a bit easier when faced with a specific problem or task. It is a toolkit that contains all the necessary code for simplifying basic--and individual--JavaScript functionality including things like DOM manipulation, event handling, AJAX (asynchronous JavaScript), animations, etc.</p>
+          <p>There are--generally--two ways to incorporate a library like jQuery into your project:
+            <ul>
+              <li>CDN - content delivery network. The library is hosted elsewhere and you use a public URL as a link in your HTML.
+                <p><pre style="margin: 0; line-height: 125%"><span style="color: #333333">&lt;</span>script type <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;text/javascript&quot;</span> src <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js&quot;</span><span style="color: #333333">&gt;&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/script&gt;</span>
+</pre></p>
+              <p>The benefit is that your implementation is always up to date. It's available, it's secure, and--most importantly--it's not yours to manage. You don't have to worry about it. Of course, there are a few downsides in that an update may 'break' something on your site, but the likelihood of that happening on an update is insignificant...well, small...well, not likely...well, probably not going to happen...maybe.</p></li>
+              <li>Local - You download the library--or relevant part of the library you want to use--and include it in your development code base. You use a relative link in the HTML.
+                <p><pre style="margin: 0; line-height: 125%"><span style="color: #333333">&lt;</span>script type <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;text/javascript&quot;</span>  src <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;/jquery/jquery-2.1.3.min.js&quot;</span><span style="color: #333333">&gt;&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/script&gt;</span>
+</pre></p>
+            <p>The benefit to this approach is you are in complete control. In most cases, you can download only what you want to and it's always going to work as expected because you've included a copy of the source library with the project. The downside is that you are in complete control. You are responsible for updating, you are responsible for security, and you are responsible for it working because it's a part of your project.</p></li>
+
+            <p>So, how about a demonstration? I have a local installation of jQuery on the site. I've linked out to it using a relative link in the <span class="greenText">&lt;head&gt;</span> element in the code and have created a hierarchy for the button (e.g. a container, the actual button, the content that goes in the popup, etc.). When you click the button, a popup, or modal, will appear. My styling rules still apply (the <span class="greenText">&lt;h4&gt;</span> element is still that pleasing shade of blue-green, I can still turn text green, etc.) and I included some additonal information in the body.
+          <p><div class="container">
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Click me!</button>
+
+            <div class="modal fade" id="myModal" role="dialog">
+              <div class="modal-dialog">
+
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Bam! I'm a modal, or popup.</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>I did--basically--no work to create this. The library is doing all the work for me. I only had to apply the right classes to the right <span class="greenText">&lt;div&gt;</span> elements.</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div></p>
+          <p>And here's the code:</p>
+          <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;p&gt;&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;container&quot;</span><span style="color: #007700">&gt;</span>
+            <span style="color: #007700">&lt;button</span> <span style="color: #0000CC">type=</span><span style="background-color: #fff0f0">&quot;button&quot;</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;btn btn-info btn-lg&quot;</span> <span style="color: #0000CC">data-toggle=</span><span style="background-color: #fff0f0">&quot;modal&quot;</span> <span style="color: #0000CC">data-target=</span><span style="background-color: #fff0f0">&quot;#myModal&quot;</span><span style="color: #007700">&gt;</span>Click me!<span style="color: #007700">&lt;/button&gt;</span>
+
+            <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;modal fade&quot;</span> <span style="color: #0000CC">id=</span><span style="background-color: #fff0f0">&quot;myModal&quot;</span> <span style="color: #0000CC">role=</span><span style="background-color: #fff0f0">&quot;dialog&quot;</span><span style="color: #007700">&gt;</span>
+              <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;modal-dialog&quot;</span><span style="color: #007700">&gt;</span>
+
+                <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;modal-content&quot;</span><span style="color: #007700">&gt;</span>
+                  <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;modal-header&quot;</span><span style="color: #007700">&gt;</span>
+                    <span style="color: #007700">&lt;button</span> <span style="color: #0000CC">type=</span><span style="background-color: #fff0f0">&quot;button&quot;</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;close&quot;</span> <span style="color: #0000CC">data-dismiss=</span><span style="background-color: #fff0f0">&quot;modal&quot;</span><span style="color: #007700">&gt;</span><span style="color: #880000; font-weight: bold">&amp;times;</span><span style="color: #007700">&lt;/button&gt;</span>
+                    <span style="color: #007700">&lt;h4</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;modal-title&quot;</span><span style="color: #007700">&gt;</span>Bam! I&#39;m a modal, or popup.<span style="color: #007700">&lt;/h4&gt;</span>
+                  <span style="color: #007700">&lt;/div&gt;</span>
+                  <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;modal-body&quot;</span><span style="color: #007700">&gt;</span>
+                    <span style="color: #007700">&lt;p&gt;</span>I did--basically--no work to create this. The library is doing all the work for me. I only had to apply the right classes to the right <span style="color: #007700">&lt;span</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;greenText&quot;</span><span style="color: #007700">&gt;</span><span style="color: #880000; font-weight: bold">&amp;lt;</span>div<span style="color: #880000; font-weight: bold">&amp;gt;</span><span style="color: #007700">&lt;/span&gt;</span> elements.<span style="color: #007700">&lt;/p&gt;</span>
+                  <span style="color: #007700">&lt;/div&gt;</span>
+                  <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;modal-footer&quot;</span><span style="color: #007700">&gt;</span>
+                    <span style="color: #007700">&lt;button</span> <span style="color: #0000CC">type=</span><span style="background-color: #fff0f0">&quot;button&quot;</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;btn btn-default&quot;</span> <span style="color: #0000CC">data-dismiss=</span><span style="background-color: #fff0f0">&quot;modal&quot;</span><span style="color: #007700">&gt;</span>Close<span style="color: #007700">&lt;/button&gt;</span>
+                  <span style="color: #007700">&lt;/div&gt;</span>
+                <span style="color: #007700">&lt;/div&gt;</span>
+              <span style="color: #007700">&lt;/div&gt;</span>
+            <span style="color: #007700">&lt;/div&gt;</span>
+          <span style="color: #007700">&lt;/div&gt;&lt;/p&gt;</span>
+</pre></p>
+          <p>To get this to work, I wrote absolutely no JavaScript. I created a button and a few different containers for content in my HTML and then let my CSS and JavaScript library do all the heavy lifting. Styling and functionality is controlled by applying distinct classes to the different containers.</p>
+          <p>Remember that slideshow?</p>
+          <p>
+            <div class="container">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" >
+
+                          <ol class="carousel-indicators">
+                              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                          </ol>
+
+                          <div class="carousel-inner" role="listbox">
+                              <div class="item active">
+                                  <img src="images/carousel1.jpg" alt="">
+                                  <div class="carousel-caption">
+                                      <h1>Wow, how pretty!</h1>
+                                      <p>Caption for the prettiness.</p>
+                                  </div>
+                              </div>
+                              <div class="item">
+                                  <img src="images/carousel2.jpg" alt="">
+                                  <div class="carousel-caption">
+                                      <h1>Some wall. Some where.</h1>
+                                      <p>Kind of dark, but still pretty, right?</p>
+                                  </div>
+                              </div>
+                              <div class="item">
+                                  <img src="images/carousel3.png" alt="">
+                                  <div class="carousel-caption">
+                                      <h1>Weird grass houses.</h1>
+                                      <p>Strange, but I kind of like them.</p>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                              <span class="sr-only">Previous</span>
+                          </a>
+                          <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                              <span class="sr-only">Next</span>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </p>
+          <p>And the code:</p>
+          <p><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;container&quot;</span><span style="color: #007700">&gt;</span>
+              <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;row&quot;</span><span style="color: #007700">&gt;</span>
+                  <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;col-md-12&quot;</span><span style="color: #007700">&gt;</span>
+                      <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">id=</span><span style="background-color: #fff0f0">&quot;carousel-example-generic&quot;</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;carousel slide&quot;</span> <span style="color: #0000CC">data-ride=</span><span style="background-color: #fff0f0">&quot;carousel&quot;</span><span style="color: #007700">&gt;</span>
+
+                          <span style="color: #007700">&lt;ol</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;carousel-indicators&quot;</span><span style="color: #007700">&gt;</span>
+                              <span style="color: #007700">&lt;li</span> <span style="color: #0000CC">data-target=</span><span style="background-color: #fff0f0">&quot;#carousel-example-generic&quot;</span> <span style="color: #0000CC">data-slide-to=</span><span style="background-color: #fff0f0">&quot;0&quot;</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;active&quot;</span><span style="color: #007700">&gt;&lt;/li&gt;</span>
+                              <span style="color: #007700">&lt;li</span> <span style="color: #0000CC">data-target=</span><span style="background-color: #fff0f0">&quot;#carousel-example-generic&quot;</span> <span style="color: #0000CC">data-slide-to=</span><span style="background-color: #fff0f0">&quot;1&quot;</span><span style="color: #007700">&gt;&lt;/li&gt;</span>
+                              <span style="color: #007700">&lt;li</span> <span style="color: #0000CC">data-target=</span><span style="background-color: #fff0f0">&quot;#carousel-example-generic&quot;</span> <span style="color: #0000CC">data-slide-to=</span><span style="background-color: #fff0f0">&quot;2&quot;</span><span style="color: #007700">&gt;&lt;/li&gt;</span>
+                          <span style="color: #007700">&lt;/ol&gt;</span>
+
+                          <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;carousel-inner&quot;</span> <span style="color: #0000CC">role=</span><span style="background-color: #fff0f0">&quot;listbox&quot;</span><span style="color: #007700">&gt;</span>
+                              <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;item active&quot;</span><span style="color: #007700">&gt;</span>
+                                  <span style="color: #007700">&lt;img</span> <span style="color: #0000CC">src=</span><span style="background-color: #fff0f0">&quot;images/carousel1.jpg&quot;</span> <span style="color: #0000CC">alt=</span><span style="background-color: #fff0f0">&quot;&quot;</span><span style="color: #007700">&gt;</span>
+                                  <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;carousel-caption&quot;</span><span style="color: #007700">&gt;</span>
+                                      <span style="color: #007700">&lt;h1&gt;</span>Wow, how pretty!<span style="color: #007700">&lt;/h1&gt;</span>
+                                      <span style="color: #007700">&lt;p&gt;</span>Caption for the prettiness.<span style="color: #007700">&lt;/p&gt;</span>
+                                  <span style="color: #007700">&lt;/div&gt;</span>
+                              <span style="color: #007700">&lt;/div&gt;</span>
+                              <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;item&quot;</span><span style="color: #007700">&gt;</span>
+                                  <span style="color: #007700">&lt;img</span> <span style="color: #0000CC">src=</span><span style="background-color: #fff0f0">&quot;images/carousel2.jpg&quot;</span> <span style="color: #0000CC">alt=</span><span style="background-color: #fff0f0">&quot;&quot;</span><span style="color: #007700">&gt;</span>
+                                  <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;carousel-caption&quot;</span><span style="color: #007700">&gt;</span>
+                                      <span style="color: #007700">&lt;h1&gt;</span>Some wall. Some where.<span style="color: #007700">&lt;/h1&gt;</span>
+                                      <span style="color: #007700">&lt;p&gt;</span>Kind of dark, but still pretty, right?<span style="color: #007700">&lt;/p&gt;</span>
+                                  <span style="color: #007700">&lt;/div&gt;</span>
+                              <span style="color: #007700">&lt;/div&gt;</span>
+                              <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;item&quot;</span><span style="color: #007700">&gt;</span>
+                                  <span style="color: #007700">&lt;img</span> <span style="color: #0000CC">src=</span><span style="background-color: #fff0f0">&quot;images/carousel3.png&quot;</span> <span style="color: #0000CC">alt=</span><span style="background-color: #fff0f0">&quot;&quot;</span><span style="color: #007700">&gt;</span>
+                                  <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;carousel-caption&quot;</span><span style="color: #007700">&gt;</span>
+                                      <span style="color: #007700">&lt;h1&gt;</span>Weird grass houses.<span style="color: #007700">&lt;/h1&gt;</span>
+                                      <span style="color: #007700">&lt;p&gt;</span>Strange, but I kind of like them.<span style="color: #007700">&lt;/p&gt;</span>
+                                  <span style="color: #007700">&lt;/div&gt;</span>
+                              <span style="color: #007700">&lt;/div&gt;</span>
+                          <span style="color: #007700">&lt;/div&gt;</span>
+
+                          <span style="color: #007700">&lt;a</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;left carousel-control&quot;</span> <span style="color: #0000CC">href=</span><span style="background-color: #fff0f0">&quot;#carousel-example-generic&quot;</span> <span style="color: #0000CC">role=</span><span style="background-color: #fff0f0">&quot;button&quot;</span> <span style="color: #0000CC">data-slide=</span><span style="background-color: #fff0f0">&quot;prev&quot;</span><span style="color: #007700">&gt;</span>
+                              <span style="color: #007700">&lt;span</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;glyphicon glyphicon-chevron-left&quot;</span> <span style="color: #0000CC">aria-hidden=</span><span style="background-color: #fff0f0">&quot;true&quot;</span><span style="color: #007700">&gt;&lt;/span&gt;</span>
+                              <span style="color: #007700">&lt;span</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;sr-only&quot;</span><span style="color: #007700">&gt;</span>Previous<span style="color: #007700">&lt;/span&gt;</span>
+                          <span style="color: #007700">&lt;/a&gt;</span>
+                          <span style="color: #007700">&lt;a</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;right carousel-control&quot;</span> <span style="color: #0000CC">href=</span><span style="background-color: #fff0f0">&quot;#carousel-example-generic&quot;</span> <span style="color: #0000CC">role=</span><span style="background-color: #fff0f0">&quot;button&quot;</span> <span style="color: #0000CC">data-slide=</span><span style="background-color: #fff0f0">&quot;next&quot;</span><span style="color: #007700">&gt;</span>
+                              <span style="color: #007700">&lt;span</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;glyphicon glyphicon-chevron-right&quot;</span> <span style="color: #0000CC">aria-hidden=</span><span style="background-color: #fff0f0">&quot;true&quot;</span><span style="color: #007700">&gt;&lt;/span&gt;</span>
+                              <span style="color: #007700">&lt;span</span> <span style="color: #0000CC">class=</span><span style="background-color: #fff0f0">&quot;sr-only&quot;</span><span style="color: #007700">&gt;</span>Next<span style="color: #007700">&lt;/span&gt;</span>
+                          <span style="color: #007700">&lt;/a&gt;</span>
+                      <span style="color: #007700">&lt;/div&gt;</span>
+                  <span style="color: #007700">&lt;/div&gt;</span>
+              <span style="color: #007700">&lt;/div&gt;</span>
+          <span style="color: #007700">&lt;/div&gt;</span>
+</pre></p>
+          <p>Again, no JavaScript written. It's just a bunch of containers with classes.</p>
+          <p>So, you can see the advantages to this, yes? You get the benefit of using JavaScript without actually having to write any actual JavaScript. You only link, or import, the libraries--or parts of libraries--that do what you want to do and then you do it. By default, most libraries are full featured powerhouses designed with a specific purpose or for a specific use, which they do...extremely well. Most of them are also flexible enough that you can customize them to fit your individual project. Some you pay for, most are free (licensed under the MIT license | Open Source Initiative). The two examples above were created using jQuery and Bootstrap (a framework that we're going to talk about in just second), but there are tons of different libraries out there that you can use for all kinds of different things.</p>
+          <p>Here's a brief list.
+            <ul>
+              <li><a href="https://galleria.io/">Galleria</a> - Maybe you don't want to use Bootstrap. Here's Galleria, a free image gallery that you can use to create beautiful slideshows. It also does video of all kinds and is 100% responsive, so, that's terribly useful.</li>
+              <li><a href="http://bouncejs.com/">Bounce.js</a> - Worried about JavaScript animations on mobile platforms. Bounce.js uses JavaScript to export animations as CSS.</li>
+              <li><a href="https://dojotoolkit.org/">dojo</a> - a full featured JavaScript library. UI components, code optimization, JSON support, AJAX support, etc. Build web sites, web apps, mobile stuff, whatever.</li>
+              <li><a href="https://reactjs.org/">React</a> - One of the more famous ones. React builds user interfaces. Facebook's baby, React is designed to create fast, simple, and scalable user interfaces for a variety of applications. Because it's a Facebook thing, there are more than few detractors out there--not W3C compliant, poor documentation and support, etc.--but it is incredibly popular, so, it might not be a bad idea to be, at least, familiar with it.</li>
+              <li><a href="https://vuejs.org/">Vue</a> - another library for building user interfaces. Cross platform, easy integration with other libraries, lots of different components that can be used together or individually, and extensive support make it a viable option in the face of the React-juggernaut.</li>
+              <li><a href="http://www.chartjs.org/">Chart.js</a> - Need a chart? Chart.js is a library for creating eye-catching, interactive, and animated charts of all kinds.</li>
+              <li><a href="http://leafletjs.com/">Leaflet</a> - Like the mobile ecosystem better? Need a map? Leaflet lets you create mobile-friendly, interactive maps. Custom icons, geolocation features, video integration...I've never used it, but it seems to have a lot going on there.</li>
+            </ul></p>
+            <p>So, as you can see there are a lot of different libraries out there that cover a lot of different things, right? The thing is, however, even if the programming thing <em>is</em> your thing, you could probably benefit from looking at a library or two. Most of them are open source, which means you have access to the raw code. There are no secrets, so, dig into them, find out how they work, and add to your JavaScript know-how.</p>
+            <p>Libraries--by and large--are meant to focus on one specific purpose or use. Charts, maps, animations, user interface issues, data control, etc. If you're looking for something a bit more, something a bit more robust then you might be looking for a framework.</p>
+          <a id="frameworks" class="anchor"></a>
+          <h3>Frameworks</h3>
+            <p>A framework is a scaffold. It is an environment consisting of a bunch of built-in bits of functionality that you can use to help you put together your project faster. It is a luxury car. It provides all the bells and whistles even if you don't necessarily know how to use them. And they're stupid easy to use. You just download them. Most come with a predefined file hierarchy into which you plug your stuff and all the necessary relationships already in place.</p>
+            <p>There are all kinds of different frameworks, each with a different focus depending on its application. In the frontend world, frameworks focus on HTML, CSS, and JavaScript, but there are also frameworks for software development, backend development, etc., each containing sets of predefined protocols, rules, standards, and guidelines designed to do most of the repetitive and difficult foundational work of development, leaving you to focus on other things.</p>
+            <p>Wait. This sounds suspiciously like a library. What exactly is the difference then?</p>
+            <a id="control" class="anchor"></a>
+            <h4>Inversion of Control</h4>
+            <p>The line of demarcation between the two has been blurred quite a bit the last few years, but--in general--the difference centers around this idea of 'Inversion of Control,' which I've also seen referred to as the 'Hollywood Principle' (i.e. 'Don't call us, we'll call you).</p>
+            <p>When you use a library, you are--largely--in control, right? The library is just a collection of functions (class definitions) that you--as the developer--call. Its primary purpose is to serve as a vehicle for code reuse and nothing more. Think of it terms of a real library (of which I am very familiar, right?). You go to the library and there are tons of books on just about every subject. If you need a book on Buddhism or Thomas Jefferson, you can usually find a half dozen (more depending on the size of the library) different books on the subject. If you don't like one, you just put it back on the shelf (you really shouldn't, by the way, but that's neither here nor there) and get another one. Eventually, you'll find one that works for what you want to do. It's a supplement to your work that you have almost total control over.</p>
+            <p>A framework might contain several different libraries, but these libraries only have one book on Buddhism or one book on Jefferson. If you want the framework's help, that's the book you're going to use, no bones about it. If you don't like that one book, well...tough. That's the book; take it or leave it. It's a mold that you have to shape your work to fit and you have almost no control over it.</p>
+            <p><img src="images/library_framework.png" alt="image of library and framework 'inversion of control' model"/></p>
+            <p>This site, for example and as previously mentioned, was built using Bootstrap, which is--by far--one of the most popular frontend frameworks out there. It has all the basic foundational stuff (like grid column setups, relative sizing, etc.) to build a responsive site quick and easy. I don't have to worry about setting up my own CSS or JavaScript to make my site look good on different devices as Bootstrap does all the heavy lifting for me. Bootstrap also provides support for preprocessors, features built-in templates and an icon set with a ton of support in the community in the way of documentation and third-party plugins. They've given me all the tools I need, I just need to use them. But those are the only tools I can use without breaking the framework.</p>
+            <p>So, don't tell me. Show me, right?</p>
+            <a id="frameworks2" class="anchor"></a>
+            <h4>Back to frameworks</h4>
+            <p><img src="images/bootstrap_theme1.png" alt="screenshot of bootstrap website"/></p>
+            <p><img src="images/components.PNG" alt="screenshot of bootstrap website"/></p>
+            <p><img src="images/navbar.PNG" alt="screenshot of bootstrap website" /></p>
+            <p><img src="images/typography.PNG" alt="screenshot of bootstrap website"/></p>
+            <p>Where a library might focus on something specific (e.g. typography, navigation bars, ui components, etc.), a framework contains <em>all</em> of that and then some, right? All built-in, all ready to use, and all designed to work seamlessly with one another. Buttons, for instance, are all styled using the same design aesthetics.</p>
+            <p>
+              <div class="btn-group">
+                <a class="btn btn-primary" href="#" role="button">Link</a>
+                <button class="btn btn-primary" type="submit">Button</button>
+                <input class="btn btn-primary" type="button" value="Input">
+                <input class="btn btn-primary" type="submit" value="Submit">
+                <input class="btn btn-primary" type="reset" value="Reset">
+              </div>
+            </p>
+            <p>
+              <div class="btn-group">
+                <button type="button" class="btn btn-primary btn-lg">Large button</button>
+                <button type="button" class="btn btn-secondary btn-lg">Large button</button>
+              </div>
+            </p>
+            <p>
+              <div class="btn-group">
+                <button type="button" class="btn">Basic</button>
+                <button type="button" class="btn btn-default">Default</button>
+                <button type="button" class="btn btn-primary">Primary</button>
+                <button type="button" class="btn btn-success">Success</button>
+                <button type="button" class="btn btn-info">Info</button>
+                <button type="button" class="btn btn-warning">Warning</button>
+                <button type="button" class="btn btn-danger">Danger</button>
+                <button type="button" class="btn btn-link">Link</button>
+              </div>
+            </p>
+            <p>Animated alerts all follow the same schema.</p>
+            <p>
+              <div class="container">
+                <div class="alert alert-success alert-dismissable fade in" id="success">
+                  <a href="#success" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <strong>Success!</strong> This alert box could indicate a successful or positive action.
+                </div>
+                <div class="alert alert-info alert-dismissable fade in">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <strong>Info!</strong> This alert box could indicate a neutral informative change or action.
+                </div>
+                <div class="alert alert-warning alert-dismissable fade in">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <strong>Warning!</strong> This alert box could indicate a warning that might need attention.
+                </div>
+                <div class="alert alert-danger alert-dismissable fade in">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
+                </div>
+              </div>
+            </p>
+            <h4>There's always a downside, isn't there?</h4>
+            <p>You see what I mean? And herein lies the problem with a framework--and really libraries as well. They're great if you need to get something up and running and you're not too worried about customization. You have the framework, you slap some of your stuff in it where it fits and--bam!--you've got a website. You link a library and--bam!--instant form validation, or slideshow, or whatever. That convenience, however, comes at a price that you may--or may not--be willing to pay. Bootstrap, for instance, doesn't follow modern best practices. Every bit of style and functionality comes thorugh the use of 'classes,' which means <span class="greenText">&lt;div&gt;</span> elements...everywhere, which is the exact antithesis of what HTML5 is trying to accomplish with its focus on semantic elements. If you've got a site already in place and try to overlay Bootstrap to get some of those sweet, sweet features, you're going to have a bad time. Bootstrap doesn't play nice with others and will likely mess up or break your design aesthetic. It's code heavy. Even if you don't use 95% of it, you still have to carry that 95% in your code base. It's popular, which means everyone is using it, which means if you use it, you look like everybody else. You can certainly customize specific elements, but as the framework is so interdependent, applying a new style to an element may change other elements or have other unintended consequences. Plus, if you're going to want to customize a bunch of stuff anyway, then what's the point of using the framework in the first place, right?</p>
+            <p>I've used Bootstrap as my scapegoat, but the idea is--generally--the same concerning all frameworks. Libraries are a bit better in that they tend to have this one, specific focus and are, typically, designed to play well with others, but even they suffer from--to a lesser degree, to be sure--the same shortcomings. Frameworks are fantastically complex playgrounds with a lot of really neat toys to mess around with, but the toys don't leave the playground, it's not a good idea to bring your own, and the toys all follow you around whether you play with them or not...okay, I kind of lost the thread there, but you get what I'm trying to say, yeah? Libraries are a bit more flexible in that you get to take the toys home, but even then you often end up with a whole box full of stuff you don't want and tailoring it specifically to your project can be a bit of a pain sometimes--depending on how well the library is written.</p>
+            <p>Don't get me wrong, libraries and frameworks aren't inherently evil. This website, is built on a framework and it's awesome...right? And, like with WordPress, a little bit of experience with a popular framework (e.g. Bootstrap, Foundation, Angular.js, etc.) or a popular library (e.g. jQuery, Meteor, of PhoneGap) will get you a long way. At some point, however, you might find it easier to roll your own rather than bum from someone else.</p>
+  			
+
+
+
+    </div>
+
+<!-- Sidebar Widgets Column -->
+    <div class="flex-widget">
+
+      <!-- Side Widget -->
+      <div class="card my-4">
+        <h5 class="card-header html">In this lesson</h5>
+        <div class="card-body">
+          <h5>Objectives</h5>
+              <ul>
+                <li>Compare and contrast the use of libraries and frameworks in frontend development.</li>
+                <li>Analyze and understand the concept of 'Inversion of Control' in the context of developing with libraries and frameworks.</li>
+                <li>Examine the shortcomings of using libraries and frameworks in the context of frontend development.</li>
+              </ul><hr/>
+        <h5>Terms</h5>
+              <ul>
+                <li><a href="#libraries">Libraries</a></li>
+                <li><a href="#frameworks">Frameworks</a></li>
+              </ul><hr/>
+        <h5>Concepts</h5>
+              <ul>
+                <li><a href="#control">Inversion of Control</a></li>
+              </ul>
+
+
+          </div>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->
+<footer>
+  <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.js"></script>
+  <script type="text/javascript" src="vendor/jquery/jquery.js"></script>
+  <script src="js/basic_javascript.js"></script>
+
+  <script>
+  //fade in the back to top button
+  (function($) {
+  $(document).ready(function(){
+      //When distance from top = 2000px fade button in/out
+      $(window).scroll(function(){
+          if ($(this).scrollTop() > 2000) {
+              $('#top').fadeIn(300);
+          } else {
+              $('#top').fadeOut(300);
+          }
+      });
+  });
+  })(jQuery);
+
+</script>
+
+</footer>
+
+</body>
+</html>

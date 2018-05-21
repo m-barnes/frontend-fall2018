@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/default.css" rel="stylesheet">
+
+
+
+
+</head>
+<body>
+  <!-- Page Content -->
+<div class="container">
+
+
+  <div class="row row flex-column-reverse flex-lg-row">
+    <div id="top"><a href="#" class="btn btn-dark btn-lg">Back to Top</a></div>
+
+    <!-- Post Content Column -->
+    <div class="flex-main">
+
+      <!-- Title -->
+      <h1>Content management and version control</h1>
+      <h2>Master of your domain</h2>
+        <p>To this point you've been dealing with very simple sites that require very little in the way of actual organization. Your hierarchies have developed organically, stemming from the way and style of how you naturally organize the things around you. Unfortunately, when it comes to dealing with larger and more complex sites content organization becomes a bit more problematic, especially if you work in a shared environment with other developers, each with their own finger in the metaphorical pie, so to speak.</p>
+        <p>In the early days of web development, sites were largely static, which means they didn't really do anything other than sit there waiting for people to come read them. Companies would put a few images, some text, throw out some useful information like hours of operation, phone numbers, location, etc. and that was that. It was an electronic version of a billboard or newspaper ad directed at us on the Internet rather than at some family on the freeway or some schmuck reading the headlines over breakfast. If there were files to download, they were typically electronic versions of already existing publications like take out menus, sales flyers, etc.</p>
+        <p>Eventually, however, someone got the bright idea to start selling stuff over the Internet and, suddenly, e-commerce becomes a thing. A big thing.</p>
+        <p>Now, we've talked about this before, but you have to understand, the development community was dramatically different back then. Webmasters and Webmistresses (I'm so glad we don't really use those terms anymore) were often hobbyists or part-time employees, at best. They had no formal training and--because this was all so very new--no real experience working with really any of these new technologies. Companies wanted in on the e-commerce gravy train and developers were scrambling to find the best option in getting their bosses a ticket. In a very short time, a whole litany of alphabet languages, each with a different purpose and functionality, started to show up or were adapted to work in a web development environment (e.g. HTML, XHTML, XML, XSL, JavaScript, CSS, Perl, PHP, etc.). In addition, as sites grew, so too did the number of files involved. No longer could you slap a few pictures up on a single page and be done with it. The people wanted to see (and companies wanted to show them) what they were buying. The order of the day then was--possibly--hundreds of different photos for different items (some from different angles, right?) spread out across multiple pages of a site. It was chaos and trying to keep track of all it was getting to be quite a headache.</p>
+        <p>And so they turned to the world of technical writing.</p>
+        <p>As the costs of commercial computing fell, as processors got more powerful, as memory got more plentiful, and as word processing applications became more accessible, the movement towards digitization started to grow. Technical writing was booming and right in the thick of it as companies realized the invaluable resource they had in design, distribution, and marketing of new products. Technical writing was on the cutting edge, so to speak, of content management as more and more were looking for new ways to share, organize, and search the growing mass of paperless content.</p>
+      <a id="content"></a>
+      <h3>Content Management</h3>
+        <p>Now, I'm going to make a few divisons in terminology for ease of understanding, but understand that all that which we are going to talk about falls under the umbrella of content management. While I may specifically reference content management systems and version control as if they are completely separate things, you should know that these things are closely related and deeply intertwined.</p>
+      <h4>Content Management Systems</h4>
+          <p>When I refer to content management systems I'm referring to systems of organization that control--essentially--file content and folders of content. Images, audio files, video files, HTML files, CSS files, etc. are all individual and separate pieces of content--typically grouped together related to type--in file folders. This is not about who has access to that content or logs of who last modified that content, even though most modern content management systems do both and then some. We're also going to talk about them in the context of front end development even though there are certainly content management systems whose focus is on other areas of development like back end development, software development, database administration, and so on.</p>
+          <p>The university--as a matter of fact--uses a content management system for managing the university's website.</p>
+          <p><img src="/images/dotCMS1.PNG" alt="screenshot of the dotCMS system" class="centered"/></p>
+          <p>As you can see there's a lot going on here, but the important point is that everything is ridiculously organized, yeah?. The CMS also has an audit trail indicating who last accessed each file at what time and date, a calendar function to assign tasks to individual users, and a site search tool. Everything can be tagged with metadata, links on the site can be checked for validity, and templates can be created and used. <br/>
+          Now, we're a relatively small university and we don't do a whole lot with our website by and large, but there's still a ton of content that needs to be wrangled and a lot of different people whose access needs to be managed. So, you can see the advantages of using a content management system even if you're only using a small part of what's available to you.</p>
+          <p>This particular CMS is dotCMS, which is an open source content management system and while there are many, many other options out there, there is one that--if you choose to wander down this road--you'll see...a lot.</p>
+          <p><img src="/images/wordpress.png" alt="generic screenshot of wordpress install" class="centered"/></p>
+          <p>This is WordPress and--according to the Internet, which would never lie to me--it powers 28% of the Internet supporting over 60 million sites. It's a bit more polished than our previous example and a whole lot more user friendly. It comes with native applications for most modern mobile operating systems, the ability to set site themes, and--because WordPress is so popular--a whole bunch of really useful and well designed plugins that extend functionality exponentially across the board.</p>
+          <p>We're not going to spend too much time with content management systems, in general--even if we've spent too much time with them already, but I wanted you to, at least, be familiar with the idea and have some exposure to them as they'll--most likely--be a pretty important part of your front end education further on down the line.</p>
+        <a id="version"></a>
+        <h4> Version Control</h4>
+          <p>When developers are creating something--be it a site, a full fledged application, or whatever--they are constantly in--or should be--a cycle of testing and redesigning. That means--at any given time--there could be a lot of different revisions of the same 'something' out there in the wild.</p>
+          <p>Version control keeps these revisions straight by storing these files in a central repository for developers to work with, promoting ease of collaboration. The central repository stores the 'official' revision of the file and keeps a history of all the changes to the project and who made them. Developers download the 'master' file to a local system, make their changes, and then upload them back to the master repository where they are held in a sort of limbo until the changes are evaluated and 'committed' to the master revision.</p>
+          <p>We're going to work directly within the GitHub ecosystem, so, let's first take a look at the website.</p>
+          <p><img src="/images/github1.PNG" alt="screenshot of a repository on github" class="centered"/></p>
+          <p>After you create an account and a repository, you should see a screen similar to this one. This particular tab (the 'code' tab) shows the files themselves. This is--for the most part--the website in front of you. At the time of this screenshot, this particular repository has a single contributor (me), a single branch (give me a minute), and 13 'commits,' which means I've 'approved' 13 revisions to the master 'branch' of this repository. You can see them below in the window with all the file names, which tells you under which proposed commit each file was changed and when.</p>
+          <p>The beauty of GitHub--and really all version control systems--is that I can work on my project anywhere on any system without having to worry too much about having the most current files. For instance, right now I'm working on my laptop at home in my living room, okay? I opened up GitHub Desktop, the local system extension of GitHub, and made a pull request. This downloaded the latest official version of the project for me to work with on my laptop.<br/>Here's a screenshot of GitHub Desktop. Ours might look a little different in class, but it's close enough, yeah?</p>
+          <p><img src="/images/githubdesktop1.PNG" alt="screenshot of github desktop dashboard" class="centered"/></p>
+          <p>After syncing the project, I made a whole bunch of changes. When I'm finished, GitHub Desktop gives me a list of all the changes I made and prompts me to provide a title and brief description for the batch edit. I click 'commit to master' and my edits are pushed to the master repository to await approval.</p>
+          <p><img src="/images/githubdesktop2.PNG" alt ="screenshot of the changes screen github desktop" class="centered"/>
+          <p>At that point, whomever is in charge of committing changes to the master branch would be able to identify my particular edit by the title and description, compare my changes to the latest official revision, and then decide whether or not to accept my edits.</p>
+          <p>There are a few things here that you won't see because of the nature of my particular circumstance and setup.</p>
+          <p>You're not limited to one developer 'checking out' the repository at a time, right? The local repositories are copies of the master, which means several developers can be working on the project at the same time, even the same file. If several of us had made changes to the same file, GitHub allows the master contributor to accept those edits individually and then those edits would merge into the master branch.</p>
+          <p>If my changes were too radical, the master contributor might not want to commit my changes to the master branch. If, however, they felt those changes were worthy of exploration and experimentation, they could 'fork' the project and create a separate development branch. Syncing would work exactly the same way, but instead of pulling from and pushing to the master branch, you would pull from and push to the forked branch.</p>
+          <p>If several developers submitted changes to the exact same part of the same file, then the master contributor would have the option of accepting one or the other and then committing those changes to the master branch.</p>
+          <p>We've been talking of GitHub in the context of web development, but the idea is extensible to other areas of development as well, right? Software development, application development--really any sort of programming of any stripe--benefits from the ability to manage versioning using version control, especially in a shared environment. Being familiar with and being able to effectively use version control systems are two skills that are fast becoming absolutely necessary in the modern development world as more and more companies are embracing the methodology every day. It is a cornerstone of development best practices, which means you should probably get nice and comfortable with it.</p>
+
+
+
+
+    </div>
+
+<!-- Sidebar Widgets Column -->
+    <div class="flex-widget">
+
+      <!-- Side Widget -->
+      <div class="card my-4">
+        <h5 class="card-header html">In this lesson</h5>
+        <div class="card-body">
+          <h5>Objectives</h5>
+              <ul>
+                <li>Discover and examine the concept of content management in modern development</li>
+                <li>Adapt and develop personal best practices in a development context</li>
+                <li>Demonstrate and use content management in personal development environment</li>
+              </ul><hr/>
+        <h5>Terms</h5>
+              <hr/>
+        <h5>Concepts</h5>
+              <ul>
+                <li><a href="#content">Content Management Systems</a></li>
+                <li><a href="#version">Version Control</a></li>
+              </ul>
+
+
+          </div>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->
+<footer>
+  <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.js"></script>
+  <script type="text/javascript" src="vendor/jquery/jquery.js"></script>
+  <script src="js/basic_javascript.js"></script>
+
+  <script>
+  //fade in the back to top button
+  (function($) {
+  $(document).ready(function(){
+      //When distance from top = 2000px fade button in/out
+      $(window).scroll(function(){
+          if ($(this).scrollTop() > 2000) {
+              $('#top').fadeIn(300);
+          } else {
+              $('#top').fadeOut(300);
+          }
+      });
+  });
+  })(jQuery);
+
+</script>
+
+</footer>
+
+</body>
+</html>
